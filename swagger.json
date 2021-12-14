@@ -9,6 +9,28 @@
     "schemes": [
       "https"
     ],
+    "produces": [
+      "application/json"
+    ],
+    "parameters": {
+      "platform": {
+        "type": "string",
+        "name": "platform",
+        "in": "query",
+        "x-nullable": false,
+        "enum": [
+          "Agnostic",
+          "Cloud",
+          "Windows64",
+          "Windows32",
+          "Linux64",
+          "Linux32",
+          "MacOS",
+          "Android",
+          "iOS"
+        ]
+      }
+    },
     "paths": {
       "/api/v2/accounts": {
         "delete": {
@@ -45,7 +67,7 @@
           "tags": [
             "AccountAsset"
           ],
-          "operationId": "AccountAsset_All",
+          "operationId": "AccountAsset_GetAll",
           "produces": [
             "application/json"
           ],
@@ -837,7 +859,7 @@
           "tags": [
             "Connection"
           ],
-          "operationId": "Connection_All",
+          "operationId": "Connection_GetAll",
           "produces": [
             "application/json"
           ],
@@ -1134,24 +1156,7 @@
           ],
           "parameters": [
             {
-              "type": "string",
-              "name": "platform",
-              "in": "query",
-              "x-schema": {
-                "$ref": "#/definitions/Platform"
-              },
-              "x-nullable": false,
-              "enum": [
-                "Agnostic",
-                "Cloud",
-                "Windows64",
-                "Windows32",
-                "Linux64",
-                "Linux32",
-                "MacOS",
-                "Android",
-                "iOS"
-              ]
+              "$ref": "#/parameters/platform"
             }
           ],
           "responses": {
@@ -1180,24 +1185,7 @@
               "x-nullable": true
             },
             {
-              "type": "string",
-              "name": "platform",
-              "in": "query",
-              "x-schema": {
-                "$ref": "#/definitions/Platform"
-              },
-              "x-nullable": false,
-              "enum": [
-                "Agnostic",
-                "Cloud",
-                "Windows64",
-                "Windows32",
-                "Linux64",
-                "Linux32",
-                "MacOS",
-                "Android",
-                "iOS"
-              ]
+              "$ref": "#/parameters/platform"
             },
             {
               "type": "string",
@@ -1259,24 +1247,7 @@
               "x-nullable": true
             },
             {
-              "type": "string",
-              "name": "platform",
-              "in": "query",
-              "x-schema": {
-                "$ref": "#/definitions/Platform"
-              },
-              "x-nullable": false,
-              "enum": [
-                "Agnostic",
-                "Cloud",
-                "Windows64",
-                "Windows32",
-                "Linux64",
-                "Linux32",
-                "MacOS",
-                "Android",
-                "iOS"
-              ]
+              "$ref": "#/parameters/platform"
             }
           ],
           "responses": {
@@ -1371,7 +1342,7 @@
           "tags": [
             "EndpointAsset"
           ],
-          "operationId": "EndpointAsset_All",
+          "operationId": "EndpointAsset_GetAll",
           "produces": [
             "application/json"
           ],
@@ -1820,7 +1791,7 @@
           "tags": [
             "Group"
           ],
-          "operationId": "Group_All",
+          "operationId": "Group_GetAll",
           "produces": [
             "application/json"
           ],
@@ -2224,7 +2195,7 @@
           "tags": [
             "Invitation"
           ],
-          "operationId": "Invitation_All",
+          "operationId": "Invitation_GetAll",
           "produces": [
             "application/json"
           ],
@@ -2615,7 +2586,7 @@
           "tags": [
             "Job"
           ],
-          "operationId": "Job_All",
+          "operationId": "Job_GetAll",
           "produces": [
             "application/json"
           ],
@@ -3323,7 +3294,7 @@
           "tags": [
             "JobThread"
           ],
-          "operationId": "JobThread_All",
+          "operationId": "JobThread_GetAll",
           "produces": [
             "application/json"
           ],
@@ -3673,24 +3644,7 @@
               "x-nullable": true
             },
             {
-              "type": "string",
-              "name": "platform",
-              "in": "query",
-              "x-schema": {
-                "$ref": "#/definitions/Platform"
-              },
-              "x-nullable": false,
-              "enum": [
-                "Agnostic",
-                "Cloud",
-                "Windows64",
-                "Windows32",
-                "Linux64",
-                "Linux32",
-                "MacOS",
-                "Android",
-                "iOS"
-              ]
+              "$ref": "#/parameters/platform"
             }
           ],
           "responses": {
@@ -3722,24 +3676,7 @@
               "x-nullable": true
             },
             {
-              "type": "string",
-              "name": "platform",
-              "in": "query",
-              "x-schema": {
-                "$ref": "#/definitions/Platform"
-              },
-              "x-nullable": false,
-              "enum": [
-                "Agnostic",
-                "Cloud",
-                "Windows64",
-                "Windows32",
-                "Linux64",
-                "Linux32",
-                "MacOS",
-                "Android",
-                "iOS"
-              ]
+              "$ref": "#/parameters/platform"
             }
           ],
           "responses": {
@@ -3839,7 +3776,7 @@
           "tags": [
             "Repository"
           ],
-          "operationId": "Repository_All",
+          "operationId": "Repository_GetAll",
           "produces": [
             "application/json"
           ],
@@ -4231,7 +4168,7 @@
           "tags": [
             "Role"
           ],
-          "operationId": "Role_All",
+          "operationId": "Role_GetAll",
           "produces": [
             "application/json"
           ],
@@ -4552,7 +4489,7 @@
           "tags": [
             "Runner"
           ],
-          "operationId": "Runner_All",
+          "operationId": "Runner_GetAll",
           "produces": [
             "application/json"
           ],
@@ -4966,7 +4903,7 @@
             "application/*+json"
           ],
           "produces": [
-            "application/json"
+            "text/plain"
           ],
           "parameters": [
             {
@@ -5052,7 +4989,7 @@
           ],
           "operationId": "Set_AddToSetBySet",
           "produces": [
-            "application/json"
+            "text/plain"
           ],
           "parameters": [
             {
@@ -5300,7 +5237,7 @@
           "tags": [
             "User"
           ],
-          "operationId": "User_All",
+          "operationId": "User_GetAll",
           "produces": [
             "application/json"
           ],
