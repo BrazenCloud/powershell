@@ -2,6 +2,8 @@
 # PsRunway
 This directory contains the PowerShell module for the PsRunway service.
 
+See the [samples folder](.\samples) for inspiration.
+
 ---
 ## Status
 [![PsRunway](https://img.shields.io/powershellgallery/v/PsRunway.svg?style=flat-square&label=PsRunway "PsRunway")](https://www.powershellgallery.com/packages/PsRunway/)
