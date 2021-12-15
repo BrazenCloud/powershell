@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# RunwayApi
-This directory contains the PowerShell module for the RunwayApi service.
+# Runway
+This directory contains the PowerShell module for the Runway service.
 
 ---
 ## Status
-[![RunwayApi](https://img.shields.io/powershellgallery/v/RunwayApi.svg?style=flat-square&label=RunwayApi "RunwayApi")](https://www.powershellgallery.com/packages/RunwayApi/)
+[![Runway](https://img.shields.io/powershellgallery/v/Runway.svg?style=flat-square&label=Runway "Runway")](https://www.powershellgallery.com/packages/Runway/)
 
 ## Info
 - Modifiable: yes
@@ -17,5 +17,5 @@ This directory contains the PowerShell module for the RunwayApi service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `RunwayApi`, see [how-to.md](how-to.md).
+For information on how to develop for `Runway`, see [how-to.md](how-to.md).
 <!-- endregion -->
