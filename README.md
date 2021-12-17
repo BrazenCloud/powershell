@@ -2,6 +2,27 @@
 # PsRunway
 This directory contains the PowerShell module for the PsRunway service.
 
+## Install PsRunway
+
+Since PsRunway is published to the PowerShell Gallery, use `Install-Module` to install the module:
+
+```powershell
+Install-Module PsRunway -Repository PSGallery
+```
+
+## Authenticate
+
+To authenticate to Runway, use the `Invoke-RwLoginAuthentication` cmdlet and then store the session token in the `RunwaySessionToken` environment variable:
+
+```powershell
+$session = Invoke-RwLoginAuthentication -Remember -Email <email> -Password <password>
+$env:RunwaySessionToken = $session.Session
+```
+
+The PsRunway module uses the environment variable when creating the authentication header. The plan is to improve this and make it transparent.
+
+## Samples
+
 See the [samples folder](./samples) for inspiration.
 
 ---
