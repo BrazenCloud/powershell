@@ -1,7 +1,7 @@
 @{
   GUID = '34531e3d-d357-44e8-b1b8-191ce4503ada'
   RootModule = './PsRunway.psm1'
-  ModuleVersion = '0.1.0'
+  ModuleVersion = '0.1.1'
   CompatiblePSEditions = 'Core', 'Desktop'
   Author = 'ThePoShWolf'
   CompanyName = 'Runway Software'
