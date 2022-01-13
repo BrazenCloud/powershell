@@ -1,5 +1,5 @@
 {
-  "x-generator": "NSwag v13.10.7.0 (NJsonSchema v10.3.9.0 (Newtonsoft.Json v12.0.0.0))",
+  "x-generator": "NSwag v13.14.8.0 (NJsonSchema v10.5.2.0 (Newtonsoft.Json v12.0.0.0))",
   "swagger": "2.0",
   "info": {
     "title": "Runway API",
@@ -67,7 +67,7 @@
         "tags": [
           "AccountAsset"
         ],
-        "operationId": "AccountAsset_GetAll",
+        "operationId": "AccountAsset_List",
         "produces": [
           "application/json"
         ],
@@ -859,7 +859,7 @@
         "tags": [
           "Connection"
         ],
-        "operationId": "Connection_GetAll",
+        "operationId": "Connection_List",
         "produces": [
           "application/json"
         ],
@@ -1185,7 +1185,24 @@
             "x-nullable": true
           },
           {
-            "$ref": "#/parameters/platform"
+            "type": "string",
+            "name": "platform",
+            "in": "query",
+            "x-schema": {
+              "$ref": "#/definitions/Platform"
+            },
+            "x-nullable": false,
+            "enum": [
+              "Agnostic",
+              "Cloud",
+              "Windows64",
+              "Windows32",
+              "Linux64",
+              "Linux32",
+              "MacOS",
+              "Android",
+              "iOS"
+            ]
           },
           {
             "type": "string",
@@ -1342,7 +1359,7 @@
         "tags": [
           "EndpointAsset"
         ],
-        "operationId": "EndpointAsset_GetAll",
+        "operationId": "EndpointAsset_List",
         "produces": [
           "application/json"
         ],
@@ -1791,7 +1808,7 @@
         "tags": [
           "Group"
         ],
-        "operationId": "Group_GetAll",
+        "operationId": "Group_List",
         "produces": [
           "application/json"
         ],
@@ -1913,6 +1930,29 @@
               "type": "array",
               "items": {
                 "$ref": "#/definitions/RunwayGroup"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/groups/hierarchyex": {
+      "get": {
+        "tags": [
+          "Group"
+        ],
+        "operationId": "Group_GetHierarchyEx",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GroupHierarchyViewEx"
               }
             }
           }
@@ -2195,7 +2235,7 @@
         "tags": [
           "Invitation"
         ],
-        "operationId": "Invitation_GetAll",
+        "operationId": "Invitation_List",
         "produces": [
           "application/json"
         ],
@@ -2586,7 +2626,7 @@
         "tags": [
           "Job"
         ],
-        "operationId": "Job_GetAll",
+        "operationId": "Job_List",
         "produces": [
           "application/json"
         ],
@@ -3150,6 +3190,32 @@
         }
       }
     },
+    "/api/v2/threads/{id}/lastresult": {
+      "get": {
+        "tags": [
+          "JobThread"
+        ],
+        "operationId": "JobThread_DownloadResultForThread",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
     "/api/v2/threads/{id}/lastlog": {
       "get": {
         "tags": [
@@ -3294,7 +3360,7 @@
         "tags": [
           "JobThread"
         ],
-        "operationId": "JobThread_GetAll",
+        "operationId": "JobThread_List",
         "produces": [
           "application/json"
         ],
@@ -3776,7 +3842,7 @@
         "tags": [
           "Repository"
         ],
-        "operationId": "Repository_GetAll",
+        "operationId": "Repository_List",
         "produces": [
           "application/json"
         ],
@@ -4168,7 +4234,7 @@
         "tags": [
           "Role"
         ],
-        "operationId": "Role_GetAll",
+        "operationId": "Role_List",
         "produces": [
           "application/json"
         ],
@@ -4489,7 +4555,7 @@
         "tags": [
           "Runner"
         ],
-        "operationId": "Runner_GetAll",
+        "operationId": "Runner_List",
         "produces": [
           "application/json"
         ],
@@ -4903,7 +4969,7 @@
           "application/*+json"
         ],
         "produces": [
-          "text/plain"
+          "application/json"
         ],
         "parameters": [
           {
@@ -4989,7 +5055,7 @@
         ],
         "operationId": "Set_AddToSetBySet",
         "produces": [
-          "text/plain"
+          "application/json"
         ],
         "parameters": [
           {
@@ -5237,7 +5303,7 @@
         "tags": [
           "User"
         ],
-        "operationId": "User_GetAll",
+        "operationId": "User_List",
         "produces": [
           "application/json"
         ],
@@ -6805,10 +6871,40 @@
       "type": "object",
       "x-abstract": true,
       "required": [
-        "isSelected",
-        "isHidden"
+        "isHidden",
+        "isSelected"
       ],
       "properties": {
+        "assignedEndpointId": {
+          "type": "string"
+        },
+        "assignedEndpointName": {
+          "type": "string"
+        },
+        "actionName": {
+          "type": "string"
+        },
+        "runnerId": {
+          "type": "string"
+        },
+        "actionId": {
+          "type": "string"
+        },
+        "isHidden": {
+          "type": "boolean"
+        },
+        "settings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ActionSetting"
+          }
+        },
+        "connectionMetrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RunwayConnectionStatistic"
+          }
+        },
         "id": {
           "type": "string"
         },
@@ -6818,27 +6914,6 @@
         "description": {
           "type": "string"
         },
-        "assignedEndpointId": {
-          "type": "string"
-        },
-        "assignedEndpointName": {
-          "type": "string"
-        },
-        "runnerId": {
-          "type": "string"
-        },
-        "actionId": {
-          "type": "string"
-        },
-        "actionName": {
-          "type": "string"
-        },
-        "settings": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ActionSetting"
-          }
-        },
         "tags": {
           "type": "array",
           "items": {
@@ -6847,15 +6922,6 @@
         },
         "isSelected": {
           "type": "boolean"
-        },
-        "isHidden": {
-          "type": "boolean"
-        },
-        "connectionMetrics": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/RunwayConnectionStatistic"
-          }
         }
       }
     },
@@ -7256,6 +7322,9 @@
         "canCreateTenants": {
           "type": "boolean"
         },
+        "parentLicenseContainerId": {
+          "type": "string"
+        },
         "ownerName": {
           "type": "string"
         },
@@ -7333,6 +7402,72 @@
           }
         }
       ]
+    },
+    "GroupHierarchyViewEx": {
+      "type": "object",
+      "required": [
+        "isSelected",
+        "licensesAllocated",
+        "licensesInUse",
+        "licenseExpiration",
+        "canCreateTenants"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "portraitUrl": {
+          "type": "string"
+        },
+        "homeForUserId": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "isSelected": {
+          "type": "boolean"
+        },
+        "licensesAllocated": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "licensesInUse": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "licenseExpiration": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "canCreateTenants": {
+          "type": "boolean"
+        },
+        "parentLicenseContainerId": {
+          "type": "string"
+        },
+        "parentIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "homeForUserName": {
+          "type": "string"
+        },
+        "homeForUserEmail": {
+          "type": "string"
+        }
+      }
     },
     "CreateGroupRequest": {
       "allOf": [
@@ -7492,6 +7627,9 @@
         },
         "canCreateTenants": {
           "type": "boolean"
+        },
+        "parentLicenseContainerId": {
+          "type": "string"
         }
       }
     },
@@ -8135,37 +8273,16 @@
       "type": "object",
       "x-abstract": true,
       "required": [
-        "isSelected",
         "isEnabled",
         "isHidden",
         "totalEndpointsFinished",
         "totalEndpointsFinishedErrors",
         "totalEndpointsRunning",
-        "totalEndpointsAssigned"
+        "totalEndpointsAssigned",
+        "isSelected"
       ],
       "properties": {
-        "id": {
-          "type": "string"
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "isSelected": {
-          "type": "boolean"
-        },
-        "name": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
         "isEnabled": {
-          "type": "boolean"
-        },
-        "isHidden": {
           "type": "boolean"
         },
         "actions": {
@@ -8176,6 +8293,9 @@
         },
         "schedule": {
           "$ref": "#/definitions/JobSchedule"
+        },
+        "isHidden": {
+          "type": "boolean"
         },
         "jobMetrics": {
           "type": "array",
@@ -8198,6 +8318,24 @@
         "totalEndpointsAssigned": {
           "type": "integer",
           "format": "int32"
+        },
+        "id": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "isSelected": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
         }
       }
     },
@@ -8469,13 +8607,43 @@
       "type": "object",
       "x-abstract": true,
       "required": [
-        "revision",
+        "isConnectionRequired",
         "license",
         "scope",
-        "isSelected",
-        "isConnectionRequired"
+        "revision",
+        "isSelected"
       ],
       "properties": {
+        "desiredSettings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ActionSetting"
+          }
+        },
+        "glyph": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "isConnectionRequired": {
+          "type": "boolean"
+        },
+        "license": {
+          "$ref": "#/definitions/RepositoryLicense"
+        },
+        "scope": {
+          "$ref": "#/definitions/RepositoryScope"
+        },
+        "input": {
+          "type": "string"
+        },
+        "output": {
+          "type": "string"
+        },
         "id": {
           "type": "string"
         },
@@ -8485,47 +8653,17 @@
         "description": {
           "type": "string"
         },
-        "glyph": {
-          "type": "string"
-        },
         "revision": {
           "type": "integer",
           "format": "int32"
         },
-        "author": {
-          "type": "string"
-        },
-        "language": {
-          "type": "string"
-        },
-        "license": {
-          "$ref": "#/definitions/RepositoryLicense"
-        },
-        "scope": {
-          "$ref": "#/definitions/RepositoryScope"
-        },
         "isSelected": {
           "type": "boolean"
-        },
-        "isConnectionRequired": {
-          "type": "boolean"
-        },
-        "input": {
-          "type": "string"
-        },
-        "output": {
-          "type": "string"
         },
         "tags": {
           "type": "array",
           "items": {
             "type": "string"
-          }
-        },
-        "desiredSettings": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ActionSetting"
           }
         }
       }
@@ -8775,11 +8913,14 @@
       "type": "object",
       "x-abstract": true,
       "required": [
+        "isActive",
         "isSelected",
-        "affinity",
-        "isActive"
+        "affinity"
       ],
       "properties": {
+        "isActive": {
+          "type": "boolean"
+        },
         "id": {
           "type": "string"
         },
@@ -8797,9 +8938,6 @@
         },
         "affinity": {
           "$ref": "#/definitions/NodeAffinity"
-        },
-        "isActive": {
-          "type": "boolean"
         },
         "assetName": {
           "type": "string"
