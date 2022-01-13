@@ -80,6 +80,9 @@ Locale: en-US
 ### [Get-RwGroupHierarchy](Get-RwGroupHierarchy.md)
 
 
+### [Get-RwGroupHierarchyEx](Get-RwGroupHierarchyEx.md)
+
+
 ### [Get-RwGroupQuerySchema](Get-RwGroupQuerySchema.md)
 
 
@@ -288,6 +291,9 @@ Locale: en-US
 
 
 ### [Invoke-RwDownloadContentPublicFile](Invoke-RwDownloadContentPublicFile.md)
+
+
+### [Invoke-RwDownloadJobThreadResult](Invoke-RwDownloadJobThreadResult.md)
 
 
 ### [Invoke-RwDownloadRepositoryAction](Invoke-RwDownloadRepositoryAction.md)

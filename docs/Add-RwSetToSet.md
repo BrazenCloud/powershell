@@ -14,25 +14,23 @@ schema: 2.0.0
 
 ### Add (Default)
 ```
-Add-RwSetToSet -TargetSetId <String> -ObjectIds <String[]> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Add-RwSetToSet -TargetSetId <String> -ObjectIds <String[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add1
 ```
-Add-RwSetToSet -SourceSetId <String> -TargetSetId <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Add-RwSetToSet -SourceSetId <String> -TargetSetId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
-Add-RwSetToSet -InputObject <IPsRunwayIdentity> -ObjectIds <String[]> [-PassThru] [-Confirm] [-WhatIf]
+Add-RwSetToSet -InputObject <IPsRunwayIdentity> -ObjectIds <String[]> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### AddViaIdentity1
 ```
-Add-RwSetToSet -InputObject <IPsRunwayIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-RwSetToSet -InputObject <IPsRunwayIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +86,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -178,7 +161,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### System.Int64
 
 ## NOTES
 

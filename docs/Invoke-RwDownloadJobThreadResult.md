@@ -1,30 +1,26 @@
 ---
 external help file:
 Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/get-rwjobthread
+online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwdownloadjobthreadresult
 schema: 2.0.0
 ---
 
-# Get-RwJobThread
+# Invoke-RwDownloadJobThreadResult
 
 ## SYNOPSIS
 
 
 ## SYNTAX
 
-### List (Default)
+### Download (Default)
 ```
-Get-RwJobThread [<CommonParameters>]
-```
-
-### Get
-```
-Get-RwJobThread -JobId <String> [<CommonParameters>]
+Invoke-RwDownloadJobThreadResult -Id <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### DownloadViaIdentity
 ```
-Get-RwJobThread -InputObject <IPsRunwayIdentity> [<CommonParameters>]
+Invoke-RwDownloadJobThreadResult -InputObject <IPsRunwayIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,13 +48,28 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -Id
+.
+
+```yaml
+Type: System.String
+Parameter Sets: Download
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Runway.PowerShell.Models.IPsRunwayIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: DownloadViaIdentity
 Aliases:
 
 Required: True
@@ -68,15 +79,30 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -JobId
-.
+### -OutFile
+Path to write output file to
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -92,9 +118,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.IQueryResponseOfIJobThreadQueryView
-
-### Runway.PowerShell.Models.IRunwayJobThread
+### System.Boolean
 
 ## NOTES
 
