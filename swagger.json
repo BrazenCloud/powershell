@@ -1185,24 +1185,7 @@
             "x-nullable": true
           },
           {
-            "type": "string",
-            "name": "platform",
-            "in": "query",
-            "x-schema": {
-              "$ref": "#/definitions/Platform"
-            },
-            "x-nullable": false,
-            "enum": [
-              "Agnostic",
-              "Cloud",
-              "Windows64",
-              "Windows32",
-              "Linux64",
-              "Linux32",
-              "MacOS",
-              "Android",
-              "iOS"
-            ]
+            "$ref": "#/parameters/platform"
           },
           {
             "type": "string",
