@@ -14,13 +14,13 @@ schema: 2.0.0
 
 ### UpdateExpanded (Default)
 ```
-Set-RwRole -Id <String> -OutFile <String> [-Description <String>] [-Name <String>]
+Set-RwRole -RoleId <String> -OutFile <String> [-Description <String>] [-Name <String>]
  [-Permissions <IRunwayRoleAccess[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Set-RwRole -Id <String> -OutFile <String> -Request <IUpdateRoleRequest> [-PassThru] [-Confirm] [-WhatIf]
+Set-RwRole -RoleId <String> -OutFile <String> -Request <IUpdateRoleRequest> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -70,21 +70,6 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-.
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -184,6 +169,21 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -RoleId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -238,20 +238,27 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+  - `[AccountId <String>]`: 
+  - `[ActionId <String>]`: 
+  - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
-  - `[Id <String>]`: 
+  - `[InvitationId <String>]`: 
   - `[JobId <String>]`: 
   - `[Name <String>]`: 
   - `[NodeId <String>]`: 
   - `[NotifyId <String>]`: 
   - `[Password <String>]`: 
+  - `[RepositoryId <String>]`: 
+  - `[RoleId <String>]`: 
+  - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
+  - `[UserId <String>]`: 
 
 PERMISSIONS <IRunwayRoleAccess[]>: .
   - `AccessFlags <String>`: 

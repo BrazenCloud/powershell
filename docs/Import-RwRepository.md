@@ -19,7 +19,7 @@ Import-RwRepository -Name <String> [<CommonParameters>]
 
 ### Load1
 ```
-Import-RwRepository -Id <String> [<CommonParameters>]
+Import-RwRepository -RepositoryId <String> [<CommonParameters>]
 ```
 
 ### LoadViaIdentity
@@ -57,21 +57,6 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Id
-.
-
-```yaml
-Type: System.String
-Parameter Sets: Load1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -103,6 +88,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RepositoryId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: Load1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -124,20 +124,27 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+  - `[AccountId <String>]`: 
+  - `[ActionId <String>]`: 
+  - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
-  - `[Id <String>]`: 
+  - `[InvitationId <String>]`: 
   - `[JobId <String>]`: 
   - `[Name <String>]`: 
   - `[NodeId <String>]`: 
   - `[NotifyId <String>]`: 
   - `[Password <String>]`: 
+  - `[RepositoryId <String>]`: 
+  - `[RoleId <String>]`: 
+  - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
+  - `[UserId <String>]`: 
 
 ## RELATED LINKS
 
