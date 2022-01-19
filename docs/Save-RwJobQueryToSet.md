@@ -14,7 +14,7 @@ schema: 2.0.0
 
 ### SaveExpanded (Default)
 ```
-Save-RwJobQueryToSet -Id <String> -IncludeSubgroups -Skip <Int32> -SortDirection <String> -Take <Int32>
+Save-RwJobQueryToSet -SetId <String> -IncludeSubgroups -Skip <Int32> -SortDirection <String> -Take <Int32>
  [-FilterCaseSensitive] [-FilterChildren <IFilterComparison[]>] [-FilterLeft <String>]
  [-FilterOperator <String>] [-FilterRight <String>] [-MembershipCheckId <String>] [-RootContainerId <String>]
  [-SelectionCheckId <String>] [-SortField <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -22,7 +22,7 @@ Save-RwJobQueryToSet -Id <String> -IncludeSubgroups -Skip <Int32> -SortDirection
 
 ### Save
 ```
-Save-RwJobQueryToSet -Id <String> -Query <IQuery> [-Confirm] [-WhatIf] [<CommonParameters>]
+Save-RwJobQueryToSet -SetId <String> -Query <IQuery> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SaveViaIdentity
@@ -140,21 +140,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
-.
-
-```yaml
-Type: System.String
-Parameter Sets: Save, SaveExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -IncludeSubgroups
 .
 
@@ -241,6 +226,21 @@ Parameter Sets: SaveExpanded, SaveViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SetId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: Save, SaveExpanded
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -368,20 +368,27 @@ FILTERCHILDREN <IFilterComparison[]>: .
   - `[Right <String>]`: 
 
 INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+  - `[AccountId <String>]`: 
+  - `[ActionId <String>]`: 
+  - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
-  - `[Id <String>]`: 
+  - `[InvitationId <String>]`: 
   - `[JobId <String>]`: 
   - `[Name <String>]`: 
   - `[NodeId <String>]`: 
   - `[NotifyId <String>]`: 
   - `[Password <String>]`: 
+  - `[RepositoryId <String>]`: 
+  - `[RoleId <String>]`: 
+  - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
+  - `[UserId <String>]`: 
 
 QUERY <IQuery>: .
   - `IncludeSubgroups <Boolean>`: 

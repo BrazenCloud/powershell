@@ -14,7 +14,7 @@ schema: 2.0.0
 
 ### UpdateExpanded (Default)
 ```
-Set-RwGroup -Id <String> -LicenseAllocatedRunners <Int32> -LicenseCanAssignSubLicenses -OutFile <String>
+Set-RwGroup -GroupId <String> -LicenseAllocatedRunners <Int32> -LicenseCanAssignSubLicenses -OutFile <String>
  [-Description <String>] [-LicenseExpiration <String>] [-Name <String>] [-PortraitUrl <String>]
  [-TenantCompanyName <String>] [-TenantExpiration <String>] [-TenantOtherDetails <String>]
  [-TenantPhoneNumber <String>] [-TenantPointOfContact <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,8 +23,8 @@ Set-RwGroup -Id <String> -LicenseAllocatedRunners <Int32> -LicenseCanAssignSubLi
 
 ### Update
 ```
-Set-RwGroup -Id <String> -OutFile <String> -Request <IUpdateGroupRequest> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-RwGroup -GroupId <String> -OutFile <String> -Request <IUpdateGroupRequest> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
@@ -82,7 +82,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
+### -GroupId
 .
 
 ```yaml
@@ -363,20 +363,27 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+  - `[AccountId <String>]`: 
+  - `[ActionId <String>]`: 
+  - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
-  - `[Id <String>]`: 
+  - `[InvitationId <String>]`: 
   - `[JobId <String>]`: 
   - `[Name <String>]`: 
   - `[NodeId <String>]`: 
   - `[NotifyId <String>]`: 
   - `[Password <String>]`: 
+  - `[RepositoryId <String>]`: 
+  - `[RoleId <String>]`: 
+  - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
+  - `[UserId <String>]`: 
 
 REQUEST <IUpdateGroupRequest>: .
   - `LicenseAllocatedRunners <Int32>`: 

@@ -14,7 +14,7 @@ schema: 2.0.0
 
 ### Get (Default)
 ```
-Get-RwRepositoryActionContentInfo -Id <String> [-Platform <String>] [<CommonParameters>]
+Get-RwRepositoryActionContentInfo -ActionId <String> [-Platform <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -47,7 +47,7 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Id
+### -ActionId
 .
 
 ```yaml
@@ -114,20 +114,27 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+  - `[AccountId <String>]`: 
+  - `[ActionId <String>]`: 
+  - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
-  - `[Id <String>]`: 
+  - `[InvitationId <String>]`: 
   - `[JobId <String>]`: 
   - `[Name <String>]`: 
   - `[NodeId <String>]`: 
   - `[NotifyId <String>]`: 
   - `[Password <String>]`: 
+  - `[RepositoryId <String>]`: 
+  - `[RoleId <String>]`: 
+  - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
+  - `[UserId <String>]`: 
 
 ## RELATED LINKS
 

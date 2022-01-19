@@ -14,15 +14,15 @@ schema: 2.0.0
 
 ### UpdateExpanded (Default)
 ```
-Set-RwConnection -Id <String> -IsHidden -OutFile <String> [-ActionId <String>] [-AssignedEndpointId <String>]
- [-Description <String>] [-GroupId <String>] [-Id1 <String>] [-Name <String>] [-RunnerId <String>]
- [-Settings <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwConnection -ConnectionId <String> -IsHidden -OutFile <String> [-ActionId <String>]
+ [-AssignedEndpointId <String>] [-Description <String>] [-GroupId <String>] [-Id <String>] [-Name <String>]
+ [-RunnerId <String>] [-Settings <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Set-RwConnection -Id <String> -OutFile <String> -Request <IUpdateConnectionRequest> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-RwConnection -ConnectionId <String> -OutFile <String> -Request <IUpdateConnectionRequest> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
@@ -33,10 +33,9 @@ Set-RwConnection -InputObject <IPsRunwayIdentity> -OutFile <String> -Request <IU
 
 ### UpdateViaIdentityExpanded
 ```
-Set-RwConnection -InputObject <IPsRunwayIdentity> -IsHidden -OutFile <String> [-Id <String>]
- [-ActionId <String>] [-AssignedEndpointId <String>] [-Description <String>] [-GroupId <String>]
- [-Name <String>] [-RunnerId <String>] [-Settings <Hashtable>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-RwConnection -InputObject <IPsRunwayIdentity> -IsHidden -OutFile <String> [-ActionId <String>]
+ [-AssignedEndpointId <String>] [-Description <String>] [-GroupId <String>] [-Id <String>] [-Name <String>]
+ [-RunnerId <String>] [-Settings <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,6 +93,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ConnectionId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Description
 .
 
@@ -129,22 +143,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id1
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -330,20 +329,27 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+  - `[AccountId <String>]`: 
+  - `[ActionId <String>]`: 
+  - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
-  - `[Id <String>]`: 
+  - `[InvitationId <String>]`: 
   - `[JobId <String>]`: 
   - `[Name <String>]`: 
   - `[NodeId <String>]`: 
   - `[NotifyId <String>]`: 
   - `[Password <String>]`: 
+  - `[RepositoryId <String>]`: 
+  - `[RoleId <String>]`: 
+  - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
+  - `[UserId <String>]`: 
 
 REQUEST <IUpdateConnectionRequest>: .
   - `IsHidden <Boolean>`: 

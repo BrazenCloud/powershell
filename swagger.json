@@ -82,7 +82,7 @@
         }
       }
     },
-    "/api/v2/accounts/{id}": {
+    "/api/v2/accounts/{accountId}": {
       "delete": {
         "tags": [
           "AccountAsset"
@@ -91,7 +91,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "accountId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -118,7 +118,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "accountId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -273,7 +273,7 @@
         }
       }
     },
-    "/api/v2/accounts/query/set/{id}": {
+    "/api/v2/accounts/query/set/{setId}": {
       "post": {
         "tags": [
           "AccountAsset"
@@ -289,7 +289,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -874,7 +874,7 @@
         }
       }
     },
-    "/api/v2/connections/{id}": {
+    "/api/v2/connections/{connectionId}": {
       "delete": {
         "tags": [
           "Connection"
@@ -883,7 +883,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "connectionId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -911,7 +911,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "connectionId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -947,7 +947,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "connectionId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -1102,7 +1102,7 @@
         }
       }
     },
-    "/api/v2/connections/query/set/{id}": {
+    "/api/v2/connections/query/set/{setId}": {
       "post": {
         "tags": [
           "Connection"
@@ -1118,7 +1118,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -1357,7 +1357,7 @@
         }
       }
     },
-    "/api/v2/endpoints/{id}": {
+    "/api/v2/endpoints/{setId}": {
       "delete": {
         "tags": [
           "EndpointAsset"
@@ -1366,7 +1366,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -1393,7 +1393,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -1581,7 +1581,7 @@
         }
       }
     },
-    "/api/v2/endpoints/query/set/{id}": {
+    "/api/v2/endpoints/query/set/{setId}": {
       "post": {
         "tags": [
           "EndpointAsset"
@@ -1597,7 +1597,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -1694,7 +1694,7 @@
         }
       }
     },
-    "/api/v2/groups/ex/{id}": {
+    "/api/v2/groups/ex/{groupId}": {
       "get": {
         "tags": [
           "Group"
@@ -1706,7 +1706,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "groupId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -1806,7 +1806,7 @@
         }
       }
     },
-    "/api/v2/groups/{id}": {
+    "/api/v2/groups/{groupId}": {
       "delete": {
         "tags": [
           "Group"
@@ -1815,7 +1815,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "groupId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -1843,7 +1843,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "groupId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -1879,7 +1879,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "groupId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -2080,7 +2080,7 @@
         }
       }
     },
-    "/api/v2/groups/query/set/{id}": {
+    "/api/v2/groups/query/set/{setId}": {
       "post": {
         "tags": [
           "Group"
@@ -2096,7 +2096,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -2354,7 +2354,7 @@
         }
       }
     },
-    "/api/v2/invitations/{id}": {
+    "/api/v2/invitations/{invitationId}": {
       "get": {
         "tags": [
           "Invitation"
@@ -2366,7 +2366,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "invitationId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -2498,7 +2498,7 @@
         }
       }
     },
-    "/api/v2/invitations/query/set/{id}": {
+    "/api/v2/invitations/query/set/{setId}": {
       "post": {
         "tags": [
           "Invitation"
@@ -2514,7 +2514,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -2624,59 +2624,6 @@
         }
       }
     },
-    "/api/v2/jobs/{id}": {
-      "delete": {
-        "tags": [
-          "Job"
-        ],
-        "operationId": "Job_DeleteById",
-        "parameters": [
-          {
-            "type": "string",
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "x-nullable": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "x-nullable": true,
-            "description": "",
-            "schema": {
-              "type": "file"
-            }
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Job"
-        ],
-        "operationId": "Job_Load",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "type": "string",
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "x-nullable": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "x-nullable": false,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/RunwayJob"
-            }
-          }
-        }
-      }
-    },
     "/api/v2/jobs/name": {
       "get": {
         "tags": [
@@ -2769,6 +2716,57 @@
             "description": "",
             "schema": {
               "type": "file"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Job"
+        ],
+        "operationId": "Job_DeleteById",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Job"
+        ],
+        "operationId": "Job_Load",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RunwayJob"
             }
           }
         }
@@ -3025,7 +3023,7 @@
         }
       }
     },
-    "/api/v2/jobs/query/set/{id}": {
+    "/api/v2/jobs/query/set/{setId}": {
       "post": {
         "tags": [
           "Job"
@@ -3041,7 +3039,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -3089,6 +3087,33 @@
             "description": "",
             "schema": {
               "type": "file"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "JobThread"
+        ],
+        "operationId": "JobThread_Load",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "threadId",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RunwayJobThread"
             }
           }
         }
@@ -3173,7 +3198,7 @@
         }
       }
     },
-    "/api/v2/threads/{id}/lastresult": {
+    "/api/v2/threads/{threadId}/lastresult": {
       "get": {
         "tags": [
           "JobThread"
@@ -3182,7 +3207,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -3199,7 +3224,7 @@
         }
       }
     },
-    "/api/v2/threads/{id}/lastlog": {
+    "/api/v2/threads/{threadId}/lastlog": {
       "get": {
         "tags": [
           "JobThread"
@@ -3208,7 +3233,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -3225,7 +3250,7 @@
         }
       }
     },
-    "/api/v2/threads/{id}/nodename": {
+    "/api/v2/threads/{threadId}/nodename": {
       "get": {
         "tags": [
           "JobThread"
@@ -3237,7 +3262,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -3304,35 +3329,6 @@
               "items": {
                 "$ref": "#/definitions/TagView"
               }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/threads/{id}": {
-      "get": {
-        "tags": [
-          "JobThread"
-        ],
-        "operationId": "JobThread_Load",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "type": "string",
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "x-nullable": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "x-nullable": false,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/RunwayJobThread"
             }
           }
         }
@@ -3473,7 +3469,7 @@
         }
       }
     },
-    "/api/v2/threads/query/set/{id}": {
+    "/api/v2/threads/query/set/{setId}": {
       "post": {
         "tags": [
           "JobThread"
@@ -3489,7 +3485,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -3678,7 +3674,7 @@
         }
       }
     },
-    "/api/v2/repository/action/{id}/download": {
+    "/api/v2/repository/action/{actionId}/download": {
       "get": {
         "tags": [
           "Repository"
@@ -3687,7 +3683,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -3707,7 +3703,7 @@
         }
       }
     },
-    "/api/v2/repository/action/{id}/info": {
+    "/api/v2/repository/action/{actionId}/info": {
       "get": {
         "tags": [
           "Repository"
@@ -3719,7 +3715,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -3791,7 +3787,7 @@
         }
       }
     },
-    "/api/v2/repository/{id}": {
+    "/api/v2/repository/{repositoryId}": {
       "get": {
         "tags": [
           "Repository"
@@ -3803,7 +3799,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "repositoryId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -3955,7 +3951,7 @@
         }
       }
     },
-    "/api/v2/repository/query/set/{id}": {
+    "/api/v2/repository/query/set/{setId}": {
       "post": {
         "tags": [
           "Repository"
@@ -3971,7 +3967,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -4232,7 +4228,7 @@
         }
       }
     },
-    "/api/v2/roles/{id}": {
+    "/api/v2/roles/{roleId}": {
       "delete": {
         "tags": [
           "Role"
@@ -4241,7 +4237,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "roleId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -4269,7 +4265,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "roleId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -4305,7 +4301,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "roleId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -4460,7 +4456,7 @@
         }
       }
     },
-    "/api/v2/roles/query/set/{id}": {
+    "/api/v2/roles/query/set/{setId}": {
       "post": {
         "tags": [
           "Role"
@@ -4476,7 +4472,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -4553,7 +4549,7 @@
         }
       }
     },
-    "/api/v2/runners/{id}": {
+    "/api/v2/runners/{runnerId}": {
       "delete": {
         "tags": [
           "Runner"
@@ -4562,7 +4558,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "runnerId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -4589,7 +4585,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "runnerId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -4852,7 +4848,7 @@
         }
       }
     },
-    "/api/v2/runners/query/set/{id}": {
+    "/api/v2/runners/query/set/{setId}": {
       "post": {
         "tags": [
           "Runner"
@@ -4868,7 +4864,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -5301,7 +5297,7 @@
         }
       }
     },
-    "/api/v2/users/{id}": {
+    "/api/v2/users/{userId}": {
       "delete": {
         "tags": [
           "User"
@@ -5310,7 +5306,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "userId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -5338,7 +5334,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "userId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -5374,7 +5370,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "userId",
             "in": "path",
             "required": true,
             "x-nullable": true
@@ -5529,7 +5525,7 @@
         }
       }
     },
-    "/api/v2/users/query/set/{id}": {
+    "/api/v2/users/query/set/{setId}": {
       "post": {
         "tags": [
           "User"
@@ -5545,7 +5541,7 @@
         "parameters": [
           {
             "type": "string",
-            "name": "id",
+            "name": "setId",
             "in": "path",
             "required": true,
             "x-nullable": true

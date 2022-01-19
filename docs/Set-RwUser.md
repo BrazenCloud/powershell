@@ -14,13 +14,13 @@ schema: 2.0.0
 
 ### UpdateExpanded (Default)
 ```
-Set-RwUser -Id <String> -OutFile <String> [-Company <String>] [-Description <String>] [-Id1 <String>]
+Set-RwUser -UserId <String> -OutFile <String> [-Company <String>] [-Description <String>] [-Id <String>]
  [-Name <String>] [-Phone <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Set-RwUser -Id <String> -OutFile <String> -Request <IUpdateUserRequest> [-PassThru] [-Confirm] [-WhatIf]
+Set-RwUser -UserId <String> -OutFile <String> -Request <IUpdateUserRequest> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -32,9 +32,8 @@ Set-RwUser -InputObject <IPsRunwayIdentity> -OutFile <String> -Request <IUpdateU
 
 ### UpdateViaIdentityExpanded
 ```
-Set-RwUser -InputObject <IPsRunwayIdentity> -OutFile <String> [-Id <String>] [-Company <String>]
- [-Description <String>] [-Name <String>] [-Phone <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-RwUser -InputObject <IPsRunwayIdentity> -OutFile <String> [-Company <String>] [-Description <String>]
+ [-Id <String>] [-Name <String>] [-Phone <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -97,22 +96,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id1
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -214,6 +198,21 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -UserId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -268,20 +267,27 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+  - `[AccountId <String>]`: 
+  - `[ActionId <String>]`: 
+  - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
-  - `[Id <String>]`: 
+  - `[InvitationId <String>]`: 
   - `[JobId <String>]`: 
   - `[Name <String>]`: 
   - `[NodeId <String>]`: 
   - `[NotifyId <String>]`: 
   - `[Password <String>]`: 
+  - `[RepositoryId <String>]`: 
+  - `[RoleId <String>]`: 
+  - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
+  - `[UserId <String>]`: 
 
 REQUEST <IUpdateUserRequest>: .
   - `[Company <String>]`: 
