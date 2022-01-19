@@ -1,25 +1,19 @@
 ---
 external help file:
 Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/get-rwinvitation
+online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/get-rwgrouphierarchyex
 schema: 2.0.0
 ---
 
-# Get-RwInvitation
+# Get-RwGroupHierarchyEx
 
 ## SYNOPSIS
 
 
 ## SYNTAX
 
-### Get (Default)
 ```
-Get-RwInvitation [<CommonParameters>]
-```
-
-### List
-```
-Get-RwInvitation [<CommonParameters>]
+Get-RwGroupHierarchyEx [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,9 +48,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.IIInvitationQueryView
-
-### Runway.PowerShell.Models.IQueryResponseOfIInvitationQueryView
+### Runway.PowerShell.Models.IGroupHierarchyViewEx
 
 ## NOTES
 
