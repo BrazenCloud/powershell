@@ -4,7 +4,8 @@ Function Invoke-RwPowerShellCommand {
         [string]$DeviceName,
         [scriptblock]$Command,
         [switch]$PWSH,
-        [switch]$LeaveJob
+        [switch]$LeaveJob,
+        [int]$SerializeDepth = 2
     )
     $runCommand = Import-RwRepository -Name 'PowerShell:RunCommand'
 
@@ -25,6 +26,7 @@ Function Invoke-RwPowerShellCommand {
                 Settings = [Runway.PowerShell.Models.IActionSettingRequestSettings]@{
                     Command = $Command
                     PWSH = $PWSH.IsPresent
+                    'Serialize Depth' = $SerializeDepth
                 }
             }
         )
