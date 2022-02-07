@@ -5,7 +5,8 @@ Function Invoke-RwPowerShellCommand {
         [scriptblock]$Command,
         [switch]$PWSH,
         [switch]$LeaveJob,
-        [int]$SerializeDepth = 2
+        [int]$SerializeDepth = 2,
+        [switch]$DefaultPropertiesOnly
     )
     $runCommand = Import-RwRepository -Name 'PowerShell:RunCommand'
 
@@ -27,6 +28,7 @@ Function Invoke-RwPowerShellCommand {
                     Command = $Command
                     PWSH = $PWSH.IsPresent
                     'Serialize Depth' = $SerializeDepth
+                    'Default Properties Only' = $DefaultPropertiesOnly.IsPresent
                 }
             }
         )
