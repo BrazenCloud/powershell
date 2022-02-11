@@ -29,6 +29,7 @@ Function Invoke-RwPowerShellCommand {
                     PWSH = $PWSH.IsPresent
                     'Serialize Depth' = $SerializeDepth
                     'Default Properties Only' = $DefaultPropertiesOnly.IsPresent
+                    'Debug' = $true
                 }
             }
         )
