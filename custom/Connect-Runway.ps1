@@ -8,5 +8,5 @@ Function Connect-Runway {
         [string]$Password
     )
     $s = Invoke-RwLoginAuthentication -Email $Email -Password $Password -Remember
-    $env:RunwaySessionTaken = $s.Session
+    $env:RunwaySessionToken = $s.Session
 }
