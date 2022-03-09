@@ -1,23 +1,45 @@
 Function Invoke-RwPowerShellCommand {
-    [cmdletbinding()]
+    [cmdletbinding(DefaultParameterSetName = 'ByName')]
     param (
-        [string]$DeviceName,
+        [Parameter(
+            ParameterSetName = 'ByName',
+            Mandatory
+        )]
+        [Alias('Name','AssetName')]
+        [string]$RunnerName,
+
+        [Parameter(
+            ParameterSetName = 'ById',
+            Mandatory
+        )]
+        [Alias('Id')]
+        [string]$RunnerId,
+
+        [Parameter(Mandatory)]
         [scriptblock]$Command,
+
         [switch]$PWSH,
+
         [switch]$LeaveJob,
+
         [int]$SerializeDepth = 2,
+
         [switch]$DefaultPropertiesOnly
     )
+    # Load the run command from the Action Repository
     $runCommand = Import-RwRepository -Name 'PowerShell:RunCommand'
 
     if ($null -ne $runCommand) {
 
-        $runners = (Get-RwRunner).Items
+        if ($PSBoundParameters.ParameterSetName -eq 'ByName') {
 
-        $runner = $runners | Where-Object {$_.AssetName -eq $DeviceName}
+            $runners = (Get-RwRunner).Items
+
+            $RunnerId = ($runners | Where-Object {$_.AssetName -eq $DeviceName}).AssetId
+        }
 
         $assignSet = New-RwSet
-        Add-RwSetToSet -TargetSetId $assignSet -ObjectIds $runner.AssetId | Out-Null
+        Add-RwSetToSet -TargetSetId $assignSet -ObjectIds $RunnerId| Out-Null
 
         $jobName = (Invoke-RestMethod -Headers @{Authorization = "Session $($env:RunwaySessionToken)"} -Uri 'https://portal.runway.host/api/v2/jobs/name' -Method Get)
 
