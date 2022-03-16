@@ -16,7 +16,8 @@ Function Invoke-RwPowerShellCommand {
         [string]$RunnerId,
 
         [Parameter(Mandatory)]
-        [scriptblock]$Command,
+        [Alias('Command')]
+        [scriptblock]$ScriptBlock,
 
         [switch]$PWSH,
 
@@ -31,11 +32,11 @@ Function Invoke-RwPowerShellCommand {
 
     if ($null -ne $runCommand) {
 
-        if ($PSBoundParameters.ParameterSetName -eq 'ByName') {
+        if ($PSCmdlet.ParameterSetName -eq 'ByName') {
 
             $runners = (Get-RwRunner).Items
 
-            $RunnerId = ($runners | Where-Object {$_.AssetName -eq $DeviceName}).AssetId
+            $RunnerId = ($runners | Where-Object {$_.AssetName -eq $RunnerName}).AssetId
         }
 
         $assignSet = New-RwSet
@@ -47,7 +48,7 @@ Function Invoke-RwPowerShellCommand {
             [Runway.PowerShell.Models.IActionSettingRequest]@{
                 RepositoryActionId = $runCommand.Id
                 Settings = [Runway.PowerShell.Models.IActionSettingRequestSettings]@{
-                    Command = $Command
+                    Command = $ScriptBlock
                     PWSH = $PWSH.IsPresent
                     'Serialize Depth' = $SerializeDepth
                     'Default Properties Only' = $DefaultPropertiesOnly.IsPresent
