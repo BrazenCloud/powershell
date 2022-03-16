@@ -47,3 +47,25 @@ This module was primarily generated via [AutoRest](https://github.com/Azure/auto
 ## Development
 For information on how to develop for `PsRunway`, see [how-to.md](how-to.md).
 <!-- endregion -->
+
+## Changelog
+
+### 0.1.3
+
+- Added `Connect-Runway`
+- Added `Invoke-RwPowerShellCommand`
+
+### 0.1.2
+
+- Updated various resource IDs to be resource specific. I.e. `Id` became `RunnerId` in `Import-RwRunner`
+
+### 0.1.1
+
+- Updated with latest Swagger.json
+  - Added `Get-RwGroupHierchyEx`
+  - Added `Invoke-RwDownloadJobThreadResult`
+- Updated `autorest.powershell` from `3.0.467` -> `3.0.471`
+
+### 0.1.0
+
+- Initial Release
