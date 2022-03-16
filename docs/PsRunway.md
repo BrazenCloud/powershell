@@ -26,6 +26,9 @@ Locale: en-US
 ### [Complete-RwRunnerDissolveRunner](Complete-RwRunnerDissolveRunner.md)
 
 
+### [Connect-Runway](Connect-Runway.md)
+
+
 ### [Enable-RwJob](Enable-RwJob.md)
 
 
@@ -318,6 +321,9 @@ Locale: en-US
 Terminate the current user session.
 
 ### [Invoke-RwMapAsset](Invoke-RwMapAsset.md)
+
+
+### [Invoke-RwPowerShellCommand](Invoke-RwPowerShellCommand.md)
 
 
 ### [Invoke-RwQueryAccountAsset](Invoke-RwQueryAccountAsset.md)

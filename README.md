@@ -12,14 +12,19 @@ Install-Module PsRunway -Repository PSGallery
 
 ## Authenticate
 
-To authenticate to Runway, use the `Invoke-RwLoginAuthentication` cmdlet and then store the session token in the `RunwaySessionToken` environment variable:
+To authenticate to Runway, use the `Connect-Runway` cmdlet. To be prompted for your password (most secure):
 
 ```powershell
-$session = Invoke-RwLoginAuthentication -Remember -Email <email> -Password <password>
-$env:RunwaySessionToken = $session.Session
+Connect-Runway -Email <email>
 ```
 
-The PsRunway module uses the environment variable when creating the authentication header. The plan is to improve this and make it transparent.
+If you wish to pass your password, use the same cmdlet, except convert your password to a secure string:
+
+```powershell
+Connect-Runway -Email <email> -Password (ConvertTo-SecureString '<password>' -AsPlainText -Force)
+```
+
+In the future, PSRunway will support securely caching the credentials.
 
 ## Samples
 
@@ -42,3 +47,25 @@ This module was primarily generated via [AutoRest](https://github.com/Azure/auto
 ## Development
 For information on how to develop for `PsRunway`, see [how-to.md](how-to.md).
 <!-- endregion -->
+
+## Changelog
+
+### 0.1.3
+
+- Added `Connect-Runway`
+- Added `Invoke-RwPowerShellCommand`
+
+### 0.1.2
+
+- Updated various resource IDs to be resource specific. I.e. `Id` became `RunnerId` in `Import-RwRunner`
+
+### 0.1.1
+
+- Updated with latest Swagger.json
+  - Added `Get-RwGroupHierchyEx`
+  - Added `Invoke-RwDownloadJobThreadResult`
+- Updated `autorest.powershell` from `3.0.467` -> `3.0.471`
+
+### 0.1.0
+
+- Initial Release
