@@ -12,8 +12,8 @@ Function Invoke-RwPowerShellCommand {
             ParameterSetName = 'ById',
             Mandatory
         )]
-        [Alias('Id')]
-        [string]$RunnerId,
+        [Alias('Id','RunnerId')]
+        [string]$AssetId,
 
         [Parameter(Mandatory)]
         [Alias('Command')]
@@ -31,7 +31,7 @@ Function Invoke-RwPowerShellCommand {
     $runCommand = Import-RwRepository -Name 'PowerShell:RunCommand'
 
     if ($null -ne $runCommand) {
-
+        # If RunnerID is not passed, look it up
         if ($PSCmdlet.ParameterSetName -eq 'ByName') {
 
             $runners = (Get-RwRunner).Items
@@ -39,15 +39,21 @@ Function Invoke-RwPowerShellCommand {
             $RunnerId = ($runners | Where-Object {$_.AssetName -eq $RunnerName}).AssetId
         }
 
+        # Create a set to assign the job to
         $assignSet = New-RwSet
-        Add-RwSetToSet -TargetSetId $assignSet -ObjectIds $RunnerId| Out-Null
 
+        # Add the runner to the Job
+        Add-RwSetToSet -TargetSetId $assignSet -ObjectIds $RunnerId | Out-Null
+
+        # Generate a name, it should use Get-RwJobRandomJobName,
+        # however that is currently bugged.
         $jobName = (Invoke-RestMethod -Headers @{Authorization = "Session $($env:RunwaySessionToken)"} -Uri 'https://portal.runway.host/api/v2/jobs/name' -Method Get)
 
-        $nj = New-RwJob -IsEnabled -IsHidden:$false -EndpointSetId $assignSet -Name $jobName -ScheduleType 'RunNow' -scheduleRepeatMinutes 0 -ScheduleWeekdays '-------' -Actions @(
-            [Runway.PowerShell.Models.IActionSettingRequest]@{
+        # Create the job
+        $nj = New-RwJob -IsEnabled -IsHidden:$false -EndpointSetId $assignSet -Name $jobName -ScheduleType 'RunNow' -Actions @(
+            @{
                 RepositoryActionId = $runCommand.Id
-                Settings = [Runway.PowerShell.Models.IActionSettingRequestSettings]@{
+                Settings = @{
                     Command = $ScriptBlock
                     PWSH = $PWSH.IsPresent
                     'Serialize Depth' = $SerializeDepth
@@ -57,24 +63,30 @@ Function Invoke-RwPowerShellCommand {
             }
         )
         
-        #$waiting = $true
+        # Wait for the job to complete
         $job = Import-RwJob -JobId $nj.JobId
         While($job.TotalEndpointsFinished -lt $job.TotalEndpointsAssigned) {
             Start-Sleep -Seconds 2
             $job = Import-RwJob -JobId $nj.JobId
         }
 
+        # Once it completes, look up the thread id for the job and runner
         $completedRunner = (Invoke-RwQueryEndpointAsset -RootContainerId $assignSet -MembershipCheckId $nj.JobId -IncludeSubgroups -Skip 0 -Take 20 -SortDirection 0).Items
         
+        # With the thread ID, pull the thread log
         Get-RwJobThreadLastLog -ThreadId $completedRunner.LastThreadId -OutFile .\rwtmp.txt
 
+        # Write the content to disk, it will be in CliXml format
         Get-Content .\rwtmp.txt | Where-Object {$_ -notlike '# *'} | Out-File .\results.xml -Force
 
+        # Import the output
         Import-Clixml .\results.xml
 
+        # Clean up the files
         Remove-Item .\rwtmp.txt
         Remove-Item .\results.xml
 
+        # Clean up the job
         if (-not $LeaveJob.IsPresent) {
             Remove-RwJob -JobId $nj.JobId -OutFile .\out.txt | Out-Null
         }
