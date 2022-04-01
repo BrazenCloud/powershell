@@ -12,7 +12,7 @@ title: PsRunway
 prefix: Rw
 ```
 
-### Directives
+## Directives
 
 ``` yaml
 directive:
@@ -37,4 +37,19 @@ directive:
     set:
       verb: Get
       subject: $1Count
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if ($documentPath.match(/PsRunway.cs/gm))
+      {
+        // line to match:
+        // var _url = new global::System.Uri($"https://portal.runway.host{pathAndQuery}");
+        // replace portal.runway.host with environmental variable
+        let urlRegex = /var _url = [^\r\n;]+portal\.runway\.host[^\r\n;]+;/gmi
+        $ = $.replace(urlRegex,'var _url = new global::System.Uri($"https://{System.Environment.GetEnvironmentVariable("RunwayDomain")}{pathAndQuery}");');
+
+        return $;
+      } else {
+        return $;
+      }
 ```
