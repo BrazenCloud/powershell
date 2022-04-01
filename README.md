@@ -50,6 +50,12 @@ For information on how to develop for `PsRunway`, see [how-to.md](how-to.md).
 
 ## Changelog
 
+### 0.1.4
+
+- Converted all `Import-Rw*` cmdlets to `Get-Rw*`
+- The Runway url is now configurable with `Connect-Runway`'s `RunwayDomain` parameter
+- Converted count cmdlets from `Invoke-RwCountSubject` to `Get-RwSubjectCount`
+
 ### 0.1.3
 
 - Added `Connect-Runway`
