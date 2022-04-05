@@ -39,6 +39,7 @@ See the [samples folder](./samples) for inspiration.
 - Converted all `Import-Rw*` cmdlets to `Get-Rw*`
 - The Runway url is now configurable with `Connect-Runway`'s `RunwayDomain` parameter
 - Converted count cmdlets from `Invoke-RwCountSubject` to `Get-RwSubjectCount`
+- Repository organization
 
 ### 0.1.3
 
