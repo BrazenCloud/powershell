@@ -2,7 +2,11 @@
 
 [![PsRunway](https://img.shields.io/powershellgallery/v/PsRunway.svg?style=flat-square&label=PsRunway "PsRunway")](https://www.powershellgallery.com/packages/PsRunway/)
 
-This directory contains the PowerShell module for the PsRunway service.
+This is the PowerShell SDK for [Runway](https://runway.host). For it to work, you need to have Windows PowerShell 5.1 or PowerShell 6+ and a Runway account.
+
+If you don't have a Runway account already, [sign up for a free one](https://portal.runway.host/login?enroll=true).
+
+If you need help with using the Runway platform, check out our [documentation](https://docs.runway.host).
 
 ## Install PsRunway
 
