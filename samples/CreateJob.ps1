@@ -1,6 +1,5 @@
 # Auth
-$session = Invoke-RwLoginAuthentication -Remember -Email <email> -Password <password>
-$env:RunwaySessionToken = $session.Session
+$session = Connect-Runway -Email '<emailaddress>' -Password (ConvertTo-SecureString '<password>' -AsPlainText -Force)
 
 # Define variables
 $jobName = 'PsTest Job'
