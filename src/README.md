@@ -68,6 +68,9 @@ directive:
     set:
       verb: Get
       subject: $1Count
+  # Set the url to pull from the RunwayDomain environment variable
+  # This makes it so we can configure the domain in the event that
+  # we need to talk to staging or when Runway is customer hosted.
   - from: source-file-csharp
     where: $
     transform: >
