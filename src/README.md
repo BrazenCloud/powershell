@@ -25,6 +25,7 @@ For information on how to develop for `PsRunway`, see [how-to.md](how-to.md).
 ``` yaml
 use: "@autorest/powershell@3.0.471"
 input-file: ../swagger.json
+azure: false
 powershell: true
 output-folder: ./
 clear-output-folder: true
@@ -36,7 +37,7 @@ metadata:
     authors: ThePoShWolf
     owners: Runway Software
     companyName: Runway Software
-    description: 'Runway API's PowerShell SDK'
+    description: "Runway API's PowerShell SDK"
     copyright: &copy; Runway Software. All rights reserved.
     tags: Runway PowerShell
     requireLicenseAcceptance: false
