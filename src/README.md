@@ -69,6 +69,19 @@ directive:
     set:
       verb: Get
       subject: $1Count
+  # Remove unnecessary outfile parameters
+  - where:
+      verb: Add|Remove|Set
+      parameter: OutFile
+    set:
+      default:
+        script: '".\out.txt"'
+  # rename model property
+  - where:
+      model-name: JobSchedule
+      property-name: Schedule
+    set:
+      property-name: Time
   # Set the url to pull from the RunwayDomain environment variable
   # This makes it so we can configure the domain in the event that
   # we need to talk to staging or when Runway is customer hosted.
@@ -86,16 +99,17 @@ directive:
       } else {
         return $;
       }
+  # Sets the -Schedule parameter in Set-RwJobSchedule to be 'Time' when it is expanded
   - from: source-file-csharp
     where: $
     transform: >
       if ($documentPath.match(/SetRwJobSchedule_UpdateExpanded.cs|SetRwJobSchedule_UpdateViaIdentityExpanded.cs/gm)) {
         // line to match:
-        // public string Schedule { get => ScheduleBody.Schedule ?? null; set => ScheduleBody.Schedule = value; }
+        // public string Schedule { get => ScheduleBody.Time ?? null; set => ScheduleBody.Time = value; }
         // needs to be:
         // public string Time ...
-        let schedRegex = /public string Schedule \{ get \=\> ScheduleBody\.Schedule [^\r\n]+/gmi
-        $ = $.replace(schedRegex, 'public string Time { get => ScheduleBody.Schedule ?? null; set => ScheduleBody.Schedule = value; }');
+        let schedRegex = /public string Schedule \{ get \=\> ScheduleBody\.Time [^\r\n]+/gmi
+        $ = $.replace(schedRegex, 'public string Time { get => ScheduleBody.Time ?? null; set => ScheduleBody.Time = value; }');
 
         return $;
       } else {
