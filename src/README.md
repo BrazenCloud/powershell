@@ -32,12 +32,12 @@ clear-output-folder: true
 namespace: Runway.PowerShell
 title: PsRunway
 prefix: Rw
-module-version: 0.1.4
+module-version: 0.2.0
 metadata:
     authors: ThePoShWolf
     owners: Runway Software
     companyName: Runway Software
-    description: "Runway API's PowerShell SDK"
+    description: "The PowerShell SDK for the Runway API"
     copyright: &copy; Runway Software. All rights reserved.
     tags: Runway PowerShell
     requireLicenseAcceptance: false
@@ -75,13 +75,27 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if ($documentPath.match(/PsRunway.cs/gm))
-      {
+      if ($documentPath.match(/PsRunway.cs/gm)) {
         // line to match:
         // var _url = new global::System.Uri($"https://portal.runway.host{pathAndQuery}");
         // replace portal.runway.host with environmental variable
         let urlRegex = /var _url = [^\r\n;]+portal\.runway\.host[^\r\n;]+;/gmi
         $ = $.replace(urlRegex,'var _url = new global::System.Uri($"https://{System.Environment.GetEnvironmentVariable("RunwayDomain")}{pathAndQuery}");');
+
+        return $;
+      } else {
+        return $;
+      }
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if ($documentPath.match(/SetRwJobSchedule_UpdateExpanded.cs|SetRwJobSchedule_UpdateViaIdentityExpanded.cs/gm)) {
+        // line to match:
+        // public string Schedule { get => ScheduleBody.Schedule ?? null; set => ScheduleBody.Schedule = value; }
+        // needs to be:
+        // public string Time ...
+        let schedRegex = /public string Schedule \{ get \=\> ScheduleBody\.Schedule [^\r\n]+/gmi
+        $ = $.replace(schedRegex, 'public string Time { get => ScheduleBody.Schedule ?? null; set => ScheduleBody.Schedule = value; }');
 
         return $;
       } else {
