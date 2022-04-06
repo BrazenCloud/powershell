@@ -48,6 +48,13 @@ metadata:
 
 ``` yaml
 directive:
+  # I'll use this in the future, currently has a weird bug
+  #- no-inline:
+  #  - JobSchedule
+  #  - RunwayJobThread
+  #- model-cmdlet:
+  #  - JobSchedule
+  #  - RunwayJobThread
   # Update Id to be SubjectId
   # This doesn't currently work, bug submitted
   # - where:
