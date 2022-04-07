@@ -67,6 +67,7 @@ directive:
       verb: Import
     set:
       verb: Get
+      alias: Import-Rw${subject}
   # Convert invoke-counts to get-counts
   # i.e.: Invoke-RwCountRunner becomes Get-RwRunnerCount
   - where:
