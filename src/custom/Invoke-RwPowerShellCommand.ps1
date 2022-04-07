@@ -28,7 +28,7 @@ Function Invoke-RwPowerShellCommand {
         [switch]$DefaultPropertiesOnly
     )
     # Load the run command from the Action Repository
-    $runCommand = Import-RwRepository -Name 'PowerShell:RunCommand'
+    $runCommand = Get-RwRepository -Name 'PowerShell:RunCommand'
 
     if ($null -ne $runCommand) {
         # If RunnerID is not passed, look it up
@@ -36,21 +36,21 @@ Function Invoke-RwPowerShellCommand {
 
             $runners = (Get-RwRunner).Items
 
-            $RunnerId = ($runners | Where-Object {$_.AssetName -eq $RunnerName}).AssetId
+            $AssetId = ($runners | Where-Object {$_.AssetName -eq $RunnerName}).AssetId
         }
 
         # Create a set to assign the job to
         $assignSet = New-RwSet
 
         # Add the runner to the Job
-        Add-RwSetToSet -TargetSetId $assignSet -ObjectIds $RunnerId | Out-Null
+        Add-RwSetToSet -TargetSetId $assignSet -ObjectIds $AssetId | Out-Null
 
         # Generate a name, it should use Get-RwJobRandomJobName,
         # however that is currently bugged.
         $jobName = (Invoke-RestMethod -Headers @{Authorization = "Session $($env:RunwaySessionToken)"} -Uri 'https://portal.runway.host/api/v2/jobs/name' -Method Get)
 
         # Create the job
-        $nj = New-RwJob -IsEnabled -IsHidden:$false -EndpointSetId $assignSet -Name $jobName -ScheduleType 'RunNow' -Actions @(
+        $nj = New-RwJob -IsEnabled -IsHidden:$false -EndpointSetId $assignSet -Name $jobName -Schedule (New-RwJobScheduleObject -ScheduleType 'RunNow' -RepeatMinutes 0) -Actions @(
             @{
                 RepositoryActionId = $runCommand.Id
                 Settings = @{
@@ -64,10 +64,10 @@ Function Invoke-RwPowerShellCommand {
         )
         
         # Wait for the job to complete
-        $job = Import-RwJob -JobId $nj.JobId
+        $job = Get-RwJob -JobId $nj.JobId
         While($job.TotalEndpointsFinished -lt $job.TotalEndpointsAssigned) {
             Start-Sleep -Seconds 2
-            $job = Import-RwJob -JobId $nj.JobId
+            $job = Get-RwJob -JobId $nj.JobId
         }
 
         # Once it completes, look up the thread id for the job and runner
@@ -88,7 +88,7 @@ Function Invoke-RwPowerShellCommand {
 
         # Clean up the job
         if (-not $LeaveJob.IsPresent) {
-            Remove-RwJob -JobId $nj.JobId -OutFile .\out.txt | Out-Null
+            Remove-RwJob -JobId $nj.JobId | Out-Null
         }
     } else {
         Write-Warning "Unable to find 'PowerShell:RunCommand' action. Add the command to your Runway tenant and then retry."
