@@ -49,12 +49,11 @@ metadata:
 ``` yaml
 directive:
   # I'll use this in the future, currently has a weird bug
-  #- no-inline:
-  #  - JobSchedule
-  #  - RunwayJobThread
-  #- model-cmdlet:
-  #  - JobSchedule
-  #  - RunwayJobThread
+  - no-inline:
+    - JobSchedule
+    - RunwayJobThread
+  - model-cmdlet:
+    - JobSchedule
   # Update Id to be SubjectId
   # This doesn't currently work, bug submitted
   # - where:
@@ -110,7 +109,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if ($documentPath.match(/SetRwJobSchedule_UpdateExpanded.cs|SetRwJobSchedule_UpdateViaIdentityExpanded.cs/gm)) {
+      if ($documentPath.match(/SetRwJobSchedule_UpdateExpanded.cs|SetRwJobSchedule_UpdateViaIdentityExpanded.cs|CreateJobRequest.cs|IJobQueryView.cs|RunwayJob.cs|NewRwJob_CreateExpanded.cs/gm)) {
         // line to match:
         // public string Schedule { get => ScheduleBody.Time ?? null; set => ScheduleBody.Time = value; }
         // needs to be:
@@ -122,4 +121,19 @@ directive:
       } else {
         return $;
       }
+#   - from: source-file-csharp
+#     where: $
+#     transform: >
+#       if ($documentPath.match(/CreateJobRequest.cs|IJobQueryView.cs|RunwayJob.cs/gm)) {
+#         // line to match:
+#         // public string JobSchedule { get => ((Runway.PowerShell.Models.IJobScheduleInternal)Schedule).Time; set => ((Runway.PowerShell.Models.IJobScheduleInternal)Schedule).Time = value ?? null; }
+#         // needs to be:
+#         // public string Time ...
+#         let schedRegex = /public string JobSchedule \{ get \=\> \(\(Runway\.PowerShell\.Models\.IJobScheduleInternal\)Schedule\)\.Time; [^\r\n]+/gmi
+#         $ = $.replace(schedRegex, 'public string Time { get => ((Runway.PowerShell.Models.IJobScheduleInternal)Schedule).Time; set => ((Runway.PowerShell.Models.IJobScheduleInternal)Schedule).Time = value ?? null; }');
+
+#         return $;
+#       } else {
+#         return $;
+#       }
 ```
