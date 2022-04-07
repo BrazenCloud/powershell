@@ -38,12 +38,15 @@ See the [samples folder](./samples) for inspiration.
 
 ## Changelog
 
-### 0.1.4
+### 0.2
 
 - Converted all `Import-Rw*` cmdlets to `Get-Rw*`
 - The Runway url is now configurable with `Connect-Runway`'s `RunwayDomain` parameter
 - Converted count cmdlets from `Invoke-RwCountSubject` to `Get-RwSubjectCount`
 - Repository organization
+- Fixes #2. JobSchedule now has a `Time` property.
+  - This is present on `Set-RwJobSchedule`
+- Fixes #6. Removes unneeded `-OutFile` parameters from various cmdlets
 
 ### 0.1.3
 
