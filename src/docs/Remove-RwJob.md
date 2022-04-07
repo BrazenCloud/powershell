@@ -14,23 +14,22 @@ schema: 2.0.0
 
 ### DeleteExpanded (Default)
 ```
-Remove-RwJob -OutFile <String> [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwJob [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
-Remove-RwJob -OutFile <String> -SetRequest <IIdRequest> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwJob -SetRequest <IIdRequest> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete1
 ```
-Remove-RwJob -JobId <String> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwJob -JobId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-RwJob -InputObject <IPsRunwayIdentity> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwJob -InputObject <IPsRunwayIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -95,21 +94,6 @@ Accept wildcard characters: False
 ```yaml
 Type: System.String
 Parameter Sets: Delete1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
 Aliases:
 
 Required: True

@@ -15,9 +15,8 @@ schema: 2.0.0
 ### CreateExpanded (Default)
 ```
 New-RwJob -IsEnabled -IsHidden [-Actions <IActionSettingRequest[]>] [-Description <String>]
- [-EndpointSetId <String>] [-GroupId <String>] [-JobSchedule <String>] [-Name <String>]
- [-ScheduleRepeatMinutes <Int32>] [-ScheduleType <String>] [-ScheduleWeekdays <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-EndpointSetId <String>] [-GroupId <String>] [-Name <String>] [-Schedule <IJobSchedule>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -141,21 +140,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -JobSchedule
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Name
 .
 
@@ -187,41 +171,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ScheduleRepeatMinutes
+### -Schedule
 .
+To construct, see NOTES section for SCHEDULE properties and create a hash table.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ScheduleType
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ScheduleWeekdays
-.
-
-```yaml
-Type: System.String
+Type: Runway.PowerShell.Models.IJobSchedule
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -311,10 +266,17 @@ REQUEST <ICreateJobRequest>: .
   - `[Name <String>]`: 
   - `[EndpointSetId <String>]`: 
   - `[GroupId <String>]`: 
-  - `[JobSchedule <String>]`: 
-  - `[ScheduleRepeatMinutes <Int32?>]`: 
-  - `[ScheduleType <String>]`: 
-  - `[ScheduleWeekdays <String>]`: 
+  - `[Schedule <IJobSchedule>]`: 
+    - `RepeatMinutes <Int32>`: 
+    - `ScheduleType <String>`: 
+    - `[Time <String>]`: 
+    - `[Weekdays <String>]`: 
+
+SCHEDULE <IJobSchedule>: .
+  - `RepeatMinutes <Int32>`: 
+  - `ScheduleType <String>`: 
+  - `[Time <String>]`: 
+  - `[Weekdays <String>]`: 
 
 ## RELATED LINKS
 

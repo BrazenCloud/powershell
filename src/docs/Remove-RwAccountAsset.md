@@ -14,25 +14,22 @@ schema: 2.0.0
 
 ### DeleteExpanded (Default)
 ```
-Remove-RwAccountAsset -OutFile <String> [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwAccountAsset [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
-Remove-RwAccountAsset -OutFile <String> -SetRequest <IIdRequest> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwAccountAsset -SetRequest <IIdRequest> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete1
 ```
-Remove-RwAccountAsset -AccountId <String> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwAccountAsset -AccountId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-RwAccountAsset -InputObject <IPsRunwayIdentity> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwAccountAsset -InputObject <IPsRunwayIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,21 +100,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

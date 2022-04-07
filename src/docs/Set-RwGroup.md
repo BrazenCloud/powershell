@@ -14,7 +14,7 @@ schema: 2.0.0
 
 ### UpdateExpanded (Default)
 ```
-Set-RwGroup -GroupId <String> -LicenseAllocatedRunners <Int32> -LicenseCanAssignSubLicenses -OutFile <String>
+Set-RwGroup -GroupId <String> -LicenseAllocatedRunners <Int32> -LicenseCanAssignSubLicenses
  [-Description <String>] [-LicenseExpiration <String>] [-Name <String>] [-PortraitUrl <String>]
  [-TenantCompanyName <String>] [-TenantExpiration <String>] [-TenantOtherDetails <String>]
  [-TenantPhoneNumber <String>] [-TenantPointOfContact <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -23,23 +23,23 @@ Set-RwGroup -GroupId <String> -LicenseAllocatedRunners <Int32> -LicenseCanAssign
 
 ### Update
 ```
-Set-RwGroup -GroupId <String> -OutFile <String> -Request <IUpdateGroupRequest> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-RwGroup -GroupId <String> -Request <IUpdateGroupRequest> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Set-RwGroup -InputObject <IPsRunwayIdentity> -OutFile <String> -Request <IUpdateGroupRequest> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwGroup -InputObject <IPsRunwayIdentity> -Request <IUpdateGroupRequest> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Set-RwGroup -InputObject <IPsRunwayIdentity> -LicenseAllocatedRunners <Int32> -LicenseCanAssignSubLicenses
- -OutFile <String> [-Description <String>] [-LicenseExpiration <String>] [-Name <String>]
- [-PortraitUrl <String>] [-TenantCompanyName <String>] [-TenantExpiration <String>]
- [-TenantOtherDetails <String>] [-TenantPhoneNumber <String>] [-TenantPointOfContact <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Description <String>] [-LicenseExpiration <String>] [-Name <String>] [-PortraitUrl <String>]
+ [-TenantCompanyName <String>] [-TenantExpiration <String>] [-TenantOtherDetails <String>]
+ [-TenantPhoneNumber <String>] [-TenantPointOfContact <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -167,21 +167,6 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

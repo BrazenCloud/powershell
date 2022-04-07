@@ -14,14 +14,14 @@ schema: 2.0.0
 
 ### ShellExpanded (Default)
 ```
-Invoke-RwShellRemoteShellCancel -OutFile <String> [-DownloadId <String>] [-RunnerId <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-RwShellRemoteShellCancel [-DownloadId <String>] [-RunnerId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Shell
 ```
-Invoke-RwShellRemoteShellCancel -OutFile <String> -Request <IRemoteShellDeleteRequest> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Invoke-RwShellRemoteShellCancel -Request <IRemoteShellDeleteRequest> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,21 +58,6 @@ Parameter Sets: ShellExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

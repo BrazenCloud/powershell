@@ -14,14 +14,13 @@ schema: 2.0.0
 
 ### BeginExpanded (Default)
 ```
-Invoke-RwBeginRunnerDissolveRunner -OutFile <String> [-SetId <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-RwBeginRunnerDissolveRunner [-SetId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Begin
 ```
-Invoke-RwBeginRunnerDissolveRunner -OutFile <String> -Request <IDissolveRunnersRequest> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Invoke-RwBeginRunnerDissolveRunner -Request <IDissolveRunnersRequest> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,21 +47,6 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -PassThru
 Returns true when the command succeeds

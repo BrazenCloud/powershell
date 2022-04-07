@@ -14,26 +14,26 @@ schema: 2.0.0
 
 ### UpdateExpanded (Default)
 ```
-Set-RwConnection -ConnectionId <String> -IsHidden -OutFile <String> [-ActionId <String>]
- [-AssignedEndpointId <String>] [-Description <String>] [-GroupId <String>] [-Id <String>] [-Name <String>]
- [-RunnerId <String>] [-Settings <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwConnection -ConnectionId <String> -IsHidden [-ActionId <String>] [-AssignedEndpointId <String>]
+ [-Description <String>] [-GroupId <String>] [-Id <String>] [-Name <String>] [-RunnerId <String>]
+ [-Settings <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Set-RwConnection -ConnectionId <String> -OutFile <String> -Request <IUpdateConnectionRequest> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwConnection -ConnectionId <String> -Request <IUpdateConnectionRequest> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Set-RwConnection -InputObject <IPsRunwayIdentity> -OutFile <String> -Request <IUpdateConnectionRequest>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwConnection -InputObject <IPsRunwayIdentity> -Request <IUpdateConnectionRequest> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Set-RwConnection -InputObject <IPsRunwayIdentity> -IsHidden -OutFile <String> [-ActionId <String>]
+Set-RwConnection -InputObject <IPsRunwayIdentity> -IsHidden [-ActionId <String>]
  [-AssignedEndpointId <String>] [-Description <String>] [-GroupId <String>] [-Id <String>] [-Name <String>]
  [-RunnerId <String>] [-Settings <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -193,21 +193,6 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

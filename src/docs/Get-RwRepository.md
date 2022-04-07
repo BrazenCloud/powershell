@@ -19,12 +19,12 @@ Get-RwRepository [<CommonParameters>]
 
 ### Load
 ```
-Get-RwRepository -Name <String> [<CommonParameters>]
+Get-RwRepository -RepositoryId <String> [<CommonParameters>]
 ```
 
 ### Load1
 ```
-Get-RwRepository -RepositoryId <String> [<CommonParameters>]
+Get-RwRepository -Name <String> [<CommonParameters>]
 ```
 
 ### LoadViaIdentity
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Load
+Parameter Sets: Load1
 Aliases:
 
 Required: True
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Load1
+Parameter Sets: Load
 Aliases:
 
 Required: True

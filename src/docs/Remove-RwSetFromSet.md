@@ -14,23 +14,23 @@ schema: 2.0.0
 
 ### Remove (Default)
 ```
-Remove-RwSetFromSet -SourceSetId <String> -TargetSetId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwSetFromSet -TargetSetId <String> -ObjectIds <String[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Remove1
 ```
-Remove-RwSetFromSet -TargetSetId <String> -ObjectIds <String[]> [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwSetFromSet -SourceSetId <String> -TargetSetId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity
 ```
-Remove-RwSetFromSet -InputObject <IPsRunwayIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwSetFromSet -InputObject <IPsRunwayIdentity> -ObjectIds <String[]> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity1
 ```
-Remove-RwSetFromSet -InputObject <IPsRunwayIdentity> -ObjectIds <String[]> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwSetFromSet -InputObject <IPsRunwayIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -79,7 +79,7 @@ Array of DeleteContentSchemaItem
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Remove1, RemoveViaIdentity1
+Parameter Sets: Remove, RemoveViaIdentity
 Aliases:
 
 Required: True
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Remove
+Parameter Sets: Remove1
 Aliases:
 
 Required: True

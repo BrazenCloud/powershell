@@ -14,25 +14,22 @@ schema: 2.0.0
 
 ### DeleteExpanded (Default)
 ```
-Remove-RwEndpointAsset -OutFile <String> [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwEndpointAsset [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
-Remove-RwEndpointAsset -EndpointId <String> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwEndpointAsset -SetRequest <IIdRequest> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete1
 ```
-Remove-RwEndpointAsset -OutFile <String> -SetRequest <IIdRequest> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwEndpointAsset -EndpointId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-RwEndpointAsset -InputObject <IPsRunwayIdentity> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwEndpointAsset -InputObject <IPsRunwayIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,7 +62,7 @@ PS C:\> {{ Add code here }}
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -106,21 +103,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
@@ -142,7 +124,7 @@ To construct, see NOTES section for SETREQUEST properties and create a hash tabl
 
 ```yaml
 Type: Runway.PowerShell.Models.IIdRequest
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True

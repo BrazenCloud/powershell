@@ -8,7 +8,7 @@ Locale: en-US
 
 # PsRunway Module
 ## Description
-
+The PowerShell SDK for the Runway API
 
 ## PsRunway Cmdlets
 ### [Add-RwInvitationToSet](Add-RwInvitationToSet.md)
@@ -372,6 +372,9 @@ This method requires a captcha token produced by the Runway web application in o
 
 ### [New-RwJob](New-RwJob.md)
 
+
+### [New-RwJobScheduleObject](New-RwJobScheduleObject.md)
+Create an in-memory object for JobSchedule.
 
 ### [New-RwRepositoryAction](New-RwRepositoryAction.md)
 

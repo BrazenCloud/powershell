@@ -14,13 +14,12 @@ schema: 2.0.0
 
 ### Enable (Default)
 ```
-Enable-RwJob -JobId <String> -OutFile <String> [-Value] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Enable-RwJob -JobId <String> [-Value] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EnableViaIdentity
 ```
-Enable-RwJob -InputObject <IPsRunwayIdentity> -OutFile <String> [-Value] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Enable-RwJob -InputObject <IPsRunwayIdentity> [-Value] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,21 +69,6 @@ Accept wildcard characters: False
 ```yaml
 Type: System.String
 Parameter Sets: Enable
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
 Aliases:
 
 Required: True

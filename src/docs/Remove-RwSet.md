@@ -14,13 +14,12 @@ schema: 2.0.0
 
 ### Delete (Default)
 ```
-Remove-RwSet -SetId <String> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwSet -SetId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-RwSet -InputObject <IPsRunwayIdentity> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwSet -InputObject <IPsRunwayIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,21 +60,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

@@ -14,24 +14,22 @@ schema: 2.0.0
 
 ### DeleteExpanded (Default)
 ```
-Remove-RwGroup -OutFile <String> [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwGroup [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
-Remove-RwGroup -OutFile <String> -SetRequest <IIdRequest> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwGroup -SetRequest <IIdRequest> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete1
 ```
-Remove-RwGroup -GroupId <String> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwGroup -GroupId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-RwGroup -InputObject <IPsRunwayIdentity> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwGroup -InputObject <IPsRunwayIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -102,21 +100,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

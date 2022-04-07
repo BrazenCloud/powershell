@@ -16,15 +16,13 @@ This method requires a captcha token produced by the Runway web application in o
 
 ### SignupExpanded (Default)
 ```
-Invoke-RwSignupAuthentication -OutFile <String> [-Captcha <String>] [-Company <String>]
- [-EmailAddress <String>] [-Name <String>] [-Password <String>] [-Phone <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Invoke-RwSignupAuthentication [-Captcha <String>] [-Company <String>] [-EmailAddress <String>]
+ [-Name <String>] [-Password <String>] [-Phone <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Signup
 ```
-Invoke-RwSignupAuthentication -OutFile <String> -Request <ISignupRequest> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-RwSignupAuthentication -Request <ISignupRequest> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,21 +106,6 @@ Parameter Sets: SignupExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

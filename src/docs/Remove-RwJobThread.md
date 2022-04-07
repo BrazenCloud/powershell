@@ -14,13 +14,12 @@ schema: 2.0.0
 
 ### Delete (Default)
 ```
-Remove-RwJobThread -JobId <String> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwJobThread -JobId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-RwJobThread -InputObject <IPsRunwayIdentity> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwJobThread -InputObject <IPsRunwayIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,21 +69,6 @@ Accept wildcard characters: False
 ```yaml
 Type: System.String
 Parameter Sets: Delete
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
 Aliases:
 
 Required: True

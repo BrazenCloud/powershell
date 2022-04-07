@@ -14,14 +14,13 @@ schema: 2.0.0
 
 ### CreateExpanded (Default)
 ```
-New-RwRepositoryAction -IsPublic -OutFile <String> [-ContentId <String>] [-Name <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-RwRepositoryAction -IsPublic [-ContentId <String>] [-Name <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-RwRepositoryAction -OutFile <String> -Request <ICreateActionRequest> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-RwRepositoryAction -Request <ICreateActionRequest> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +87,6 @@ Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -14,13 +14,12 @@ schema: 2.0.0
 
 ### DeleteExpanded (Default)
 ```
-Remove-RwRepository -OutFile <String> [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwRepository [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
-Remove-RwRepository -OutFile <String> -SetRequest <IIdRequest> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwRepository -SetRequest <IIdRequest> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,21 +56,6 @@ Parameter Sets: DeleteExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -14,23 +14,23 @@ schema: 2.0.0
 
 ### Add (Default)
 ```
-Add-RwSetToSet -SourceSetId <String> -TargetSetId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-RwSetToSet -TargetSetId <String> -ObjectIds <String[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add1
 ```
-Add-RwSetToSet -TargetSetId <String> -ObjectIds <String[]> [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-RwSetToSet -SourceSetId <String> -TargetSetId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
-Add-RwSetToSet -InputObject <IPsRunwayIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-RwSetToSet -InputObject <IPsRunwayIdentity> -ObjectIds <String[]> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### AddViaIdentity1
 ```
-Add-RwSetToSet -InputObject <IPsRunwayIdentity> -ObjectIds <String[]> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Add-RwSetToSet -InputObject <IPsRunwayIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,11 +75,11 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectIds
-Array of PutContentSchemaItem
+Array of String
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Add1, AddViaIdentity1
+Parameter Sets: Add, AddViaIdentity
 Aliases:
 
 Required: True
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Add
+Parameter Sets: Add1
 Aliases:
 
 Required: True

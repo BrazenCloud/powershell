@@ -1,23 +1,24 @@
 ---
 external help file:
 Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwlogoutauthentication
+online version: https://docs.microsoft.com/en-us/powershell/module/az./new-RwJobScheduleObject
 schema: 2.0.0
 ---
 
-# Invoke-RwLogoutAuthentication
+# New-RwJobScheduleObject
 
 ## SYNOPSIS
-Terminate the current user session.
+Create an in-memory object for JobSchedule.
 
 ## SYNTAX
 
 ```
-Invoke-RwLogoutAuthentication [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-RwJobScheduleObject -RepeatMinutes <Int32> -ScheduleType <String> [-Time <String>] [-Weekdays <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Terminate the current user session.
+Create an in-memory object for JobSchedule.
 
 ## EXAMPLES
 
@@ -41,11 +42,41 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -PassThru
-Returns true when the command succeeds
+### -RepeatMinutes
+
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ScheduleType
+
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Time
+
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -56,29 +87,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -Weekdays
+
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
+Aliases:
 
 Required: False
 Position: Named
@@ -94,7 +109,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### Runway.PowerShell.Models.JobSchedule
 
 ## NOTES
 

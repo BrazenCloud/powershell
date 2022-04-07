@@ -14,14 +14,14 @@ schema: 2.0.0
 
 ### AddExpanded (Default)
 ```
-Add-RwInvitationUserToGroup -OutFile <String> [-GroupId <String>] [-Invitations <IEmailInvitation[]>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-RwInvitationUserToGroup [-GroupId <String>] [-Invitations <IEmailInvitation[]>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add
 ```
-Add-RwInvitationUserToGroup -OutFile <String> -Request <IGroupInvitationRequest> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Add-RwInvitationUserToGroup -Request <IGroupInvitationRequest> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -74,21 +74,6 @@ Parameter Sets: AddExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

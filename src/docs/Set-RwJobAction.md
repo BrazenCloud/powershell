@@ -14,14 +14,14 @@ schema: 2.0.0
 
 ### Update (Default)
 ```
-Set-RwJobAction -JobId <String> -OutFile <String> -Request <IActionSettingRequest[]> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-RwJobAction -JobId <String> -Request <IActionSettingRequest[]> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Set-RwJobAction -InputObject <IPsRunwayIdentity> -OutFile <String> -Request <IActionSettingRequest[]>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwJobAction -InputObject <IPsRunwayIdentity> -Request <IActionSettingRequest[]> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,21 +71,6 @@ Accept wildcard characters: False
 ```yaml
 Type: System.String
 Parameter Sets: Update
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
 Aliases:
 
 Required: True

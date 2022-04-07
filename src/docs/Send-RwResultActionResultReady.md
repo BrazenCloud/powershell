@@ -14,14 +14,14 @@ schema: 2.0.0
 
 ### Notify (Default)
 ```
-Send-RwResultActionResultReady -NotifyId <String> -OutFile <String> [-ContentId <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Send-RwResultActionResultReady -NotifyId <String> [-ContentId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### NotifyViaIdentity
 ```
-Send-RwResultActionResultReady -InputObject <IPsRunwayIdentity> -OutFile <String> [-ContentId <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Send-RwResultActionResultReady -InputObject <IPsRunwayIdentity> [-ContentId <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,21 +86,6 @@ Accept wildcard characters: False
 ```yaml
 Type: System.String
 Parameter Sets: Notify
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
 Aliases:
 
 Required: True

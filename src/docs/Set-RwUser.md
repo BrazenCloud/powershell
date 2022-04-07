@@ -14,26 +14,26 @@ schema: 2.0.0
 
 ### UpdateExpanded (Default)
 ```
-Set-RwUser -UserId <String> -OutFile <String> [-Company <String>] [-Description <String>] [-Id <String>]
- [-Name <String>] [-Phone <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwUser -UserId <String> [-Company <String>] [-Description <String>] [-Id <String>] [-Name <String>]
+ [-Phone <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Set-RwUser -UserId <String> -OutFile <String> -Request <IUpdateUserRequest> [-PassThru] [-Confirm] [-WhatIf]
+Set-RwUser -UserId <String> -Request <IUpdateUserRequest> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Set-RwUser -InputObject <IPsRunwayIdentity> -OutFile <String> -Request <IUpdateUserRequest> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwUser -InputObject <IPsRunwayIdentity> -Request <IUpdateUserRequest> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Set-RwUser -InputObject <IPsRunwayIdentity> -OutFile <String> [-Company <String>] [-Description <String>]
- [-Id <String>] [-Name <String>] [-Phone <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwUser -InputObject <IPsRunwayIdentity> [-Company <String>] [-Description <String>] [-Id <String>]
+ [-Name <String>] [-Phone <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -131,21 +131,6 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

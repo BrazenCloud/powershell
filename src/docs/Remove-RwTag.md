@@ -14,13 +14,12 @@ schema: 2.0.0
 
 ### DeleteExpanded (Default)
 ```
-Remove-RwTag -OutFile <String> [-SetId <String>] [-Tags <String[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-RwTag [-SetId <String>] [-Tags <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
-Remove-RwTag -OutFile <String> -Request <ITagRequest> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwTag -Request <ITagRequest> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,21 +46,6 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -PassThru
 Returns true when the command succeeds

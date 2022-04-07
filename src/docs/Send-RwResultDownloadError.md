@@ -14,13 +14,12 @@ schema: 2.0.0
 
 ### Notify (Default)
 ```
-Send-RwResultDownloadError -NotifyId <String> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Send-RwResultDownloadError -NotifyId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### NotifyViaIdentity
 ```
-Send-RwResultDownloadError -InputObject <IPsRunwayIdentity> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf]
+Send-RwResultDownloadError -InputObject <IPsRunwayIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -71,21 +70,6 @@ Accept wildcard characters: False
 ```yaml
 Type: System.String
 Parameter Sets: Notify
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
 Aliases:
 
 Required: True

@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectIds
-Array of String
+Array of PutContentSchemaItem
 
 ```yaml
 Type: System.String[]

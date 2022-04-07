@@ -14,14 +14,14 @@ schema: 2.0.0
 
 ### DissolveExpanded (Default)
 ```
-Invoke-RwDissolveEndpointAssetEndpoint -OutFile <String> -SkipDissolve [-SetId <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-RwDissolveEndpointAssetEndpoint -SkipDissolve [-SetId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Dissolve
 ```
-Invoke-RwDissolveEndpointAssetEndpoint -OutFile <String> -Request <IDissolveEndpointsRequest> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-RwDissolveEndpointAssetEndpoint -Request <IDissolveEndpointsRequest> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,21 +48,6 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -PassThru
 Returns true when the command succeeds

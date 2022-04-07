@@ -14,25 +14,25 @@ schema: 2.0.0
 
 ### UpdateExpanded (Default)
 ```
-Set-RwRole -RoleId <String> -OutFile <String> [-Description <String>] [-Name <String>]
- [-Permissions <IRunwayRoleAccess[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwRole -RoleId <String> [-Description <String>] [-Name <String>] [-Permissions <IRunwayRoleAccess[]>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Set-RwRole -RoleId <String> -OutFile <String> -Request <IUpdateRoleRequest> [-PassThru] [-Confirm] [-WhatIf]
+Set-RwRole -RoleId <String> -Request <IUpdateRoleRequest> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Set-RwRole -InputObject <IPsRunwayIdentity> -OutFile <String> -Request <IUpdateRoleRequest> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwRole -InputObject <IPsRunwayIdentity> -Request <IUpdateRoleRequest> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Set-RwRole -InputObject <IPsRunwayIdentity> -OutFile <String> [-Description <String>] [-Name <String>]
+Set-RwRole -InputObject <IPsRunwayIdentity> [-Description <String>] [-Name <String>]
  [-Permissions <IRunwayRoleAccess[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -101,21 +101,6 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

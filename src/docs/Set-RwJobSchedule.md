@@ -14,27 +14,26 @@ schema: 2.0.0
 
 ### UpdateExpanded (Default)
 ```
-Set-RwJobSchedule -JobId <String> -OutFile <String> -RepeatMinutes <Int32> -ScheduleType <String>
- [-Schedule <String>] [-Weekdays <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwJobSchedule -JobId <String> -RepeatMinutes <Int32> -ScheduleType <String> [-Time <String>]
+ [-Weekdays <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Set-RwJobSchedule -JobId <String> -OutFile <String> -Schedule <IJobSchedule> [-PassThru] [-Confirm] [-WhatIf]
+Set-RwJobSchedule -JobId <String> -Schedule <IJobSchedule> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Set-RwJobSchedule -InputObject <IPsRunwayIdentity> -OutFile <String> -Schedule <IJobSchedule> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwJobSchedule -InputObject <IPsRunwayIdentity> -Schedule <IJobSchedule> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Set-RwJobSchedule -InputObject <IPsRunwayIdentity> -OutFile <String> -RepeatMinutes <Int32>
- -ScheduleType <String> [-Schedule <String>] [-Weekdays <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-RwJobSchedule -InputObject <IPsRunwayIdentity> -RepeatMinutes <Int32> -ScheduleType <String>
+ [-Time <String>] [-Weekdays <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,21 +92,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
@@ -144,7 +128,7 @@ To construct, see NOTES section for SCHEDULE properties and create a hash table.
 
 ```yaml
 Type: Runway.PowerShell.Models.IJobSchedule
-Parameter Sets: (All)
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -163,6 +147,21 @@ Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Time
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -264,7 +263,7 @@ INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
 SCHEDULE <IJobSchedule>: .
   - `RepeatMinutes <Int32>`: 
   - `ScheduleType <String>`: 
-  - `[Schedule <String>]`: 
+  - `[Time <String>]`: 
   - `[Weekdays <String>]`: 
 
 ## RELATED LINKS

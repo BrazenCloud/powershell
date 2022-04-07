@@ -12,19 +12,19 @@ schema: 2.0.0
 
 ## SYNTAX
 
-### Query1 (Default)
+### Query (Default)
+```
+Invoke-RwQueryRunner -GroupId <String> [<CommonParameters>]
+```
+
+### Query1
 ```
 Invoke-RwQueryRunner -IPAddress <String> [<CommonParameters>]
 ```
 
-### Query
-```
-Invoke-RwQueryRunner -Query <IQuery> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
 ### Query2
 ```
-Invoke-RwQueryRunner -GroupId <String> [<CommonParameters>]
+Invoke-RwQueryRunner -Query <IQuery> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### QueryExpanded
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Query2
+Parameter Sets: Query
 Aliases:
 
 Required: True
@@ -228,7 +228,7 @@ To construct, see NOTES section for QUERY properties and create a hash table.
 
 ```yaml
 Type: Runway.PowerShell.Models.IQuery
-Parameter Sets: Query
+Parameter Sets: Query2
 Aliases:
 
 Required: True

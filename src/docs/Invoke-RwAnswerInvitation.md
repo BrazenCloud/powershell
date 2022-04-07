@@ -14,14 +14,14 @@ schema: 2.0.0
 
 ### AnswerExpanded (Default)
 ```
-Invoke-RwAnswerInvitation -Accept -OutFile <String> [-InvitationId <String>] [-PassThru] [-Confirm] [-WhatIf]
+Invoke-RwAnswerInvitation -Accept [-InvitationId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Answer
 ```
-Invoke-RwAnswerInvitation -OutFile <String> -Request <IInvitationAnswerRequest> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Invoke-RwAnswerInvitation -Request <IInvitationAnswerRequest> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -73,21 +73,6 @@ Parameter Sets: AnswerExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -14,13 +14,13 @@ schema: 2.0.0
 
 ### MapExpanded (Default)
 ```
-Invoke-RwMapAsset -OutFile <String> [-EndpointData <IAssetMapEndpoint[]>]
- [-KubernetesData <IKubernetesEndpoint[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-RwMapAsset [-EndpointData <IAssetMapEndpoint[]>] [-KubernetesData <IKubernetesEndpoint[]>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Map
 ```
-Invoke-RwMapAsset -OutFile <String> -Request <IAssetMap> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-RwMapAsset -Request <IAssetMap> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -74,21 +74,6 @@ Parameter Sets: MapExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

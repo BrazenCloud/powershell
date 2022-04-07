@@ -14,14 +14,14 @@ schema: 2.0.0
 
 ### ShellExpanded (Default)
 ```
-Invoke-RwShellRemoteShellPing -OutFile <String> [-DownloadId <String>] [-RunnerId <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-RwShellRemoteShellPing [-DownloadId <String>] [-RunnerId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Shell
 ```
-Invoke-RwShellRemoteShellPing -OutFile <String> -Request <IRemoteShellPingRequest> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Invoke-RwShellRemoteShellPing -Request <IRemoteShellPingRequest> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,21 +58,6 @@ Parameter Sets: ShellExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
