@@ -16,6 +16,7 @@ will clean them up. Currently it accomplishes the following:
   - Simplifies the JSON
 - Replace opIds ending with _All to _List
   - Work around a bug with AutoRest
+- Remove file responses that don't actually return files
 #>
 
 $swagger = Get-Content $SwaggerPath | ConvertFrom-Json -AsHashtable
@@ -79,6 +80,84 @@ foreach ($path in $swagger.paths.Keys) {
     }
 }
 
-# Output the file
+# Remove file responses that don't actually return files
 
-$swagger | ConvertTo-Json -Depth 10 | Out-File $OutFile -Encoding utf8
+<# build the $paths var:
+
+foreach ($path in $swagger.paths.Keys) {
+    $methods = foreach ($method in $swagger.paths[$path].Keys) {
+        if ($swagger.paths[$path][$method].responses['200'].schema.type -eq 'file') {
+            [pscustomobject]@{
+                method = $method
+                opid = $swagger.paths[$path][$method].operationId
+            }
+        }
+    }
+    if ($methods.count -gt 0) {
+        "'$path' = @( '$($methods.method -join "','")' ) # $($methods.opid -join ',')"
+    }
+}
+
+#>
+
+$paths = @{
+    '/api/v2/results/error/{notifyId}' = @( 'put' ) # Results_NotifyDownloadError
+    '/api/v2/repository' = @( 'delete' ) # Repository_DeleteBySet
+    '/api/v2/runners' = @( 'delete' ) # Runner_DeleteBySet
+    '/api/v2/endpoints' = @( 'delete' ) # EndpointAsset_DeleteBySet
+    '/api/v2/endpoints/dissolve' = @( 'put' ) # EndpointAsset_DissolveEndpoints
+    '/api/v2/auth/signup' = @( 'post' ) # Authentication_Signup
+    '/api/v2/endpoints/{endpointId}' = @( 'delete' ) # EndpointAsset_DeleteById
+    '/api/v2/auth/logout' = @( 'post' ) # Authentication_Logout
+    '/api/v2/results/{notifyId}' = @( 'put' ) # Results_NotifyActionResultReady
+    '/api/v2/jobs/{jobId}/enable' = @( 'put' ) # Job_EnableJob
+    '/api/v2/jobs' = @( 'delete' ) # Job_DeleteBySet
+    '/api/v2/shell/ping' = @( 'post' ) # RemoteShell_ShellPing
+    '/api/v2/users' = @( 'delete' ) # User_DeleteBySet
+    '/api/v2/roles/{roleId}' = @( 'put','delete' ) # Role_Update,Role_DeleteById
+    '/api/v2/threads/job/{jobId}' = @( 'delete' ) # JobThread_DeleteByJob
+    '/api/v2/jobs/{jobId}' = @( 'delete' ) # Job_DeleteById
+    '/api/v2/runners/{runnerId}' = @( 'delete' ) # Runner_DeleteById
+    '/api/v2/connections/{connectionId}' = @( 'put','delete' ) # Connection_Update,Connection_DeleteById
+    '/api/v2/invitations' = @( 'post','put','delete' ) # Invitation_InviteUsers,Invitation_AnswerInvitation,Invitation_DeleteBySet
+    '/api/v2/runners/dissolve' = @( 'put' ) # Runner_BeginDissolveRunners
+    '/api/v2/threads/step' = @( 'put' ) # JobThread_StepJobThread
+    '/api/v2/accounts/{accountId}' = @( 'delete' ) # AccountAsset_DeleteById
+    '/api/v2/jobs/{jobId}/actions' = @( 'put' ) # Job_UpdateActions
+    '/api/v2/invitations/adduserstogroup' = @( 'post' ) # Invitation_AddUsersToGroup
+    '/api/v2/groups' = @( 'delete' ) # Group_DeleteBySet
+    '/api/v2/users/{userId}' = @( 'put','delete' ) # User_Update,User_DeleteById
+    '/api/v2/groups/{groupId}' = @( 'put','delete' ) # Group_Update,Group_DeleteById
+    '/api/v2/accounts' = @( 'delete' ) # AccountAsset_DeleteBySet
+    '/api/v2/repository/action' = @( 'post' ) # Repository_CreateAction
+    '/api/v2/results/progress/{notifyId}' = @( 'put' ) # Results_NotifyDownloadInProgress
+    '/api/v2/roles' = @( 'delete' ) # Role_DeleteBySet
+    '/api/v2/sets/{setId}' = @( 'delete' ) # Set_DeleteSet
+    '/api/v2/tags' = @( 'put','delete' ) # Tag_AddTags,Tag_DeleteTags
+    '/api/v2/connections' = @( 'delete' ) # Connection_DeleteBySet
+    '/api/v2/assets/map' = @( 'post' ) # Asset_MapAssets
+    '/api/v2/jobs/{jobId}/schedule' = @( 'put' ) # Job_UpdateSchedule
+    '/api/v2/shell' = @( 'delete' ) # RemoteShell_ShellCancel
+    '/api/v2/runners/dissolved' = @( 'delete' ) # Runner_CompleteDissolveRunner
+}
+
+foreach ($path in $paths.Keys) {
+    foreach ($method in $paths[$path]) {
+        $swagger.paths[$path][$method].responses['200'].Remove('schema')
+    }
+}
+
+# Sort objects
+
+$toSort = 'paths','definitions','parameters'
+foreach ($prop in $toSort) {
+    $sortedProp = [ordered]@{}
+    foreach ($item in $swagger.$prop.Keys | Sort-Object) {
+        $sortedProp[$item] = $swagger.$prop[$item]
+    }
+    $swagger.$prop = $sortedProp
+}
+
+# Output the file, keeping properties in order
+
+$swagger | Select-Object 'x-generator',swagger,info,host,schemes,produces,parameters,paths,definitions,* -ErrorAction SilentlyContinue | ConvertTo-Json -Depth 10 | Out-File $OutFile -Encoding utf8
