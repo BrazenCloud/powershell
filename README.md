@@ -38,7 +38,7 @@ See the [samples folder](./samples) for inspiration.
 
 ## Changelog
 
-### 0.2
+### 0.2.0
 
 - Converted all `Import-Rw*` cmdlets to `Get-Rw*`
 - The Runway url is now configurable with `Connect-Runway`'s `RunwayDomain` parameter
