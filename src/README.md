@@ -76,13 +76,6 @@ directive:
     set:
       verb: Get
       subject: $1Count
-  # Remove unnecessary outfile parameters
-  - where:
-      verb: Add|Remove|Set
-      parameter: OutFile
-    set:
-      default:
-        script: '".\out.txt"'
   # rename model property
   - where:
       model-name: JobSchedule
