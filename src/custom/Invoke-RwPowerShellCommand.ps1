@@ -69,10 +69,10 @@ Function Invoke-RwPowerShellCommand {
         }
 
         # Once it completes, look up the thread id for the job and runner
-        $completedRunner = (Invoke-RwQueryEndpointAsset -RootContainerId $assignSet -MembershipCheckId $nj.JobId -IncludeSubgroups -Skip 0 -Take 20 -SortDirection 0).Items
+        $completedThread = Get-RwJobThread -JobId $job.Id | Where-Object {$_.ProdigalObjectId -eq $AssetId}
         
         # With the thread ID, pull the thread log
-        Get-RwJobThreadLastLog -ThreadId $completedRunner.LastThreadId -OutFile .\rwtmp.txt
+        Get-RwJobThreadLastLog -ThreadId $completedThread.Id -OutFile .\rwtmp.txt
 
         # Write the content to disk, it will be in CliXml format
         Get-Content .\rwtmp.txt | Where-Object {$_ -notlike '# *'} | Out-File .\results.xml -Force
