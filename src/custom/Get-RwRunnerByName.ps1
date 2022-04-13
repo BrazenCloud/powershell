@@ -31,7 +31,7 @@ Function Get-RwRunnerByName {
             filter = @{
                 Left = 'AssetName'
                 Operator = '='
-                Right = $AssetName
+                Right = $AssetName[0]
             }
         }
     }
