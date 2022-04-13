@@ -16,12 +16,5 @@ Function Get-RwJobAssignedRunners {
         $JobId = (Get-RwJobByName -JobName $JobName).Id
     }
     $setId = (Get-RwJob -JobId $JobId).EndpointSetId
-    $query = @{
-        includeSubgroups = $true
-        skip = 0
-        take = 100
-        sortDirection = 0
-        RootContainerId = $setId
-    }
-    (Invoke-RwQueryEndpointAsset -Query $query).Items
+    Get-RwSetMember -SetId $setId
 }
