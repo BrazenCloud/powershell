@@ -34,8 +34,6 @@ Function Invoke-RwPowerShellCommand {
         # If RunnerID is not passed, look it up
         if ($PSCmdlet.ParameterSetName -eq 'ByName') {
 
-            $runners = (Get-RwRunner).Items
-
             $AssetId = (Get-RwRunnerByName -AssetName $RunnerName).AssetId
         }
 
