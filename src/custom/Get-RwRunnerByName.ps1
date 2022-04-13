@@ -2,17 +2,37 @@ Function Get-RwRunnerByName {
     [cmdletbinding()]
     param (
         [Alias('Name','RunnerName')]
-        [string]$AssetName
+        [string[]]$AssetName
     )
-    $query = @{
-        includeSubgroups = $true
-        skip = 0
-        take = 100
-        SortDirection = 0
-        filter = @{
-            Left = 'AssetName'
-            Operator = '='
-            Right = $AssetName
+    if ($AssetName.Count -gt 1) {
+        $filterChildren = foreach ($name in $AssetName) {
+            @{
+                Left = 'AssetName'
+                Operator = '='
+                Right = $name
+            }
+        }
+        $query = @{
+            includeSubgroups = $true
+            skip = 0
+            take = 100
+            sortDirection = 0
+            filter = @{
+                children = $filterChildren
+                operator = 'OR'
+            }
+        }
+    } else {
+        $query = @{
+            includeSubgroups = $true
+            skip = 0
+            take = 100
+            SortDirection = 0
+            filter = @{
+                Left = 'AssetName'
+                Operator = '='
+                Right = $AssetName
+            }
         }
     }
     (Invoke-RwQueryRunner -Query $query).Items
