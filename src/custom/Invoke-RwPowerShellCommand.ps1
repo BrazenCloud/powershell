@@ -36,7 +36,7 @@ Function Invoke-RwPowerShellCommand {
 
             $runners = (Get-RwRunner).Items
 
-            $AssetId = ($runners | Where-Object {$_.AssetName -eq $RunnerName}).AssetId
+            $AssetId = (Get-RwRunnerByName -AssetName $RunnerName).AssetId
         }
 
         # Create a set to assign the job to
