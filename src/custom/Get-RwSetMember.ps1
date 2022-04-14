@@ -1,6 +1,11 @@
 Function Get-RwSetMember {
-    [cmdletbinding()]
+    [cmdletbinding(
+        DefaultParameterSetName = 'ById'
+    )]
     param (
+        [Parameter(
+            ParameterSetName = 'ById'
+        )]
         [string]$SetId
     )
 

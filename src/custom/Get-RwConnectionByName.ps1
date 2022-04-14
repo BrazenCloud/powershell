@@ -1,6 +1,11 @@
 Function Get-RwConnectionByName {
-    [CmdletBinding()]
+    [CmdletBinding(
+        DefaultParameterSetName = 'ByName'
+    )]
     param (
+        [Parameter(
+            ParameterSetName = 'ByName'
+        )]
         [Alias('Name')]
         [string[]]$ConnectionName
     )

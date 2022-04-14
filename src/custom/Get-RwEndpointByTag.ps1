@@ -1,6 +1,11 @@
 Function Get-RwEndpointByTag {
-    [CmdletBinding()]
+    [CmdletBinding(
+        DefaultParameterSetName = 'ByTags'
+    )]
     param (
+        [Parameter(
+            ParameterSetName = 'ByTags'
+        )]
         [string[]]$Tags
     )
 

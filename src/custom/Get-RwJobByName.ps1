@@ -1,6 +1,11 @@
 Function Get-RwJobByName {
-    [cmdletbinding()]
+    [cmdletbinding(
+        DefaultParameterSetName = 'ByName'
+    )]
     param (
+        [Parameter(
+            ParameterSetName = 'ByName'
+        )]
         [Alias('Name')]
         [string[]]$JobName
     )

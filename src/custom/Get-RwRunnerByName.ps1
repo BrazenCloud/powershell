@@ -1,6 +1,11 @@
 Function Get-RwRunnerByName {
-    [cmdletbinding()]
+    [cmdletbinding(
+        DefaultParameterSetName = 'ByName'
+    )]
     param (
+        [Parameter(
+            ParameterSetName = 'ByName'
+        )]
         [Alias('Name','RunnerName')]
         [string[]]$AssetName
     )
