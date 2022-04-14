@@ -42,6 +42,7 @@ See the [samples folder](./samples) for inspiration.
 
 ### 0.2.0
 
+- **Renamed the module from `PsRunway` to `Runway`**
 - Converted all `Import-Rw*` cmdlets to `Get-Rw*`
 - The Runway url is now configurable with `Connect-Runway`'s `RunwayDomain` parameter
 - Converted count cmdlets from `Invoke-RwCountSubject` to `Get-RwSubjectCount`
@@ -49,6 +50,13 @@ See the [samples folder](./samples) for inspiration.
 - Fixes #2. JobSchedule now has a `Time` property.
   - This is present on `Set-RwJobSchedule`
 - Fixes #6. Removes unneeded `-OutFile` parameters from various cmdlets
+- Added a collection of query based helper cmdlets:
+  - `Get-RwConnectionByName`
+  - `Get-RwEndpointByTag`
+  - `Get-RwJobAssignedRunners`
+  - `Get-RwJobByName`
+  - `Get-RwRunnerByName`
+  - `Get-RwSetMember`
 
 ### 0.1.3
 
