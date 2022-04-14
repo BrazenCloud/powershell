@@ -4,7 +4,8 @@ Function Get-RwRunnerByName {
     )]
     param (
         [Parameter(
-            ParameterSetName = 'ByName'
+            ParameterSetName = 'ByName',
+            Position = 0
         )]
         [Alias('Name','RunnerName')]
         [string[]]$AssetName

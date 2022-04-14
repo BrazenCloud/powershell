@@ -4,7 +4,8 @@ Function Get-RwEndpointByTag {
     )]
     param (
         [Parameter(
-            ParameterSetName = 'ByTags'
+            ParameterSetName = 'ByTags',
+            Position = 0
         )]
         [string[]]$Tags
     )

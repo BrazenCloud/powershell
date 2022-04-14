@@ -4,7 +4,8 @@ Function Get-RwJobByName {
     )]
     param (
         [Parameter(
-            ParameterSetName = 'ByName'
+            ParameterSetName = 'ByName',
+            Position = 0
         )]
         [Alias('Name')]
         [string[]]$JobName

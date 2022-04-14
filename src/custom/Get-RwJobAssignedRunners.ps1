@@ -4,7 +4,8 @@ Function Get-RwJobAssignedRunners {
     )]
     param (
         [Parameter(
-            ParameterSetName = 'ByName'
+            ParameterSetName = 'ByName',
+            Position = 0
         )]
         [string]$JobName,
         [Parameter(

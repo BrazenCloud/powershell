@@ -4,7 +4,8 @@ Function Get-RwSetMember {
     )]
     param (
         [Parameter(
-            ParameterSetName = 'ById'
+            ParameterSetName = 'ById',
+            Position = 0
         )]
         [string]$SetId
     )
