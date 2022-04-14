@@ -1,19 +1,21 @@
-# PsRunway
+# Runway
 
-[![PsRunway](https://img.shields.io/powershellgallery/v/PsRunway.svg?style=flat-square&label=PsRunway "PsRunway")](https://www.powershellgallery.com/packages/PsRunway/)
+[![Runway](https://img.shields.io/powershellgallery/v/Runway.svg?style=flat-square&label=Runway "Runway")](https://www.powershellgallery.com/packages/Runway/)
 
-This is the PowerShell SDK for [Runway](https://runway.host). For it to work, you need to have Windows PowerShell 5.1 or PowerShell 6+ and a Runway account.
+**Starting in v0.2.0, Runway was renamed from PsRunway to Runway.**
+
+This is the PowerShell module and SDK for [Runway](https://runway.host). For it to work, you need to have Windows PowerShell 5.1 or PowerShell 6+ and a Runway account.
 
 If you don't have a Runway account already, [sign up for a free one](https://portal.runway.host/login?enroll=true).
 
 If you need help with using the Runway platform, check out our [documentation](https://docs.runway.host).
 
-## Install PsRunway
+## Install Runway
 
-Since PsRunway is published to the PowerShell Gallery, use `Install-Module` to install the module:
+Since Runway is published to the PowerShell Gallery, use `Install-Module` to install the module:
 
 ```powershell
-Install-Module PsRunway -Repository PSGallery
+Install-Module Runway -Repository PSGallery
 ```
 
 ## Authenticate
@@ -30,7 +32,7 @@ If you wish to pass your password, use the same cmdlet, except convert your pass
 Connect-Runway -Email <email> -Password (ConvertTo-SecureString '<password>' -AsPlainText -Force)
 ```
 
-In the future, PSRunway will support securely caching the credentials.
+In the future, Runway will support securely caching the credentials.
 
 ## Samples
 
