@@ -31,7 +31,7 @@ Function Get-RwConnectionByName {
             filter = @{
                 Left = 'Name'
                 Operator = '='
-                Right = $ConnectionName
+                Right = $ConnectionName[0]
             }
         }
     }
