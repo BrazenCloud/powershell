@@ -5,11 +5,19 @@ Function Invoke-RwPowerShellCommand {
             ParameterSetName = 'ByName',
             Mandatory
         )]
+        [Parameter(
+            ParameterSetName = 'ByNameRaw',
+            Mandatory
+        )]
         [Alias('Name','AssetName')]
         [string]$RunnerName,
 
         [Parameter(
             ParameterSetName = 'ById',
+            Mandatory
+        )]
+        [Parameter(
+            ParameterSetName = 'ByIdRaw',
             Mandatory
         )]
         [Alias('Id','RunnerId')]
@@ -23,16 +31,42 @@ Function Invoke-RwPowerShellCommand {
 
         [switch]$LeaveJob,
 
+        [Parameter(
+            ParameterSetName = 'ById',
+            Mandatory
+        )]
+        [Parameter(
+            ParameterSetName = 'ByName',
+            Mandatory
+        )]
         [int]$SerializeDepth = 2,
 
-        [switch]$DefaultPropertiesOnly
+        [Parameter(
+            ParameterSetName = 'ById',
+            Mandatory
+        )]
+        [Parameter(
+            ParameterSetName = 'ByName',
+            Mandatory
+        )]
+        [switch]$DefaultPropertiesOnly,
+
+        [Parameter(
+            ParameterSetName = 'ByIdRaw',
+            Mandatory
+        )]
+        [Parameter(
+            ParameterSetName = 'ByNameRaw',
+            Mandatory
+        )]
+        [switch]$Raw
     )
     # Load the run command from the Action Repository
     $runCommand = Get-RwRepository -Name 'PowerShell:RunCommand'
 
     if ($null -ne $runCommand) {
         # If RunnerID is not passed, look it up
-        if ($PSCmdlet.ParameterSetName -eq 'ByName') {
+        if ($PSCmdlet.ParameterSetName -like 'ByName*') {
 
             $AssetId = (Get-RwRunnerByName -AssetName $RunnerName).AssetId
         }
@@ -57,6 +91,7 @@ Function Invoke-RwPowerShellCommand {
                     'Serialize Depth' = $SerializeDepth
                     'Default Properties Only' = $DefaultPropertiesOnly.IsPresent
                     'Debug' = $true
+                    'Raw Output' = $Raw.IsPresent
                 }
             }
         )
@@ -74,15 +109,22 @@ Function Invoke-RwPowerShellCommand {
         # With the thread ID, pull the thread log
         Get-RwJobThreadLastLog -ThreadId $completedThread.Id -OutFile .\rwtmp.txt
 
-        # Write the content to disk, it will be in CliXml format
-        Get-Content .\rwtmp.txt | Where-Object {$_ -notlike '# *'} | Out-File .\results.xml -Force
+        if ($Raw.IsPresent) {
+            # Get the contents
+            Get-Content .\rwtmp.txt | Where-Object {$_ -notlike '# *'}
+        } else {
+            # Write the content to disk, it will be in CliXml format
+            Get-Content .\rwtmp.txt | Where-Object {$_ -notlike '# *'} | Out-File .\results.xml -Force
 
-        # Import the output
-        Import-Clixml .\results.xml
+            # Import the output
+            Import-Clixml .\results.xml
+
+            # Clean up XML file
+            Remove-Item .\results.xml
+        }
 
         # Clean up the files
         Remove-Item .\rwtmp.txt
-        Remove-Item .\results.xml
 
         # Clean up the job
         if (-not $LeaveJob.IsPresent) {
