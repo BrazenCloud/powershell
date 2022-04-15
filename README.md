@@ -1,13 +1,21 @@
-<!-- region Generated -->
-# PsRunway
-This directory contains the PowerShell module for the PsRunway service.
+# Runway
 
-## Install PsRunway
+[![Runway](https://img.shields.io/powershellgallery/v/Runway.svg?style=flat-square&label=Runway "Runway")](https://www.powershellgallery.com/packages/Runway/)
 
-Since PsRunway is published to the PowerShell Gallery, use `Install-Module` to install the module:
+**Starting in v0.2.0, Runway was renamed from PsRunway to Runway.**
+
+This is the PowerShell module and SDK for [Runway](https://runway.host). For it to work, you need to have Windows PowerShell 5.1 or PowerShell 6+ and a Runway account.
+
+If you don't have a Runway account already, [sign up for a free one](https://portal.runway.host/login?enroll=true).
+
+If you need help with using the Runway platform, check out our [documentation](https://docs.runway.host).
+
+## Install Runway
+
+Since Runway is published to the PowerShell Gallery, use `Install-Module` to install the module:
 
 ```powershell
-Install-Module PsRunway -Repository PSGallery
+Install-Module Runway -Repository PSGallery
 ```
 
 ## Authenticate
@@ -24,31 +32,34 @@ If you wish to pass your password, use the same cmdlet, except convert your pass
 Connect-Runway -Email <email> -Password (ConvertTo-SecureString '<password>' -AsPlainText -Force)
 ```
 
-In the future, PSRunway will support securely caching the credentials.
+In the future, Runway will support securely caching the credentials.
 
 ## Samples
 
 See the [samples folder](./samples) for inspiration.
 
----
-## Status
-[![PsRunway](https://img.shields.io/powershellgallery/v/PsRunway.svg?style=flat-square&label=PsRunway "PsRunway")](https://www.powershellgallery.com/packages/PsRunway/)
-
-## Info
-- Modifiable: yes
-- Generated: all
-- Committed: yes
-- Packaged: yes
-
----
-## Detail
-This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
-
-## Development
-For information on how to develop for `PsRunway`, see [how-to.md](how-to.md).
-<!-- endregion -->
-
 ## Changelog
+
+### 0.2.0
+
+- **Renamed the module from `PsRunway` to `Runway`**
+- Converted all `Import-Rw*` cmdlets to `Get-Rw*`
+- The Runway url is now configurable with `Connect-Runway`'s `RunwayDomain` parameter
+- Converted count cmdlets from `Invoke-RwCountSubject` to `Get-RwSubjectCount`
+- Repository organization
+- Fixes #2. JobSchedule now has a `Time` property.
+  - This is present on `Set-RwJobSchedule`
+- Fixes #6. Removes unneeded `-OutFile` parameters from various cmdlets
+- Added a collection of query based helper cmdlets:
+  - `Get-RwConnectionByName`
+  - `Get-RwEndpointByTag`
+  - `Get-RwJobAssignedRunners`
+  - `Get-RwJobByName`
+  - `Get-RwRunnerByName`
+  - `Get-RwSetMember`
+  - `Get-RwUserByGroup`
+- Fixed #5 `Get-RwJobRandomJobName`
+- Updated with latest prod swagger build (2022-04-13)
 
 ### 0.1.3
 
