@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwliveauthenticationsignup
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/invoke-rwliveauthenticationsignup
 schema: 2.0.0
 ---
 
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.ISignupRequest
+Type: RunwaySdk.PowerShell.Models.ISignupRequest
 Parameter Sets: Live
 Aliases:
 
@@ -190,11 +190,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.ISignupRequest
+### RunwaySdk.PowerShell.Models.ISignupRequest
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.ILoginResponse
+### RunwaySdk.PowerShell.Models.ILoginResponse
 
 ## NOTES
 

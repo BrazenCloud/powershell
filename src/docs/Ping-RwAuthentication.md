@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/ping-rwauthentication
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/ping-rwauthentication
 schema: 2.0.0
 ---
 

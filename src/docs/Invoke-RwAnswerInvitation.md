@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwanswerinvitation
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/invoke-rwanswerinvitation
 schema: 2.0.0
 ---
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IInvitationAnswerRequest
+Type: RunwaySdk.PowerShell.Models.IInvitationAnswerRequest
 Parameter Sets: Answer
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IInvitationAnswerRequest
+### RunwaySdk.PowerShell.Models.IInvitationAnswerRequest
 
 ## OUTPUTS
 

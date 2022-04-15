@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwqueryjob
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/invoke-rwqueryjob
 schema: 2.0.0
 ---
 
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for FILTERCHILDREN properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IFilterComparison[]
+Type: RunwaySdk.PowerShell.Models.IFilterComparison[]
 Parameter Sets: QueryExpanded
 Aliases:
 
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for QUERY properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IQuery
+Type: RunwaySdk.PowerShell.Models.IQuery
 Parameter Sets: Query
 Aliases:
 
@@ -298,11 +298,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IQuery
+### RunwaySdk.PowerShell.Models.IQuery
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.IQueryResponseOfIJobQueryView
+### RunwaySdk.PowerShell.Models.IQueryResponseOfIJobQueryView
 
 ## NOTES
 

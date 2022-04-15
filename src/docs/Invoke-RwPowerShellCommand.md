@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwpowershellcommand
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/invoke-rwpowershellcommand
 schema: 2.0.0
 ---
 
@@ -14,14 +14,26 @@ schema: 2.0.0
 
 ### ByName (Default)
 ```
-Invoke-RwPowerShellCommand -RunnerName <String> -ScriptBlock <ScriptBlock> [-DefaultPropertiesOnly]
- [-LeaveJob] [-PWSH] [-SerializeDepth <Int32>] [<CommonParameters>]
+Invoke-RwPowerShellCommand -DefaultPropertiesOnly -RunnerName <String> -ScriptBlock <ScriptBlock>
+ -SerializeDepth <Int32> [-LeaveJob] [-PWSH] [<CommonParameters>]
 ```
 
 ### ById
 ```
-Invoke-RwPowerShellCommand -AssetId <String> -ScriptBlock <ScriptBlock> [-DefaultPropertiesOnly] [-LeaveJob]
- [-PWSH] [-SerializeDepth <Int32>] [<CommonParameters>]
+Invoke-RwPowerShellCommand -AssetId <String> -DefaultPropertiesOnly -ScriptBlock <ScriptBlock>
+ -SerializeDepth <Int32> [-LeaveJob] [-PWSH] [<CommonParameters>]
+```
+
+### ByIdRaw
+```
+Invoke-RwPowerShellCommand -AssetId <String> -Raw -ScriptBlock <ScriptBlock> [-LeaveJob] [-PWSH]
+ [<CommonParameters>]
+```
+
+### ByNameRaw
+```
+Invoke-RwPowerShellCommand -Raw -RunnerName <String> -ScriptBlock <ScriptBlock> [-LeaveJob] [-PWSH]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,7 +66,7 @@ PS C:\> {{ Add code here }}
 
 ```yaml
 Type: System.String
-Parameter Sets: ById
+Parameter Sets: ById, ByIdRaw
 Aliases: Id, RunnerId
 
 Required: True
@@ -69,10 +81,10 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: ById, ByName
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -109,12 +121,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Raw
+
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ByIdRaw, ByNameRaw
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RunnerName
 
 
 ```yaml
 Type: System.String
-Parameter Sets: ByName
+Parameter Sets: ByName, ByNameRaw
 Aliases: Name, AssetName
 
 Required: True
@@ -144,10 +171,10 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: ById, ByName
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

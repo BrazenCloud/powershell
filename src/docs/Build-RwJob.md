@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/build-rwjob
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/build-rwjob
 schema: 2.0.0
 ---
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.ICompileJobRequest
+Type: RunwaySdk.PowerShell.Models.ICompileJobRequest
 Parameter Sets: Compile
 Aliases:
 
@@ -114,11 +114,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.ICompileJobRequest
+### RunwaySdk.PowerShell.Models.ICompileJobRequest
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.IActionConfiguration
+### RunwaySdk.PowerShell.Models.IActionConfiguration
 
 ## NOTES
 

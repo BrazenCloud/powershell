@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/get-rwrepositoryactioncontentinfo
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/get-rwrepositoryactioncontentinfo
 schema: 2.0.0
 ---
 
@@ -19,7 +19,7 @@ Get-RwRepositoryActionContentInfo -ActionId <String> [-Platform <String>] [<Comm
 
 ### GetViaIdentity
 ```
-Get-RwRepositoryActionContentInfo -InputObject <IPsRunwayIdentity> [-Platform <String>] [<CommonParameters>]
+Get-RwRepositoryActionContentInfo -InputObject <IRunwayIdentity> [-Platform <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,7 +67,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IPsRunwayIdentity
+Type: RunwaySdk.PowerShell.Models.IRunwayIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -98,11 +98,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IPsRunwayIdentity
+### RunwaySdk.PowerShell.Models.IRunwayIdentity
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.IContentInfo
+### RunwaySdk.PowerShell.Models.IContentInfo
 
 ## NOTES
 
@@ -113,13 +113,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+INPUTOBJECT <IRunwayIdentity>: Identity Parameter
   - `[AccountId <String>]`: 
   - `[ActionId <String>]`: 
   - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[EndpointId <String>]`: 
+  - `[FolderId <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
   - `[InvitationId <String>]`: 
@@ -133,6 +134,7 @@ INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
   - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
+  - `[Stream <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
   - `[UserId <String>]`: 

@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/step-rwjobthread
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/step-rwjobthread
 schema: 2.0.0
 ---
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IStepThreadRequest
+Type: RunwaySdk.PowerShell.Models.IStepThreadRequest
 Parameter Sets: Step
 Aliases:
 
@@ -190,7 +190,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IStepThreadRequest
+### RunwaySdk.PowerShell.Models.IStepThreadRequest
 
 ## OUTPUTS
 

@@ -1,16 +1,16 @@
 ---
-Module Name: PsRunway
-Module Guid: c526cecf-2ed2-4e63-9736-c57b5103f885
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/psrunway
+Module Name: Runway
+Module Guid: bc28dca3-18ff-4e56-8fa3-b21c3ad6a1e1
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/runway
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# PsRunway Module
+# Runway Module
 ## Description
 The PowerShell SDK for the Runway API
 
-## PsRunway Cmdlets
+## Runway Cmdlets
 ### [Add-RwInvitationToSet](Add-RwInvitationToSet.md)
 
 
@@ -24,6 +24,9 @@ The PowerShell SDK for the Runway API
 
 
 ### [Build-RwJob](Build-RwJob.md)
+
+
+### [Close-RwClientStream](Close-RwClientStream.md)
 
 
 ### [Complete-RwRunnerDissolveRunner](Complete-RwRunnerDissolveRunner.md)
@@ -65,6 +68,9 @@ The PowerShell SDK for the Runway API
 ### [Get-RwConnection](Get-RwConnection.md)
 
 
+### [Get-RwConnectionByName](Get-RwConnectionByName.md)
+
+
 ### [Get-RwConnectionCount](Get-RwConnectionCount.md)
 
 
@@ -96,6 +102,9 @@ The PowerShell SDK for the Runway API
 
 
 ### [Get-RwEndpointAssetTag](Get-RwEndpointAssetTag.md)
+
+
+### [Get-RwEndpointByTag](Get-RwEndpointByTag.md)
 
 
 ### [Get-RwGroup](Get-RwGroup.md)
@@ -140,6 +149,12 @@ The PowerShell SDK for the Runway API
 ### [Get-RwJob](Get-RwJob.md)
 
 
+### [Get-RwJobAssignedRunners](Get-RwJobAssignedRunners.md)
+
+
+### [Get-RwJobByName](Get-RwJobByName.md)
+
+
 ### [Get-RwJobCount](Get-RwJobCount.md)
 
 
@@ -162,6 +177,9 @@ The PowerShell SDK for the Runway API
 
 
 ### [Get-RwJobThreadCount](Get-RwJobThreadCount.md)
+
+
+### [Get-RwJobThreadEnabledStatus](Get-RwJobThreadEnabledStatus.md)
 
 
 ### [Get-RwJobThreadLastLog](Get-RwJobThreadLastLog.md)
@@ -218,6 +236,9 @@ The PowerShell SDK for the Runway API
 ### [Get-RwRunner](Get-RwRunner.md)
 
 
+### [Get-RwRunnerByName](Get-RwRunnerByName.md)
+
+
 ### [Get-RwRunnerCount](Get-RwRunnerCount.md)
 
 
@@ -230,6 +251,9 @@ The PowerShell SDK for the Runway API
 ### [Get-RwRunnerTag](Get-RwRunnerTag.md)
 
 
+### [Get-RwSetMember](Get-RwSetMember.md)
+
+
 ### [Get-RwSetMemberCount](Get-RwSetMemberCount.md)
 
 
@@ -237,6 +261,9 @@ The PowerShell SDK for the Runway API
 
 
 ### [Get-RwUser](Get-RwUser.md)
+
+
+### [Get-RwUserByGroup](Get-RwUserByGroup.md)
 
 
 ### [Get-RwUserCount](Get-RwUserCount.md)
@@ -349,6 +376,9 @@ Create a new user account, pending validation of email address.
 An email message will be sent to the specified email address with further instructions.
 This method requires a captcha token produced by the Runway web application in order to succeed.
 
+### [Invoke-RwSocket2Client](Invoke-RwSocket2Client.md)
+
+
 ### [Invoke-RwSocketClient](Invoke-RwSocketClient.md)
 
 
@@ -403,6 +433,9 @@ Create an in-memory object for JobSchedule.
 ### [Remove-RwGroup](Remove-RwGroup.md)
 
 
+### [Remove-RwGroupUserFromGroup](Remove-RwGroupUserFromGroup.md)
+
+
 ### [Remove-RwInvitation](Remove-RwInvitation.md)
 
 
@@ -431,6 +464,9 @@ Create an in-memory object for JobSchedule.
 
 
 ### [Remove-RwUser](Remove-RwUser.md)
+
+
+### [Rename-RwAuthenticationPassword](Rename-RwAuthenticationPassword.md)
 
 
 ### [Request-RwLog](Request-RwLog.md)
@@ -503,6 +539,9 @@ Create an in-memory object for JobSchedule.
 
 
 ### [Set-RwUser](Set-RwUser.md)
+
+
+### [Start-RwJobThread](Start-RwJobThread.md)
 
 
 ### [Step-RwJobThread](Step-RwJobThread.md)

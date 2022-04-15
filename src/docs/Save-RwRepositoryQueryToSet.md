@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/save-rwrepositoryquerytoset
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/save-rwrepositoryquerytoset
 schema: 2.0.0
 ---
 
@@ -27,13 +27,13 @@ Save-RwRepositoryQueryToSet -SetId <String> -Query <IQuery> [-Confirm] [-WhatIf]
 
 ### SaveViaIdentity
 ```
-Save-RwRepositoryQueryToSet -InputObject <IPsRunwayIdentity> -Query <IQuery> [-Confirm] [-WhatIf]
+Save-RwRepositoryQueryToSet -InputObject <IRunwayIdentity> -Query <IQuery> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### SaveViaIdentityExpanded
 ```
-Save-RwRepositoryQueryToSet -InputObject <IPsRunwayIdentity> -IncludeSubgroups -Skip <Int32>
+Save-RwRepositoryQueryToSet -InputObject <IRunwayIdentity> -IncludeSubgroups -Skip <Int32>
  -SortDirection <String> -Take <Int32> [-FilterCaseSensitive] [-FilterChildren <IFilterComparison[]>]
  [-FilterLeft <String>] [-FilterOperator <String>] [-FilterRight <String>] [-MembershipCheckId <String>]
  [-RootContainerId <String>] [-SelectionCheckId <String>] [-SortField <String>] [-Confirm] [-WhatIf]
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for FILTERCHILDREN properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IFilterComparison[]
+Type: RunwaySdk.PowerShell.Models.IFilterComparison[]
 Parameter Sets: SaveExpanded, SaveViaIdentityExpanded
 Aliases:
 
@@ -161,7 +161,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IPsRunwayIdentity
+Type: RunwaySdk.PowerShell.Models.IRunwayIdentity
 Parameter Sets: SaveViaIdentity, SaveViaIdentityExpanded
 Aliases:
 
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for QUERY properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IQuery
+Type: RunwaySdk.PowerShell.Models.IQuery
 Parameter Sets: Save, SaveViaIdentity
 Aliases:
 
@@ -344,9 +344,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IPsRunwayIdentity
+### RunwaySdk.PowerShell.Models.IQuery
 
-### Runway.PowerShell.Models.IQuery
+### RunwaySdk.PowerShell.Models.IRunwayIdentity
 
 ## OUTPUTS
 
@@ -368,13 +368,14 @@ FILTERCHILDREN <IFilterComparison[]>: .
   - `[Operator <String>]`: 
   - `[Right <String>]`: 
 
-INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+INPUTOBJECT <IRunwayIdentity>: Identity Parameter
   - `[AccountId <String>]`: 
   - `[ActionId <String>]`: 
   - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[EndpointId <String>]`: 
+  - `[FolderId <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
   - `[InvitationId <String>]`: 
@@ -388,6 +389,7 @@ INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
   - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
+  - `[Stream <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
   - `[UserId <String>]`: 

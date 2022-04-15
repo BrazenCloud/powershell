@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwqueryrunner
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/invoke-rwqueryrunner
 schema: 2.0.0
 ---
 
@@ -37,12 +37,12 @@ Invoke-RwQueryRunner -IncludeSubgroups -Skip <Int32> -SortDirection <String> -Ta
 
 ### QueryViaIdentity
 ```
-Invoke-RwQueryRunner -InputObject <IPsRunwayIdentity> [<CommonParameters>]
+Invoke-RwQueryRunner -InputObject <IRunwayIdentity> [<CommonParameters>]
 ```
 
 ### QueryViaIdentity1
 ```
-Invoke-RwQueryRunner -InputObject <IPsRunwayIdentity> [<CommonParameters>]
+Invoke-RwQueryRunner -InputObject <IRunwayIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for FILTERCHILDREN properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IFilterComparison[]
+Type: RunwaySdk.PowerShell.Models.IFilterComparison[]
 Parameter Sets: QueryExpanded
 Aliases:
 
@@ -181,7 +181,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IPsRunwayIdentity
+Type: RunwaySdk.PowerShell.Models.IRunwayIdentity
 Parameter Sets: QueryViaIdentity, QueryViaIdentity1
 Aliases:
 
@@ -227,7 +227,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for QUERY properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IQuery
+Type: RunwaySdk.PowerShell.Models.IQuery
 Parameter Sets: Query2
 Aliases:
 
@@ -364,13 +364,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IPsRunwayIdentity
+### RunwaySdk.PowerShell.Models.IQuery
 
-### Runway.PowerShell.Models.IQuery
+### RunwaySdk.PowerShell.Models.IRunwayIdentity
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.IQueryResponseOfIRunnerQueryView
+### RunwaySdk.PowerShell.Models.IQueryResponseOfIRunnerQueryView
 
 ### System.String
 
@@ -390,13 +390,14 @@ FILTERCHILDREN <IFilterComparison[]>: .
   - `[Operator <String>]`: 
   - `[Right <String>]`: 
 
-INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+INPUTOBJECT <IRunwayIdentity>: Identity Parameter
   - `[AccountId <String>]`: 
   - `[ActionId <String>]`: 
   - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[EndpointId <String>]`: 
+  - `[FolderId <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
   - `[InvitationId <String>]`: 
@@ -410,6 +411,7 @@ INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
   - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
+  - `[Stream <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
   - `[UserId <String>]`: 

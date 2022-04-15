@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwqueryendpointasset
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/invoke-rwqueryendpointasset
 schema: 2.0.0
 ---
 
@@ -23,19 +23,6 @@ Invoke-RwQueryEndpointAsset -IncludeSubgroups -Skip <Int32> -SortDirection <Stri
 ### Query
 ```
 Invoke-RwQueryEndpointAsset -Query <IQuery> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Query1
-```
-Invoke-RwQueryEndpointAsset -Query <IQuery> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### QueryExpanded1
-```
-Invoke-RwQueryEndpointAsset -IncludeSubgroups -Skip <Int32> -SortDirection <String> -Take <Int32>
- [-FilterCaseSensitive] [-FilterChildren <IFilterComparison[]>] [-FilterLeft <String>]
- [-FilterOperator <String>] [-FilterRight <String>] [-MembershipCheckId <String>] [-RootContainerId <String>]
- [-SelectionCheckId <String>] [-SortField <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,7 +55,7 @@ PS C:\> {{ Add code here }}
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: False
@@ -83,8 +70,8 @@ Accept wildcard characters: False
 To construct, see NOTES section for FILTERCHILDREN properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IFilterComparison[]
-Parameter Sets: QueryExpanded, QueryExpanded1
+Type: RunwaySdk.PowerShell.Models.IFilterComparison[]
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: False
@@ -99,7 +86,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: False
@@ -114,7 +101,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: False
@@ -129,7 +116,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: False
@@ -144,7 +131,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: True
@@ -159,7 +146,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: False
@@ -174,8 +161,8 @@ Accept wildcard characters: False
 To construct, see NOTES section for QUERY properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IQuery
-Parameter Sets: Query, Query1
+Type: RunwaySdk.PowerShell.Models.IQuery
+Parameter Sets: Query
 Aliases:
 
 Required: True
@@ -190,7 +177,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: False
@@ -205,7 +192,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: False
@@ -220,7 +207,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: True
@@ -235,7 +222,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: True
@@ -250,7 +237,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: False
@@ -265,7 +252,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: QueryExpanded, QueryExpanded1
+Parameter Sets: QueryExpanded
 Aliases:
 
 Required: True
@@ -311,13 +298,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IQuery
+### RunwaySdk.PowerShell.Models.IQuery
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.IQueryResponseOfIEndpointAssetQueryView
-
-### Runway.PowerShell.Models.IQueryResponseOfRunwayEndpointAsset
+### RunwaySdk.PowerShell.Models.IQueryResponseOfIEndpointAssetQueryView
 
 ## NOTES
 

@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/request-rwresultactionresult
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/request-rwresultactionresult
 schema: 2.0.0
 ---
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IActionResultRequest
+Type: RunwaySdk.PowerShell.Models.IActionResultRequest
 Parameter Sets: Request
 Aliases:
 
@@ -130,7 +130,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IActionResultRequest
+### RunwaySdk.PowerShell.Models.IActionResultRequest
 
 ## OUTPUTS
 

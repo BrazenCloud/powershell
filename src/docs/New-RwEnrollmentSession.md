@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/new-rwenrollmentsession
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/new-rwenrollmentsession
 schema: 2.0.0
 ---
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.ICreateEnrollmentSessionRequest
+Type: RunwaySdk.PowerShell.Models.ICreateEnrollmentSessionRequest
 Parameter Sets: Create
 Aliases:
 
@@ -175,11 +175,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.ICreateEnrollmentSessionRequest
+### RunwaySdk.PowerShell.Models.ICreateEnrollmentSessionRequest
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.ITokenResponse
+### RunwaySdk.PowerShell.Models.ITokenResponse
 
 ## NOTES
 

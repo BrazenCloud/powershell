@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/complete-rwrunnerdissolverunner
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/complete-rwrunnerdissolverunner
 schema: 2.0.0
 ---
 

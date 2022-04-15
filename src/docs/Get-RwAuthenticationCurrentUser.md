@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/get-rwauthenticationcurrentuser
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/get-rwauthenticationcurrentuser
 schema: 2.0.0
 ---
 
@@ -48,7 +48,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.IRunwayUser
+### RunwaySdk.PowerShell.Models.IRunwayUser
 
 ## NOTES
 

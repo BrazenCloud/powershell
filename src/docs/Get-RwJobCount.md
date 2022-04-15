@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/get-rwjobcount
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/get-rwjobcount
 schema: 2.0.0
 ---
 
@@ -53,6 +53,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+Invoke-RwJobCount
 
 ## RELATED LINKS
 

@@ -15,11 +15,11 @@ if(($null -eq $TestName) -or ($TestName -contains 'Invoke-RwQueryRunner'))
 }
 
 Describe 'Invoke-RwQueryRunner' {
-    It 'Query1' -skip {
+    It 'Query' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Query2' -skip {
+    It 'Query1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
@@ -31,7 +31,7 @@ Describe 'Invoke-RwQueryRunner' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Query' -skip {
+    It 'Query2' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 

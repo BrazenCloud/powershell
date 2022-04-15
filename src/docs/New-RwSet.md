@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/new-rwset
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/new-rwset
 schema: 2.0.0
 ---
 

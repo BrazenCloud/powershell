@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/set-rwrole
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/set-rwrole
 schema: 2.0.0
 ---
 
@@ -26,13 +26,13 @@ Set-RwRole -RoleId <String> -Request <IUpdateRoleRequest> [-PassThru] [-Confirm]
 
 ### UpdateViaIdentity
 ```
-Set-RwRole -InputObject <IPsRunwayIdentity> -Request <IUpdateRoleRequest> [-PassThru] [-Confirm] [-WhatIf]
+Set-RwRole -InputObject <IRunwayIdentity> -Request <IUpdateRoleRequest> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Set-RwRole -InputObject <IPsRunwayIdentity> [-Description <String>] [-Name <String>]
+Set-RwRole -InputObject <IRunwayIdentity> [-Description <String>] [-Name <String>]
  [-Permissions <IRunwayRoleAccess[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -81,7 +81,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IPsRunwayIdentity
+Type: RunwaySdk.PowerShell.Models.IRunwayIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for PERMISSIONS properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IRunwayRoleAccess[]
+Type: RunwaySdk.PowerShell.Models.IRunwayRoleAccess[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IUpdateRoleRequest
+Type: RunwaySdk.PowerShell.Models.IUpdateRoleRequest
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -205,9 +205,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IPsRunwayIdentity
+### RunwaySdk.PowerShell.Models.IRunwayIdentity
 
-### Runway.PowerShell.Models.IUpdateRoleRequest
+### RunwaySdk.PowerShell.Models.IUpdateRoleRequest
 
 ## OUTPUTS
 
@@ -222,13 +222,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+INPUTOBJECT <IRunwayIdentity>: Identity Parameter
   - `[AccountId <String>]`: 
   - `[ActionId <String>]`: 
   - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[EndpointId <String>]`: 
+  - `[FolderId <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
   - `[InvitationId <String>]`: 
@@ -242,6 +243,7 @@ INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
   - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
+  - `[Stream <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
   - `[UserId <String>]`: 

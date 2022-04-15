@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/new-rwrepositoryaction
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/new-rwrepositoryaction
 schema: 2.0.0
 ---
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.ICreateActionRequest
+Type: RunwaySdk.PowerShell.Models.ICreateActionRequest
 Parameter Sets: Create
 Aliases:
 
@@ -160,7 +160,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.ICreateActionRequest
+### RunwaySdk.PowerShell.Models.ICreateActionRequest
 
 ## OUTPUTS
 

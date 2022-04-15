@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/new-rwconnection
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/new-rwconnection
 schema: 2.0.0
 ---
 
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.ICreateConnectionRequest
+Type: RunwaySdk.PowerShell.Models.ICreateConnectionRequest
 Parameter Sets: Create
 Aliases:
 
@@ -221,7 +221,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.ICreateConnectionRequest
+### RunwaySdk.PowerShell.Models.ICreateConnectionRequest
 
 ## OUTPUTS
 

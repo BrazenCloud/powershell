@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/remove-rwtag
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/remove-rwtag
 schema: 2.0.0
 ---
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.ITagRequest
+Type: RunwaySdk.PowerShell.Models.ITagRequest
 Parameter Sets: Delete
 Aliases:
 
@@ -144,7 +144,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.ITagRequest
+### RunwaySdk.PowerShell.Models.ITagRequest
 
 ## OUTPUTS
 

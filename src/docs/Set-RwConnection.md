@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/set-rwconnection
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/set-rwconnection
 schema: 2.0.0
 ---
 
@@ -27,15 +27,15 @@ Set-RwConnection -ConnectionId <String> -Request <IUpdateConnectionRequest> [-Pa
 
 ### UpdateViaIdentity
 ```
-Set-RwConnection -InputObject <IPsRunwayIdentity> -Request <IUpdateConnectionRequest> [-PassThru] [-Confirm]
+Set-RwConnection -InputObject <IRunwayIdentity> -Request <IUpdateConnectionRequest> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Set-RwConnection -InputObject <IPsRunwayIdentity> -IsHidden [-ActionId <String>]
- [-AssignedEndpointId <String>] [-Description <String>] [-GroupId <String>] [-Id <String>] [-Name <String>]
- [-RunnerId <String>] [-Settings <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-RwConnection -InputObject <IRunwayIdentity> -IsHidden [-ActionId <String>] [-AssignedEndpointId <String>]
+ [-Description <String>] [-GroupId <String>] [-Id <String>] [-Name <String>] [-RunnerId <String>]
+ [-Settings <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -158,7 +158,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IPsRunwayIdentity
+Type: RunwaySdk.PowerShell.Models.IRunwayIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IUpdateConnectionRequest
+Type: RunwaySdk.PowerShell.Models.IUpdateConnectionRequest
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -296,9 +296,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IPsRunwayIdentity
+### RunwaySdk.PowerShell.Models.IRunwayIdentity
 
-### Runway.PowerShell.Models.IUpdateConnectionRequest
+### RunwaySdk.PowerShell.Models.IUpdateConnectionRequest
 
 ## OUTPUTS
 
@@ -313,13 +313,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+INPUTOBJECT <IRunwayIdentity>: Identity Parameter
   - `[AccountId <String>]`: 
   - `[ActionId <String>]`: 
   - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[EndpointId <String>]`: 
+  - `[FolderId <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
   - `[InvitationId <String>]`: 
@@ -333,6 +334,7 @@ INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
   - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
+  - `[Stream <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
   - `[UserId <String>]`: 

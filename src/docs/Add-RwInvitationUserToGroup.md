@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/add-rwinvitationusertogroup
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/add-rwinvitationusertogroup
 schema: 2.0.0
 ---
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for INVITATIONS properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IEmailInvitation[]
+Type: RunwaySdk.PowerShell.Models.IEmailInvitation[]
 Parameter Sets: AddExpanded
 Aliases:
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IGroupInvitationRequest
+Type: RunwaySdk.PowerShell.Models.IGroupInvitationRequest
 Parameter Sets: Add
 Aliases:
 
@@ -147,7 +147,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IGroupInvitationRequest
+### RunwaySdk.PowerShell.Models.IGroupInvitationRequest
 
 ## OUTPUTS
 

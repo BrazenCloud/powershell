@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/new-rwrole
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/new-rwrole
 schema: 2.0.0
 ---
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for PERMISSIONS properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IRunwayRoleAccess[]
+Type: RunwaySdk.PowerShell.Models.IRunwayRoleAccess[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.ICreateRoleRequest
+Type: RunwaySdk.PowerShell.Models.ICreateRoleRequest
 Parameter Sets: Create
 Aliases:
 
@@ -161,7 +161,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.ICreateRoleRequest
+### RunwaySdk.PowerShell.Models.ICreateRoleRequest
 
 ## OUTPUTS
 

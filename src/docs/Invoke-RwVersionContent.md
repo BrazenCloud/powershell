@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwversioncontent
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/invoke-rwversioncontent
 schema: 2.0.0
 ---
 
@@ -63,7 +63,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.IVersionResponse
+### RunwaySdk.PowerShell.Models.IVersionResponse
 
 ## NOTES
 

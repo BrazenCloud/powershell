@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwshellremoteshellcancel
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/invoke-rwshellremoteshellcancel
 schema: 2.0.0
 ---
 
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IRemoteShellDeleteRequest
+Type: RunwaySdk.PowerShell.Models.IRemoteShellDeleteRequest
 Parameter Sets: Shell
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IRemoteShellDeleteRequest
+### RunwaySdk.PowerShell.Models.IRemoteShellDeleteRequest
 
 ## OUTPUTS
 

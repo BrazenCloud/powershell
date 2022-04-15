@@ -19,7 +19,7 @@ Describe 'Remove-RwRunner' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Delete' -skip {
+    It 'Delete1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
@@ -27,7 +27,7 @@ Describe 'Remove-RwRunner' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Delete1' -skip {
+    It 'Delete' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

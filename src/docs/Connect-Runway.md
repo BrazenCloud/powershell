@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/connect-runway
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/connect-runway
 schema: 2.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: PsRunway
+Module Name: Runway
 online version: https://docs.microsoft.com/en-us/powershell/module/az./new-RwJobScheduleObject
 schema: 2.0.0
 ---
@@ -109,7 +109,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.JobSchedule
+### RunwaySdk.PowerShell.Models.JobSchedule
 
 ## NOTES
 

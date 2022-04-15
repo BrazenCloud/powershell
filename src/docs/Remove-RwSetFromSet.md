@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/remove-rwsetfromset
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/remove-rwsetfromset
 schema: 2.0.0
 ---
 
@@ -24,13 +24,13 @@ Remove-RwSetFromSet -SourceSetId <String> -TargetSetId <String> [-Confirm] [-Wha
 
 ### RemoveViaIdentity
 ```
-Remove-RwSetFromSet -InputObject <IPsRunwayIdentity> -ObjectIds <String[]> [-Confirm] [-WhatIf]
+Remove-RwSetFromSet -InputObject <IRunwayIdentity> -ObjectIds <String[]> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity1
 ```
-Remove-RwSetFromSet -InputObject <IPsRunwayIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-RwSetFromSet -InputObject <IRunwayIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,7 +63,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IPsRunwayIdentity
+Type: RunwaySdk.PowerShell.Models.IRunwayIdentity
 Parameter Sets: RemoveViaIdentity, RemoveViaIdentity1
 Aliases:
 
@@ -155,7 +155,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IPsRunwayIdentity
+### RunwaySdk.PowerShell.Models.IRunwayIdentity
 
 ### System.String[]
 
@@ -172,13 +172,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
+INPUTOBJECT <IRunwayIdentity>: Identity Parameter
   - `[AccountId <String>]`: 
   - `[ActionId <String>]`: 
   - `[ConnectionId <String>]`: 
   - `[ContentId <String>]`: 
   - `[Email <String>]`: 
   - `[EndpointId <String>]`: 
+  - `[FolderId <String>]`: 
   - `[GroupId <String>]`: 
   - `[IPAddress <String>]`: 
   - `[InvitationId <String>]`: 
@@ -192,6 +193,7 @@ INPUTOBJECT <IPsRunwayIdentity>: Identity Parameter
   - `[RunnerId <String>]`: 
   - `[SetId <String>]`: 
   - `[SourceSetId <String>]`: 
+  - `[Stream <String>]`: 
   - `[TargetSetId <String>]`: 
   - `[ThreadId <String>]`: 
   - `[UserId <String>]`: 

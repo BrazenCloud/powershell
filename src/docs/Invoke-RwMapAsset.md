@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwmapasset
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/invoke-rwmapasset
 schema: 2.0.0
 ---
 
@@ -53,7 +53,7 @@ PS C:\> {{ Add code here }}
 To construct, see NOTES section for ENDPOINTDATA properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IAssetMapEndpoint[]
+Type: RunwaySdk.PowerShell.Models.IAssetMapEndpoint[]
 Parameter Sets: MapExpanded
 Aliases:
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for KUBERNETESDATA properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IKubernetesEndpoint[]
+Type: RunwaySdk.PowerShell.Models.IKubernetesEndpoint[]
 Parameter Sets: MapExpanded
 Aliases:
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IAssetMap
+Type: RunwaySdk.PowerShell.Models.IAssetMap
 Parameter Sets: Map
 Aliases:
 
@@ -147,7 +147,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IAssetMap
+### RunwaySdk.PowerShell.Models.IAssetMap
 
 ## OUTPUTS
 
@@ -164,9 +164,11 @@ To create the parameters described below, construct a hash table containing the 
 
 ENDPOINTDATA <IAssetMapEndpoint[]>: .
   - `TypeHint <Int32>`: 
+  - `[DeviceType <String>]`: 
   - `[DnsName <String>]`: 
   - `[EndpointType <String>]`: 
   - `[GatewayAddress <String>]`: 
+  - `[HardwareProduct <String>]`: 
   - `[IPAddress <String>]`: 
   - `[Interfaces <IAssetMapNetworkInterface[]>]`: 
     - `[ArpCache <IAssetMapArpCache[]>]`: 
@@ -199,9 +201,11 @@ KUBERNETESDATA <IKubernetesEndpoint[]>: .
 REQUEST <IAssetMap>: .
   - `[EndpointData <IAssetMapEndpoint[]>]`: 
     - `TypeHint <Int32>`: 
+    - `[DeviceType <String>]`: 
     - `[DnsName <String>]`: 
     - `[EndpointType <String>]`: 
     - `[GatewayAddress <String>]`: 
+    - `[HardwareProduct <String>]`: 
     - `[IPAddress <String>]`: 
     - `[Interfaces <IAssetMapNetworkInterface[]>]`: 
       - `[ArpCache <IAssetMapArpCache[]>]`: 

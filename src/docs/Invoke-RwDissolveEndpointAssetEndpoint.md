@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/invoke-rwdissolveendpointassetendpoint
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/invoke-rwdissolveendpointassetendpoint
 schema: 2.0.0
 ---
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IDissolveEndpointsRequest
+Type: RunwaySdk.PowerShell.Models.IDissolveEndpointsRequest
 Parameter Sets: Dissolve
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IDissolveEndpointsRequest
+### RunwaySdk.PowerShell.Models.IDissolveEndpointsRequest
 
 ## OUTPUTS
 

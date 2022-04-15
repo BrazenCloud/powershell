@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/get-rwcontentpublicdownload
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/get-rwcontentpublicdownload
 schema: 2.0.0
 ---
 
@@ -48,7 +48,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.IContentView
+### RunwaySdk.PowerShell.Models.IContentView
 
 ## NOTES
 

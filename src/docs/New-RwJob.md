@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/new-rwjob
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/new-rwjob
 schema: 2.0.0
 ---
 
@@ -54,7 +54,7 @@ PS C:\> {{ Add code here }}
 To construct, see NOTES section for ACTIONS properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IActionSettingRequest[]
+Type: RunwaySdk.PowerShell.Models.IActionSettingRequest[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for REQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.ICreateJobRequest
+Type: RunwaySdk.PowerShell.Models.ICreateJobRequest
 Parameter Sets: Create
 Aliases:
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for SCHEDULE properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IJobSchedule
+Type: RunwaySdk.PowerShell.Models.IJobSchedule
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -223,11 +223,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.ICreateJobRequest
+### RunwaySdk.PowerShell.Models.ICreateJobRequest
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.ICreateJobResponse
+### RunwaySdk.PowerShell.Models.ICreateJobResponse
 
 ## NOTES
 

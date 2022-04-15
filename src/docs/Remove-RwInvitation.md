@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/remove-rwinvitation
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/remove-rwinvitation
 schema: 2.0.0
 ---
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for SETREQUEST properties and create a hash table.
 
 ```yaml
-Type: Runway.PowerShell.Models.IIdRequest
+Type: RunwaySdk.PowerShell.Models.IIdRequest
 Parameter Sets: Delete
 Aliases:
 
@@ -129,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Runway.PowerShell.Models.IIdRequest
+### RunwaySdk.PowerShell.Models.IIdRequest
 
 ## OUTPUTS
 

@@ -1,7 +1,7 @@
 ---
 external help file:
-Module Name: PsRunway
-online version: https://docs.microsoft.com/en-us/powershell/module/psrunway/new-rwauthenticationutilitynode
+Module Name: Runway
+online version: https://docs.microsoft.com/en-us/powershell/module/runway/new-rwauthenticationutilitynode
 schema: 2.0.0
 ---
 
@@ -79,7 +79,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Runway.PowerShell.Models.ILoginResponse
+### RunwaySdk.PowerShell.Models.ILoginResponse
 
 ## NOTES
 
