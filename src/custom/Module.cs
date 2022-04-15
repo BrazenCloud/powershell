@@ -1,4 +1,4 @@
-namespace RunwaySdk
+namespace RunwaySdk.PowerShell
 {
     using Runtime;
     using System.Collections.Generic;
