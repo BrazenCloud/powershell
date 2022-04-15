@@ -8,11 +8,10 @@ $assetName = '<assetName>'
 $groupName = 'Home*'
 
 # Retrieve the appropriate objects
-$runners = (Get-RwRunner).Items
 $groups = (Get-RwGroup).Items
 
 # Find the specific runner and group
-$runner = $runners | Where-Object {$_.AssetName -eq $assetName}
+$runner = Get-RwRunnerByName -Name $assetName
 $group = $groups | Where-Object {$_.Name -like $groupName} | Select-Object -First 1
 
 # Load the action
@@ -27,7 +26,7 @@ $schedule = New-RwJobScheduleObject -ScheduleType 'RunNow' -RepeatMinutes 0
 
 # Create the job
 New-RwJob -IsEnabled -IsHidden:$false -EndpointSetId $assignSet -GroupId $group.Id -Name $jobName -Schedule $schedule -Actions @(
-    [Runway.PowerShell.Models.IActionSettingRequest]@{
+    @{
         RepositoryActionId = $action.Id # action ID
     }
 )
