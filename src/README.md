@@ -29,7 +29,7 @@ azure: false
 powershell: true
 output-folder: ./
 clear-output-folder: true
-namespace: Runway.PowerShell
+namespace: RunwaySdk.PowerShell
 title: Runway
 prefix: Rw
 module-version: 0.2.0
