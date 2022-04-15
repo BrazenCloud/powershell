@@ -42,6 +42,7 @@ metadata:
     tags: Runway PowerShell
     requireLicenseAcceptance: false
     projectUri: https://github.com/runway-software/runway-powershell
+    licenseUri: https://github.com/Runway-Software/runway-powershell/blob/main/license.txt
 ```
 
 ### Directives

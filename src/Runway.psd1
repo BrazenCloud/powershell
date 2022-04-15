@@ -16,7 +16,7 @@
   PrivateData = @{
     PSData = @{
       Tags = 'Runway', 'PowerShell'
-      LicenseUri = ''
+      LicenseUri = 'https://github.com/Runway-Software/runway-powershell/blob/main/license.txt'
       ProjectUri = 'https://github.com/runway-software/runway-powershell'
       ReleaseNotes = ''
     }
