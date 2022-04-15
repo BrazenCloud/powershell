@@ -16,6 +16,9 @@ will clean them up. Currently it accomplishes the following:
   - Simplifies the JSON
 - Replace opIds ending with _All to _List
   - Work around a bug with AutoRest
+- Remove opIds ending with ForPie
+  - They are specific to the UI pie chart and AutoRest creates the cmdlets
+    with the same name and parameter set.
 - Remove file responses that don't actually return files
 #>
 
@@ -79,6 +82,15 @@ foreach ($path in $swagger.paths.Keys) {
         }
     }
 }
+
+# Remove paths ending with ForPie
+$newPathHt = @{}
+foreach ($path in $swagger.paths.Keys) {
+    if ($path -notlike '*ForPie') {
+        $newPathHt[$path] = $swagger.paths[$path]
+    }
+}
+$swagger.paths = $newPathHt
 
 # Remove file responses that don't actually return files
 
