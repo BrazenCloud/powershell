@@ -57,6 +57,9 @@ See the [samples folder](./samples) for inspiration.
   - `Get-RwJobByName`
   - `Get-RwRunnerByName`
   - `Get-RwSetMember`
+  - `Get-RwUserByGroup`
+- Fixed #5 `Get-RwJobRandomJobName`
+- Updated with latest prod swagger build (2022-04-13)
 
 ### 0.1.3
 

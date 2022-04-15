@@ -20,6 +20,7 @@ will clean them up. Currently it accomplishes the following:
   - They are specific to the UI pie chart and AutoRest creates the cmdlets
     with the same name and parameter set.
 - Remove file responses that don't actually return files
+- Remove Produces from Job_GetRandomJobName
 #>
 
 $swagger = Get-Content $SwaggerPath | ConvertFrom-Json -AsHashtable
@@ -84,6 +85,7 @@ foreach ($path in $swagger.paths.Keys) {
 }
 
 # Remove paths ending with ForPie
+
 $newPathHt = @{}
 foreach ($path in $swagger.paths.Keys) {
     if ($path -notlike '*ForPie') {
@@ -158,6 +160,12 @@ foreach ($path in $paths.Keys) {
         $swagger.paths[$path][$method].responses['200'].Remove('schema')
     }
 }
+
+# Remove Produces from Job_GetRandomJobName
+
+$jobNamePath = '/api/v2/jobs/name'
+$jobNameMethod = 'get'
+$swagger.paths[$jobNamePath][$jobNameMethod].Remove('produces')
 
 # Sort objects
 

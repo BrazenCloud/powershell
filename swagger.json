@@ -3019,9 +3019,6 @@
     },
     "/api/v2/jobs/name": {
       "get": {
-        "produces": [
-          "text/plain"
-        ],
         "responses": {
           "200": {
             "x-nullable": false,
