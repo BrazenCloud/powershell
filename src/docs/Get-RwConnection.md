@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 
+Returns Connections from the Runway API.
 
 ## SYNTAX
 

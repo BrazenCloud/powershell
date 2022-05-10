@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 
+Returns Job Threads from the Runway API.
 
 ## SYNTAX
 

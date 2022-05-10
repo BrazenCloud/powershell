@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 
+Returns the members of a Set in Runway.
 
 ## SYNTAX
 
