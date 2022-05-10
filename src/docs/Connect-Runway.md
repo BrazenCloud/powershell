@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 
+Authenticate to the Runway API.
 
 ## SYNTAX
 
@@ -18,26 +19,30 @@ Connect-Runway [-Email] <String> [-Password] <SecureString> [[-RunwayDomain] <St
 
 ## DESCRIPTION
 
+Authenticate to the Runway API using an email and password. Optionally, set a custom Runway domain.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Default Authentication
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+PS C:\> Connect-Runway -Email email@domain.com
 ```
 
-{{ Add description here }}
+This example will prompt for a password.
 
-### Example 2: {{ Add title here }}
+### Example 2: Pass the password
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+PS C:\> Connect-Runway -Email email@domain.com -Password (ConvertTo-SecureString 'Password' -AsPlainText -Force)
 ```
 
-{{ Add description here }}
+When successful, no output is returned.
+
+### Example 3: Custom Domain
+```powershell
+PS C:\> Connect-Runway -Email email@domain.com -RunwayDomain 'runway.domain.com'
+```
+
+This example authenticates to a custom Runway instance. All future cmdlets will communicate to the Runway domain specified in this cmdlet.
 
 ## PARAMETERS
 
@@ -91,13 +96,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-## OUTPUTS
+### System.String
 
-### System.Object
+### System.Security.SecureString
+
+## OUTPUTS
 
 ## NOTES
 
 ALIASES
 
 ## RELATED LINKS
-
