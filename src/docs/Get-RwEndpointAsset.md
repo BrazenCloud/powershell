@@ -30,6 +30,7 @@ Get-RwEndpointAsset -InputObject <IRunwayIdentity> [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Endpoint Assets as a list or by Id.
 
 ## EXAMPLES
 

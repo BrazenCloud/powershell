@@ -30,6 +30,7 @@ Get-RwConnection -InputObject <IRunwayIdentity> [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Connections as a list or by Id.
 
 ## EXAMPLES
 

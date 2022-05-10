@@ -30,6 +30,7 @@ Get-RwJob -InputObject <IRunwayIdentity> [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Jobs as a list or by Id.
 
 ## EXAMPLES
 

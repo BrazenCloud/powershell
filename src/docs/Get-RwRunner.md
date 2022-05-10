@@ -30,6 +30,7 @@ Get-RwRunner -InputObject <IRunwayIdentity> [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Runners as a list or by Id.
 
 ## EXAMPLES
 

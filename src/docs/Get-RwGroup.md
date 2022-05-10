@@ -30,6 +30,7 @@ Get-RwGroup -InputObject <IRunwayIdentity> [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Groups as a list or by Id.
 
 ## EXAMPLES
 

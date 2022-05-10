@@ -19,6 +19,7 @@ Get-RwTag [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Tags as a list or by Id.
 
 ## EXAMPLES
 

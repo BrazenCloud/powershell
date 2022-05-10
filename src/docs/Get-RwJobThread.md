@@ -40,6 +40,7 @@ Get-RwJobThread -InputObject <IRunwayIdentity> [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Job Threads as a list or by Id.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 
+Returns Account Assets from the Runway API.
 
 ## SYNTAX
 
@@ -29,6 +30,7 @@ Get-RwAccountAsset -InputObject <IRunwayIdentity> [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Account Assets either as a list or by Id.
 
 ## EXAMPLES
 

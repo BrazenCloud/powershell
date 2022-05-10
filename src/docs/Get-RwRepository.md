@@ -40,6 +40,7 @@ Get-RwRepository -InputObject <IRunwayIdentity> [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Actions as a list or by Id.
 
 ## EXAMPLES
 

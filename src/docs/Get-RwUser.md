@@ -30,6 +30,7 @@ Get-RwUser -InputObject <IRunwayIdentity> [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Users as a list or by Id.
 
 ## EXAMPLES
 

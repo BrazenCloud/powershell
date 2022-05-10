@@ -35,6 +35,7 @@ Get-RwInvitation -InputObject <IRunwayIdentity> [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Invitations as a list or by Id.
 
 ## EXAMPLES
 

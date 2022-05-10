@@ -30,6 +30,7 @@ Get-RwRole -InputObject <IRunwayIdentity> [<CommonParameters>]
 
 ## DESCRIPTION
 
+Returns Roles as a list or by Id.
 
 ## EXAMPLES
 
