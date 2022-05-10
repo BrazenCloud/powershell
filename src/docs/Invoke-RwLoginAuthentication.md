@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 
+Makes a raw authentication call.
 
 ## SYNTAX
 
@@ -24,6 +25,10 @@ Invoke-RwLoginAuthentication -Request <ILoginRequest> [-Confirm] [-WhatIf] [<Com
 ```
 
 ## DESCRIPTION
+
+The best way to authenticate to Runway is using Connect-Runway.
+
+Connect-Runway calls this cmdlet to hit the Runway API and get a session token.
 
 
 ## EXAMPLES
