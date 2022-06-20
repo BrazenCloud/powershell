@@ -1,4 +1,4 @@
-namespace RunwaySdk.PowerShell
+namespace BrazenCloudSdk.PowerShell
 {
     using Runtime;
     using System.Collections.Generic;

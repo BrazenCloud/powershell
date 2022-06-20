@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Runway
-This directory contains the PowerShell module for the Runway service.
+# BrazenCloud
+This directory contains the PowerShell module for the BrazenCloud service.
 
 ---
 ## Status
-[![Runway](https://img.shields.io/powershellgallery/v/Runway.svg?style=flat-square&label=Runway "Runway")](https://www.powershellgallery.com/packages/Runway/)
+[![BrazenCloud](https://img.shields.io/powershellgallery/v/BrazenCloud.svg?style=flat-square&label=BrazenCloud "BrazenCloud")](https://www.powershellgallery.com/packages/BrazenCloud/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the Runway service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Runway`, see [how-to.md](how-to.md).
+For information on how to develop for `BrazenCloud`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration
@@ -29,17 +29,17 @@ azure: false
 powershell: true
 output-folder: ./
 clear-output-folder: true
-namespace: RunwaySdk.PowerShell
-title: Runway
-prefix: Rw
-module-version: 0.2.0
+namespace: BrazenCloudSdk.PowerShell
+title: BrazenCloud
+prefix: Bc
+module-version: 0.3.0
 metadata:
     authors: ThePoShWolf
-    owners: Runway Software
-    companyName: Runway Software
-    description: "The PowerShell SDK for the Runway API"
-    copyright: &copy; Runway Software. All rights reserved.
-    tags: Runway PowerShell
+    owners: BrazenCloud
+    companyName: BrazenCloud
+    description: "The PowerShell SDK for the BrazenCloud API"
+    copyright: &copy; BrazenCloud. All rights reserved.
+    tags: BrazenCloud PowerShell API
     requireLicenseAcceptance: false
     projectUri: https://github.com/runway-software/runway-powershell
     licenseUri: https://github.com/Runway-Software/runway-powershell/blob/main/license.txt
@@ -64,11 +64,11 @@ directive:
   #    parameter-name: ${subject}Id
   # Imports should be Gets
   # They becomes Import-* due to how AutoRest correlates the OperationId to a verb
-  - where:
-      verb: Import
-    set:
-      verb: Get
-      alias: Import-Rw${subject}
+  #- where:
+  #    verb: Import
+  #  set:
+  #    verb: Get
+  #    alias: Import-Rw${subject}
   # Convert invoke-counts to get-counts
   # i.e.: Invoke-RwCountRunner becomes Get-RwRunnerCount
   - where:
@@ -77,7 +77,7 @@ directive:
     set:
       verb: Get
       subject: $1Count
-      alias: Invoke-Rw${subject}
+      alias: Invoke-Bc${subject}
   # rename model property
   - where:
       model-name: JobSchedule
@@ -90,7 +90,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if ($documentPath.match(/Runway.cs/gm)) {
+      if ($documentPath.match(/BrazenCloud.cs/gm)) {
         // line to match:
         // var _url = new global::System.Uri($"https://portal.runway.host{pathAndQuery}");
         // replace portal.runway.host with environmental variable
@@ -101,11 +101,11 @@ directive:
       } else {
         return $;
       }
-  # Sets the -Schedule parameter in Set-RwJobSchedule to be 'Time' when it is expanded
+  # Sets the -Schedule parameter in Set-BcJobSchedule to be 'Time' when it is expanded
   - from: source-file-csharp
     where: $
     transform: >
-      if ($documentPath.match(/SetRwJobSchedule_UpdateExpanded.cs|SetRwJobSchedule_UpdateViaIdentityExpanded.cs|CreateJobRequest.cs|IJobQueryView.cs|RunwayJob.cs|NewRwJob_CreateExpanded.cs/gm)) {
+      if ($documentPath.match(/SetBcJobSchedule_UpdateExpanded.cs|SetBcJobSchedule_UpdateViaIdentityExpanded.cs|CreateJobRequest.cs|IJobQueryView.cs|RunwayJob.cs|NewBcJob_CreateExpanded.cs/gm)) {
         // line to match:
         // public string Schedule { get => ScheduleBody.Time ?? null; set => ScheduleBody.Time = value; }
         // needs to be:
