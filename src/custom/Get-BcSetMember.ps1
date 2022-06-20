@@ -1,4 +1,4 @@
-Function Get-RwSetMember {
+Function Get-BcSetMember {
     [cmdletbinding(
         DefaultParameterSetName = 'ById'
     )]
@@ -17,5 +17,5 @@ Function Get-RwSetMember {
          sortDirection = 0
          RootContainerId = $SetId
      }
-     (Invoke-RwQueryEndpointAsset -Query $query).Items
+     (Invoke-BcQueryEndpointAsset -Query $query).Items
 }

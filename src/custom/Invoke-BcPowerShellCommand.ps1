@@ -1,4 +1,4 @@
-Function Invoke-RwPowerShellCommand {
+Function Invoke-BcPowerShellCommand {
     [cmdletbinding(DefaultParameterSetName = 'ByName')]
     param (
         [Parameter(
@@ -62,27 +62,27 @@ Function Invoke-RwPowerShellCommand {
         [switch]$Raw
     )
     # Load the run command from the Action Repository
-    $runCommand = Get-RwRepository -Name 'PowerShell:RunCommand'
+    $runCommand = Get-BcRepository -Name 'PowerShell:RunCommand'
 
     if ($null -ne $runCommand) {
         # If RunnerID is not passed, look it up
         if ($PSCmdlet.ParameterSetName -like 'ByName*') {
 
-            $AssetId = (Get-RwRunnerByName -AssetName $RunnerName).AssetId
+            $AssetId = (Get-BcRunnerByName -AssetName $RunnerName).AssetId
         }
 
         # Create a set to assign the job to
-        $assignSet = New-RwSet
+        $assignSet = New-BcSet
 
         # Add the runner to the Job
-        Add-RwSetToSet -TargetSetId $assignSet -ObjectIds $AssetId | Out-Null
+        Add-BcSetToSet -TargetSetId $assignSet -ObjectIds $AssetId | Out-Null
 
-        # Generate a name, it should use Get-RwJobRandomJobName,
+        # Generate a name, it should use Get-BcJobRandomJobName,
         # however that is currently bugged.
         $jobName = (Invoke-RestMethod -Headers @{Authorization = "Session $($env:RunwaySessionToken)"} -Uri 'https://portal.runway.host/api/v2/jobs/name' -Method Get)
 
         # Create the job
-        $nj = New-RwJob -IsEnabled -IsHidden:$false -EndpointSetId $assignSet -Name $jobName -Schedule (New-RwJobScheduleObject -ScheduleType 'RunNow' -RepeatMinutes 0) -Actions @(
+        $nj = New-BcJob -IsEnabled -IsHidden:$false -EndpointSetId $assignSet -Name $jobName -Schedule (New-BcJobScheduleObject -ScheduleType 'RunNow' -RepeatMinutes 0) -Actions @(
             @{
                 RepositoryActionId = $runCommand.Id
                 Settings = @{
@@ -97,17 +97,17 @@ Function Invoke-RwPowerShellCommand {
         )
         
         # Wait for the job to complete
-        $job = Get-RwJob -JobId $nj.JobId
+        $job = Get-BcJob -JobId $nj.JobId
         While($job.TotalEndpointsFinished -lt $job.TotalEndpointsAssigned) {
             Start-Sleep -Seconds 2
-            $job = Get-RwJob -JobId $nj.JobId
+            $job = Get-BcJob -JobId $nj.JobId
         }
 
         # Once it completes, look up the thread id for the job and runner
-        $completedThread = Get-RwJobThread -JobId $job.Id | Where-Object {$_.ProdigalObjectId -eq $AssetId}
+        $completedThread = Get-BcJobThread -JobId $job.Id | Where-Object {$_.ProdigalObjectId -eq $AssetId}
         
         # With the thread ID, pull the thread log
-        Get-RwJobThreadLastLog -ThreadId $completedThread.Id -OutFile .\rwtmp.txt
+        Get-BcJobThreadLastLog -ThreadId $completedThread.Id -OutFile .\rwtmp.txt
 
         if ($Raw.IsPresent) {
             # Get the contents
@@ -128,7 +128,7 @@ Function Invoke-RwPowerShellCommand {
 
         # Clean up the job
         if (-not $LeaveJob.IsPresent) {
-            Remove-RwJob -JobId $nj.JobId | Out-Null
+            Remove-BcJob -JobId $nj.JobId | Out-Null
         }
     } else {
         Write-Warning "Unable to find 'PowerShell:RunCommand' action. Add the command to your Runway tenant and then retry."

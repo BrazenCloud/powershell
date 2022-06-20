@@ -1,4 +1,4 @@
-Function Get-RwRunnerByName {
+Function Get-BcRunnerByName {
     [cmdletbinding(
         DefaultParameterSetName = 'ByName'
     )]
@@ -41,5 +41,5 @@ Function Get-RwRunnerByName {
             }
         }
     }
-    (Invoke-RwQueryRunner -Query $query).Items
+    (Invoke-BcQueryRunner -Query $query).Items
 }

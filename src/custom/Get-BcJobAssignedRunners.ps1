@@ -1,4 +1,4 @@
-Function Get-RwJobAssignedRunners {
+Function Get-BcJobAssignedRunners {
     [CmdletBinding(
         DefaultParameterSetName = 'ByName'
     )]
@@ -14,8 +14,8 @@ Function Get-RwJobAssignedRunners {
         [string]$JobId
     )
     if ($PSCmdlet.ParameterSetName -eq 'ByName') {
-        $JobId = (Get-RwJobByName -JobName $JobName).Id
+        $JobId = (Get-BcJobByName -JobName $JobName).Id
     }
-    $setId = (Get-RwJob -JobId $JobId).EndpointSetId
-    Get-RwSetMember -SetId $setId
+    $setId = (Get-BcJob -JobId $JobId).EndpointSetId
+    Get-BcSetMember -SetId $setId
 }

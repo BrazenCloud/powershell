@@ -1,5 +1,5 @@
-Function Get-RwConnectionByName {
-    [CmdletBinding(
+Function Get-BcJobByName {
+    [cmdletbinding(
         DefaultParameterSetName = 'ByName'
     )]
     param (
@@ -8,10 +8,10 @@ Function Get-RwConnectionByName {
             Position = 0
         )]
         [Alias('Name')]
-        [string[]]$ConnectionName
+        [string[]]$JobName
     )
-    if ($ConnectionName.Count -gt 1) {
-        $filterChildren = foreach ($name in $ConnectionName) {
+    if ($JobName.Count -gt 1) {
+        $filterChildren = foreach ($name in $JobName) {
             @{
                 Left = 'Name'
                 Operator = '='
@@ -37,9 +37,9 @@ Function Get-RwConnectionByName {
             filter = @{
                 Left = 'Name'
                 Operator = '='
-                Right = $ConnectionName[0]
+                Right = $JobName[0]
             }
         }
     }
-    (Invoke-RwQueryConnection -Query $query).Items
+    (Invoke-BcQueryJob -Query $query).Items
 }

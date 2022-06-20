@@ -1,4 +1,4 @@
-Function Get-RwUserByGroup {
+Function Get-BcUserByGroup {
     [cmdletbinding()]
     param (
         [string]$GroupId
@@ -14,5 +14,5 @@ Function Get-RwUserByGroup {
             Right = $GroupId
         }
     }
-    (Invoke-RwQueryUser -Query $query).Items
+    (Invoke-BcQueryUser -Query $query).Items
 }

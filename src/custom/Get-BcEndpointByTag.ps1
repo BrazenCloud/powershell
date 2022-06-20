@@ -1,4 +1,4 @@
-Function Get-RwEndpointByTag {
+Function Get-BcEndpointByTag {
     [CmdletBinding(
         DefaultParameterSetName = 'ByTags'
     )]
@@ -41,5 +41,5 @@ Function Get-RwEndpointByTag {
             }
         }
     }
-    (Invoke-RwQueryEndpointAsset -Query $query).Items
+    (Invoke-BcQueryEndpointAsset -Query $query).Items
 }
