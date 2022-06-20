@@ -11,5 +11,5 @@ Function Connect-BrazenCloud {
     $env:BrazenCloudDomain = $Domain
 
     $s = Invoke-BcLoginAuthentication -Email $Email -Password ([pscredential]::new('blah', $Password).GetNetworkCredential().Password) -Remember
-    $env:BrazenSessionToken = $s.Session
+    $env:BrazenCloudSessionToken = $s.Session
 }

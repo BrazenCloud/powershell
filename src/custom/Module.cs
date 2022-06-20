@@ -33,7 +33,7 @@ namespace BrazenCloudSdk.PowerShell
             if (request.Headers.Contains("Authorization")) request.Headers.Remove("Authorization");
 
             // add in the auth header
-            request.Headers.Add("Authorization", "Session " + System.Environment.GetEnvironmentVariable("RunwaySessionToken"));
+            request.Headers.Add("Authorization", "Session " + System.Environment.GetEnvironmentVariable("BrazenCloudSessionToken"));
 
             // let it go on.
             return await next.SendAsync(request, callback);
