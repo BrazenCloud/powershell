@@ -64,10 +64,10 @@ directive:
   #    parameter-name: ${subject}Id
   # Imports should be Gets
   # They becomes Import-* due to how AutoRest correlates the OperationId to a verb
-  #- where:
-  #    verb: Import
-  #  set:
-  #    verb: Get
+  - where:
+      verb: Import
+    set:
+      verb: Get
   #    alias: Import-Rw${subject}
   # Convert invoke-counts to get-counts
   # i.e.: Invoke-RwCountRunner becomes Get-RwRunnerCount
