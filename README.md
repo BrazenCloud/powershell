@@ -40,6 +40,14 @@ See the [samples folder](./samples) for inspiration.
 
 ## Changelog
 
+### 0.3.0
+
+- **Renamed module from `Runway` to `BrazenCloud` inline with the company rebrand (https://brazencloud.io)
+  - Cmdlet prefix changed from `Rw` to `Bc`. `Get-RwJob` is now `Get-BcJob`, for example.
+  - `Connect-Runway` became `Connect-BrazenCloud`
+  - Aliases for the old `Invoke-RwCountSubject` cmdlets were removed.
+- Built from latest API docs.
+
 ### 0.2.0
 
 - **Renamed the module from `PsRunway` to `Runway`**
