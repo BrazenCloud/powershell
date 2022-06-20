@@ -77,7 +77,7 @@ directive:
     set:
       verb: Get
       subject: $1Count
-      alias: Invoke-Bc${subject}
+  #    alias: Invoke-Bc${subject}
   # rename model property
   - where:
       model-name: JobSchedule
