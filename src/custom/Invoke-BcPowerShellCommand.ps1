@@ -9,7 +9,7 @@ Function Invoke-BcPowerShellCommand {
             ParameterSetName = 'ByNameRaw',
             Mandatory
         )]
-        [Alias('Name','AssetName')]
+        [Alias('Name', 'AssetName')]
         [string]$RunnerName,
 
         [Parameter(
@@ -20,7 +20,7 @@ Function Invoke-BcPowerShellCommand {
             ParameterSetName = 'ByIdRaw',
             Mandatory
         )]
-        [Alias('Id','RunnerId')]
+        [Alias('Id', 'RunnerId')]
         [string]$AssetId,
 
         [Parameter(Mandatory)]
@@ -32,22 +32,18 @@ Function Invoke-BcPowerShellCommand {
         [switch]$LeaveJob,
 
         [Parameter(
-            ParameterSetName = 'ById',
-            Mandatory
+            ParameterSetName = 'ById'
         )]
         [Parameter(
-            ParameterSetName = 'ByName',
-            Mandatory
+            ParameterSetName = 'ByName'
         )]
         [int]$SerializeDepth = 2,
 
         [Parameter(
-            ParameterSetName = 'ById',
-            Mandatory
+            ParameterSetName = 'ById'
         )]
         [Parameter(
-            ParameterSetName = 'ByName',
-            Mandatory
+            ParameterSetName = 'ByName'
         )]
         [switch]$DefaultPropertiesOnly,
 
@@ -79,42 +75,42 @@ Function Invoke-BcPowerShellCommand {
 
         # Generate a name, it should use Get-BcJobRandomJobName,
         # however that is currently bugged.
-        $jobName = (Invoke-RestMethod -Headers @{Authorization = "Session $($env:RunwaySessionToken)"} -Uri 'https://portal.runway.host/api/v2/jobs/name' -Method Get)
+        $jobName = Get-BcJobRandomJobName
 
         # Create the job
         $nj = New-BcJob -IsEnabled -IsHidden:$false -EndpointSetId $assignSet -Name $jobName -Schedule (New-BcJobScheduleObject -ScheduleType 'RunNow' -RepeatMinutes 0) -Actions @(
             @{
                 RepositoryActionId = $runCommand.Id
-                Settings = @{
-                    Command = $ScriptBlock
-                    PWSH = $PWSH.IsPresent
-                    'Serialize Depth' = $SerializeDepth
+                Settings           = @{
+                    Command                   = $ScriptBlock
+                    PWSH                      = $PWSH.IsPresent
+                    'Serialize Depth'         = $SerializeDepth
                     'Default Properties Only' = $DefaultPropertiesOnly.IsPresent
-                    'Debug' = $true
-                    'Raw Output' = $Raw.IsPresent
+                    'Debug'                   = $true
+                    'Raw Output'              = $Raw.IsPresent
                 }
             }
         )
         
         # Wait for the job to complete
         $job = Get-BcJob -JobId $nj.JobId
-        While($job.TotalEndpointsFinished -lt $job.TotalEndpointsAssigned) {
+        While ($job.TotalEndpointsFinished -lt $job.TotalEndpointsAssigned) {
             Start-Sleep -Seconds 2
             $job = Get-BcJob -JobId $nj.JobId
         }
 
         # Once it completes, look up the thread id for the job and runner
-        $completedThread = Get-BcJobThread -JobId $job.Id | Where-Object {$_.ProdigalObjectId -eq $AssetId}
+        $completedThread = Get-BcJobThread -JobId $job.Id | Where-Object { $_.ProdigalObjectId -eq $AssetId }
         
         # With the thread ID, pull the thread log
         Get-BcJobThreadLastLog -ThreadId $completedThread.Id -OutFile .\rwtmp.txt
 
         if ($Raw.IsPresent) {
             # Get the contents
-            Get-Content .\rwtmp.txt | Where-Object {$_ -notlike '# *'}
+            Get-Content .\rwtmp.txt | Where-Object { $_ -notlike '# *' }
         } else {
             # Write the content to disk, it will be in CliXml format
-            Get-Content .\rwtmp.txt | Where-Object {$_ -notlike '# *'} | Out-File .\results.xml -Force
+            Get-Content .\rwtmp.txt | Where-Object { $_ -notlike '# *' } | Out-File .\results.xml -Force
 
             # Import the output
             Import-Clixml .\results.xml
