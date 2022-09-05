@@ -42,11 +42,14 @@ See the [samples folder](./samples) for inspiration.
 
 ### 0.3.0
 
-- **Renamed module from `Runway` to `BrazenCloud` inline with the company rebrand (https://brazencloud.io)
+- **Renamed module from `Runway` to `BrazenCloud` inline with the company rebrand (https://brazencloud.com)
   - Cmdlet prefix changed from `Rw` to `Bc`. `Get-RwJob` is now `Get-BcJob`, for example.
   - `Connect-Runway` became `Connect-BrazenCloud`
   - Aliases for the old `Invoke-RwCountSubject` cmdlets were removed.
-- Built from latest API docs.
+- Built from latest API docs. Includes, but is not limited to:
+  - Adding cmdlets for the Datastore feature
+  - Adding cmdlets for the remote shell feature.
+    - This is not technically supported in PowerShell, but the API calls exist so they are cmdlets.
 
 ### 0.2.0
 
