@@ -6,7 +6,7 @@ Function Connect-BrazenCloud {
         [string]$Email,
         [Parameter(Mandatory)]
         [SecureString]$Password,
-        [string]$Domain = 'portal.runway.host'
+        [string]$Domain = 'portal.brazencloud.com'
     )
     $env:BrazenCloudDomain = $Domain
 
