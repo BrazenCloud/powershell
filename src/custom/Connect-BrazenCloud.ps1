@@ -12,4 +12,6 @@ Function Connect-BrazenCloud {
 
     $s = Invoke-BcLoginAuthentication -Email $Email -Password ([pscredential]::new('blah', $Password).GetNetworkCredential().Password) -Remember
     $env:BrazenCloudSessionToken = $s.Session
+
+    Set-BcDefaultGroup -GroupId (Get-BcAuthenticationCurrentUser).HomeContainerId
 }
