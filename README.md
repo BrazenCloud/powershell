@@ -1,44 +1,56 @@
-# Runway
+# BrazenCloud
 
-[![Runway](https://img.shields.io/powershellgallery/v/Runway.svg?style=flat-square&label=Runway "Runway")](https://www.powershellgallery.com/packages/Runway/)
+[![BrazenCloud](https://img.shields.io/powershellgallery/v/BrazenCloud.svg?style=flat-square&label=BrazenCloud "BrazenCloud")](https://www.powershellgallery.com/packages/BrazenCloud/)
 
-**Starting in v0.2.0, Runway was renamed from PsRunway to Runway.**
+**Starting in v0.3.0, This module was renamed to `BrazenCloud`**
 
-This is the PowerShell module and SDK for [Runway](https://runway.host). For it to work, you need to have Windows PowerShell 5.1 or PowerShell 6+ and a Runway account.
+This is the PowerShell module and SDK for [BrazenCloud](https://brazencloud.com). For it to work, you need to have Windows PowerShell 5.1 or PowerShell 6+ and a BrazenCloud account.
 
-If you don't have a Runway account already, [sign up for a free one](https://portal.runway.host/login?enroll=true).
+If you don't have a BrazenCloud account already, [sign up for a free one](https://portal.brazencloud.com/login?enroll=true).
 
-If you need help with using the Runway platform, check out our [documentation](https://docs.runway.host).
+If you need help with using the BrazenCloud platform, check out our [documentation](https://docs.runway.host).
 
-## Install Runway
+## Install BrazenCloud
 
-Since Runway is published to the PowerShell Gallery, use `Install-Module` to install the module:
+Since BrazenCloud is published to the PowerShell Gallery, use `Install-Module` to install the module:
 
 ```powershell
-Install-Module Runway -Repository PSGallery
+Install-Module BrazenCloud -Repository PSGallery
 ```
 
 ## Authenticate
 
-To authenticate to Runway, use the `Connect-Runway` cmdlet. To be prompted for your password (most secure):
+To authenticate to BrazenCloud, use the `Connect-BrazenCloud` cmdlet. To be prompted for your password (most secure):
 
 ```powershell
-Connect-Runway -Email <email>
+Connect-BrazenCloud -Email <email>
 ```
 
 If you wish to pass your password, use the same cmdlet, except convert your password to a secure string:
 
 ```powershell
-Connect-Runway -Email <email> -Password (ConvertTo-SecureString '<password>' -AsPlainText -Force)
+Connect-BrazenCloud -Email <email> -Password (ConvertTo-SecureString '<password>' -AsPlainText -Force)
 ```
 
-In the future, Runway will support securely caching the credentials.
+In the future, BrazenCloud will support securely caching the credentials.
 
 ## Samples
 
 See the [samples folder](./samples) for inspiration.
 
 ## Changelog
+
+### 0.3.0
+
+- **Renamed module from `Runway` to `BrazenCloud` inline with the company rebrand (https://brazencloud.com)**
+  - Cmdlet prefix changed from `Rw` to `Bc`. `Get-RwJob` is now `Get-BcJob`, for example.
+  - `Connect-Runway` became `Connect-BrazenCloud`
+  - Aliases for the old `Invoke-RwCountSubject` cmdlets were removed.
+- Built from latest API docs. Includes, but is not limited to:
+  - Adding cmdlets for the Datastore feature
+  - Adding cmdlets for the remote shell feature.
+    - This is not technically supported in PowerShell, but the API calls exist so they are cmdlets.
+- Now sets a default group for any cmdlets that accept a `GroupId` parameter.
 
 ### 0.2.0
 
