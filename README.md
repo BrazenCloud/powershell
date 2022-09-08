@@ -40,6 +40,10 @@ See the [samples folder](./samples) for inspiration.
 
 ## Changelog
 
+### 0.3.1
+
+- Module now respects the `-Domain` parameter of `Connect-BrazenCloud`.
+
 ### 0.3.0
 
 - **Renamed module from `Runway` to `BrazenCloud` inline with the company rebrand (https://brazencloud.com)**

@@ -92,9 +92,9 @@ directive:
     transform: >
       if ($documentPath.match(/BrazenCloud.cs/gm)) {
         // line to match:
-        // var _url = new global::System.Uri($"https://portal.runway.host{pathAndQuery}");
-        // replace portal.runway.host with environmental variable
-        let urlRegex = /var _url = [^\r\n;]+portal\.runway\.host[^\r\n;]+;/gmi
+        // var _url = new global::System.Uri($"https://portal.brazencloud.com{pathAndQuery}");
+        // replace portal.brazencloud.com with environmental variable
+        let urlRegex = /var _url = [^\r\n;]+portal\.brazencloud\.com[^\r\n;]+;/gmi
         $ = $.replace(urlRegex,'var _url = new global::System.Uri($"https://{System.Environment.GetEnvironmentVariable("BrazenCloudDomain")}{pathAndQuery}");');
 
         return $;
