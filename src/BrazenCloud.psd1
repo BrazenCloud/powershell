@@ -1,7 +1,7 @@
 @{
   GUID = '3f4232eb-3edc-45c5-ae3d-af1e09d83e3d'
   RootModule = './BrazenCloud.psm1'
-  ModuleVersion = '0.3.0'
+  ModuleVersion = '0.3.2'
   CompatiblePSEditions = 'Core', 'Desktop'
   Author = 'ThePoShWolf'
   CompanyName = 'BrazenCloud'
