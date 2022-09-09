@@ -32,7 +32,7 @@ clear-output-folder: true
 namespace: BrazenCloudSdk.PowerShell
 title: BrazenCloud
 prefix: Bc
-module-version: 0.3.0
+module-version: 0.3.2
 metadata:
     authors: ThePoShWolf
     owners: BrazenCloud
@@ -92,9 +92,9 @@ directive:
     transform: >
       if ($documentPath.match(/BrazenCloud.cs/gm)) {
         // line to match:
-        // var _url = new global::System.Uri($"https://portal.runway.host{pathAndQuery}");
-        // replace portal.runway.host with environmental variable
-        let urlRegex = /var _url = [^\r\n;]+portal\.runway\.host[^\r\n;]+;/gmi
+        // var _url = new global::System.Uri($"https://portal.brazencloud.com{pathAndQuery}");
+        // replace portal.brazencloud.com with environmental variable
+        let urlRegex = /var _url = [^\r\n;]+portal\.brazencloud\.com[^\r\n;]+;/gmi
         $ = $.replace(urlRegex,'var _url = new global::System.Uri($"https://{System.Environment.GetEnvironmentVariable("BrazenCloudDomain")}{pathAndQuery}");');
 
         return $;
