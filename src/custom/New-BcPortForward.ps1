@@ -79,6 +79,7 @@ Function New-BcPortForward {
             }
             Start-Process @procSplat -LoadUserProfile
 
+            Write-Host "$source is now being forwarded to $RemoteDestination on $($endpoint.Name)."
             Write-Host "Connection '$guid' initiated. Close the new window when you are finished."
         } else {
             Write-Warning "Unable to automatically connect to the stream. The BrazenCloud utility is not downloaded. You can reconnect using 'Connect-BrazenCloud' and omit the -SkipExecutableDownload. Or you can manually connect with 'runway -S $($env:BrazenCloudDomain) stream --listen $guid --persistent'"
