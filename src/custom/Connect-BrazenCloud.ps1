@@ -7,7 +7,7 @@ Function Connect-BrazenCloud {
         [Parameter(Mandatory)]
         [SecureString]$Password,
         [string]$Domain = 'portal.brazencloud.com',
-        [int]$TTL = 20,
+        [int]$TTL = 60,
         [switch]$SkipExecutableDownload
     )
     $env:BrazenCloudDomain = $Domain
