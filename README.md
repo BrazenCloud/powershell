@@ -40,6 +40,17 @@ See the [samples folder](./samples) for inspiration.
 
 ## Changelog
 
+### 0.3.3
+
+- Increased the default TTL for authentication (now 60 minutes instead of 20)
+- Module now downloads and authenticates the BrazenCloud utility.
+  - This was implemented to improve support for our [Action Developer Kit](https://github.com/brazencloud/adk)
+- Added DataStore cmdlets (Elastic integrated indexes, shows as 'Results' in the UI)
+  - You can find these cmdlets with: `Get-Command *datastore* -Module BrazenCloud`
+- Added a cmdlet to leverage Streams to forward a local port to a remote runner port: `New-BcPortForward`
+- Added output types to all custom functions
+- Added `Get-BcEndpointAssetHelper`
+
 ### 0.3.2
 
 - Module now respects the `-Domain` parameter of `Connect-BrazenCloud`.
