@@ -8,22 +8,23 @@ Function Get-BcJobByName {
             Position = 0
         )]
         [Alias('Name')]
-        [string[]]$JobName
+        [string[]]$JobName,
+        [string]$GroupId
     )
     if ($JobName.Count -gt 1) {
         $filterChildren = foreach ($name in $JobName) {
             @{
-                Left = 'Name'
+                Left     = 'Name'
                 Operator = '='
-                Right = $name
+                Right    = $name
             }
         }
         $query = @{
             includeSubgroups = $true
-            skip = 0
-            take = 100
-            sortDirection = 0
-            filter = @{
+            skip             = 0
+            take             = 100
+            sortDirection    = 0
+            filter           = @{
                 children = $filterChildren
                 operator = 'OR'
             }
@@ -31,15 +32,18 @@ Function Get-BcJobByName {
     } else {
         $query = @{
             includeSubgroups = $true
-            skip = 0
-            take = 100
-            SortDirection = 0
-            filter = @{
-                Left = 'Name'
+            skip             = 0
+            take             = 100
+            SortDirection    = 0
+            filter           = @{
+                Left     = 'Name'
                 Operator = '='
-                Right = $JobName[0]
+                Right    = $JobName[0]
             }
         }
+    }
+    if ($PSBoundParameters.Keys -contains 'GroupId') {
+        $query['rootContainerId'] = $GroupId
     }
     (Invoke-BcQueryJob -Query $query).Items
 }
