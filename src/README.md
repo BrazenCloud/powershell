@@ -32,7 +32,7 @@ clear-output-folder: true
 namespace: BrazenCloudSdk.PowerShell
 title: BrazenCloud
 prefix: Bc
-module-version: 0.3.2
+module-version: 0.3.3
 metadata:
     authors: ThePoShWolf
     owners: BrazenCloud
