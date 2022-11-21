@@ -41,8 +41,8 @@ metadata:
     copyright: &copy; BrazenCloud. All rights reserved.
     tags: BrazenCloud PowerShell API
     requireLicenseAcceptance: false
-    projectUri: https://github.com/runway-software/runway-powershell
-    licenseUri: https://github.com/Runway-Software/runway-powershell/blob/main/license.txt
+    projectUri: https://github.com/brazencloud/powershell
+    licenseUri: https://github.com/brazencloud/powershell/blob/main/license.txt
 ```
 
 ### Directives
