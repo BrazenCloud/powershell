@@ -1,4 +1,5 @@
 Function Get-BcJobAssignedRunners {
+    [OutputType([BrazenCloudSdk.PowerShell.Models.IEndpointAssetQueryView[]])]
     [CmdletBinding(
         DefaultParameterSetName = 'ByName'
     )]

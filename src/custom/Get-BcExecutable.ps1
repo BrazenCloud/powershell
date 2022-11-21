@@ -38,7 +38,7 @@ Function Get-BcExecutable {
         }
     }
 
-    if ($platform -ne $null) {
+    if ($null -ne $platform) {
         Write-Verbose "Downloading the '$platform' binary..."
         Invoke-BcDownloadContentPublicFile -Platform $Platform -Key 'runway' -OutFile $OutFile
     }

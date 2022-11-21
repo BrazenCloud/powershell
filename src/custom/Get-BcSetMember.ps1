@@ -1,4 +1,5 @@
 Function Get-BcSetMember {
+    [OutputType([BrazenCloudSdk.PowerShell.Models.IEndpointAssetQueryView[]])]
     [cmdletbinding(
         DefaultParameterSetName = 'ById'
     )]
@@ -11,11 +12,11 @@ Function Get-BcSetMember {
     )
 
     $query = @{
-         includeSubgroups = $true
-         skip = 0
-         take = 100
-         sortDirection = 0
-         RootContainerId = $SetId
-     }
+        includeSubgroups = $true
+        skip             = 0
+        take             = 100
+        sortDirection    = 0
+        RootContainerId  = $SetId
+    }
      (Invoke-BcQueryEndpointAsset -Query $query).Items
 }

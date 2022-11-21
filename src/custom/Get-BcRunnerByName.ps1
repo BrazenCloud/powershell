@@ -1,4 +1,5 @@
 Function Get-BcRunnerByName {
+    [OutputType([BrazenCloudSdk.PowerShell.Models.IRunnerQueryView[]])]
     [cmdletbinding(
         DefaultParameterSetName = 'ByName'
     )]
@@ -7,23 +8,23 @@ Function Get-BcRunnerByName {
             ParameterSetName = 'ByName',
             Position = 0
         )]
-        [Alias('Name','RunnerName')]
+        [Alias('Name', 'RunnerName')]
         [string[]]$AssetName
     )
     if ($AssetName.Count -gt 1) {
         $filterChildren = foreach ($name in $AssetName) {
             @{
-                Left = 'AssetName'
+                Left     = 'AssetName'
                 Operator = '='
-                Right = $name
+                Right    = $name
             }
         }
         $query = @{
             includeSubgroups = $true
-            skip = 0
-            take = 100
-            sortDirection = 0
-            filter = @{
+            skip             = 0
+            take             = 100
+            sortDirection    = 0
+            filter           = @{
                 children = $filterChildren
                 operator = 'OR'
             }
@@ -31,13 +32,13 @@ Function Get-BcRunnerByName {
     } else {
         $query = @{
             includeSubgroups = $true
-            skip = 0
-            take = 100
-            SortDirection = 0
-            filter = @{
-                Left = 'AssetName'
+            skip             = 0
+            take             = 100
+            SortDirection    = 0
+            filter           = @{
+                Left     = 'AssetName'
                 Operator = '='
-                Right = $AssetName[0]
+                Right    = $AssetName[0]
             }
         }
     }

@@ -1,4 +1,5 @@
 Function Get-BcConnectionByName {
+    [OutputType([BrazenCloudSdk.PowerShell.Models.IIConnectionQueryView[]])]
     [CmdletBinding(
         DefaultParameterSetName = 'ByName'
     )]

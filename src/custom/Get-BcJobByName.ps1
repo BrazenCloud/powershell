@@ -1,4 +1,5 @@
 Function Get-BcJobByName {
+    [OutputType([BrazenCloudSdk.PowerShell.Models.IJobQueryView[]])]
     [cmdletbinding(
         DefaultParameterSetName = 'ByName'
     )]
